@@ -1,5 +1,7 @@
 import Head from "next/head";
 
+import UserProfile from "@/components/common/UserProfile";
+
 const HomePage = () => {
   return (
     <>
@@ -10,7 +12,7 @@ const HomePage = () => {
           content="I post about programming and web development."
         />
       </Head>
-      <div>Main Page</div>
+      <UserProfile />
     </>
   );
 };
