@@ -1,7 +1,7 @@
 import Head from "next/head";
-import UserProfile from "@/components/common/UserProfile";
-import HeaderText from "@/components/common/HeaderText";
-import SearchBar from "@/components/home/SearchBar/SearchBar";
+import { UserProfile, HeaderText, PostTags } from "@/components/common";
+import { SearchBar } from "@/components/home";
+
 const HomePage = () => {
   return (
     <>
@@ -15,6 +15,7 @@ const HomePage = () => {
       <UserProfile />
       <HeaderText title="Posts" fontSize="3xl" />
       <SearchBar />
+      <PostTags />
     </>
   );
 };

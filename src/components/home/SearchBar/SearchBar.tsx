@@ -1,8 +1,9 @@
-import { Input, Flex } from "@chakra-ui/react";
+import { Input, Flex, Center } from "@chakra-ui/react";
+import SearchIcon from "public/images/search.svg";
 
 const SearchBar = () => {
   return (
-    <Flex>
+    <Flex flexDirection="row" alignItems="center">
       <Input
         placeholder="검색"
         _placeholder={{ color: "SearchBar.fontColor" }}
@@ -15,6 +16,7 @@ const SearchBar = () => {
         focusBorderColor="SearchBar.background"
         width="30%"
       />
+      <SearchIcon width="50" height="50" />
     </Flex>
   );
 };

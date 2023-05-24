@@ -11,8 +11,8 @@ export const CustomTheme = extendTheme({
   colors: {
     tag: {
       active: {
-        fontColor: "#2D7B7F",
-        background: "#00393C",
+        fontColor: "#00393C",
+        background: "#2D7B7F",
       },
       inactive: {
         fontColor: "#627387",
