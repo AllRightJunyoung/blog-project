@@ -3,8 +3,10 @@ import type { HeaderTextProps } from "./HeaderText.types";
 const HeaderText = ({ title, fontSize }: HeaderTextProps) => {
   return (
     <Flex flexDirection="column">
-      <Text fontSize={fontSize}>{title}</Text>
-      <Divider color="white" border="1px" />
+      <Text fontSize={fontSize} marginLeft={5}>
+        {title}
+      </Text>
+      <Divider color="blog.divider.color" border="1px" />
     </Flex>
   );
 };

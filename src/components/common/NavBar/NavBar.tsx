@@ -5,19 +5,34 @@ const NavBar = () => {
   return (
     <Flex
       flexDirection="column"
-      backgroundColor="#293C4A"
+      backgroundColor="blog.NavBar.background"
       position="sticky"
       height="50px"
       marginBottom="30px"
     >
       <Flex gap="20px" alignSelf="flex-end" padding="10px" marginEnd="5">
-        <Link as={NextLink} href="/home" color="white" fontSize="xl">
+        <Link
+          as={NextLink}
+          href="/home"
+          color="blog.NavBar.fontColor"
+          fontSize="xl"
+        >
           Home
         </Link>
-        <Link as={NextLink} href="/about" color="white" fontSize="xl">
+        <Link
+          as={NextLink}
+          href="/about"
+          color="blog.NavBar.fontColor"
+          fontSize="xl"
+        >
           About
         </Link>
-        <Link as={NextLink} href="/project" color="white" fontSize="xl">
+        <Link
+          as={NextLink}
+          href="/project"
+          color="blog.NavBar.fontColor"
+          fontSize="xl"
+        >
           Project
         </Link>
       </Flex>
