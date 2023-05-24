@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { UserProfile, HeaderText, PostTags } from "@/components/common";
-import { SearchBar } from "@/components/home";
+import { PostCards, SearchBar } from "@/components/home";
 
 const HomePage = () => {
   return (
@@ -16,6 +16,7 @@ const HomePage = () => {
       <HeaderText title="Posts" fontSize="3xl" />
       <SearchBar />
       <PostTags />
+      <PostCards />
     </>
   );
 };

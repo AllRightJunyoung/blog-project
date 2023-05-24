@@ -29,7 +29,7 @@ export const CustomTheme = extendTheme({
     },
     card: {
       fontColor: "white",
-      background: "#242E35",
+      background: "#10181B",
     },
     pagination: {
       fontColor: "white",
