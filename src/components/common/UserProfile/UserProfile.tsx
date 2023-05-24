@@ -5,8 +5,12 @@ const UserProfile = () => {
   return (
     <Flex flexDir="column" alignItems="center" justifyContent="center">
       <Avatar size="2xl" />
-      <Text size="xl">문준영</Text>
-      <Text size="xl">Front-end Developer</Text>
+      <Text size="xl" color="white" mt={1}>
+        문준영
+      </Text>
+      <Text size="xl" color="white">
+        Front-end Developer
+      </Text>
     </Flex>
   );
 };
