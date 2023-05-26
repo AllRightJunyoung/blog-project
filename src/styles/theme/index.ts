@@ -33,7 +33,7 @@ export const CustomTheme = extendTheme({
     },
     pagination: {
       fontColor: "white",
-      stroke: "#73CECF",
+      border: "#73CECF",
     },
     divider: {
       color: "white",

@@ -1,5 +1,7 @@
-import { GridItem, Flex, Text, Divider, Box } from "@chakra-ui/react";
-import { Image } from "@chakra-ui/next-js";
+import { GridItem, Flex, Text, Box } from "@chakra-ui/react";
+import { CalendarIcon, TimeIcon } from "@chakra-ui/icons";
+
+import { Image } from "@chakra-ui/react";
 import { faker } from "@faker-js/faker";
 import type { Props } from "./PostCard.types";
 
@@ -7,19 +9,18 @@ const PostCard = ({ name, date, time, title }: Props) => {
   const image = faker.image.url();
 
   return (
-    <GridItem h="auto" bg="card.background" borderRadius={10}>
+    <GridItem bg="card.background" borderRadius={10}>
       <Flex direction="column">
         <Flex direction="column" align="center">
-          <Box width={300} height={200} position="relative" margin={3}>
-            <Image
-              alt="fake-image"
-              src={image}
-              fill={true}
-              border="2px solid rgb(225, 113, 139)"
-              borderRadius="20px"
-            />
-          </Box>
-          <Text color="white" fontSize="18px" marginBottom={5}>
+          <Image
+            boxSize="320"
+            objectFit="cover"
+            alt="fake-image"
+            src={image}
+            border="2px solid rgb(225, 113, 139)"
+            borderRadius="20px"
+          />
+          <Text color="white" fontSize="18px" margin={5}>
             {name}
           </Text>
         </Flex>
@@ -38,17 +39,21 @@ const PostCard = ({ name, date, time, title }: Props) => {
             borderRight="1px solid #242E35"
             color="rgb(100, 116, 139)"
             fontSize="14px"
-            padding="10px 50px"
+            padding="10px 40px"
+            gap="3px"
           >
-            {date}
+            <CalendarIcon />
+            <Text>{date}</Text>
           </Flex>
           <Flex
             alignItems="center"
             justifyContent="center"
             color="rgb(100, 116, 139)"
             fontSize="14px"
-            padding="0px 16px"
+            padding="0px 15px"
+            gap="3px"
           >
+            <TimeIcon />
             {time}
           </Flex>
         </Flex>

@@ -1,6 +1,11 @@
 import Head from "next/head";
-import { UserProfile, HeaderText, PostTags } from "@/components/common";
-import { PostCards, SearchBar } from "@/components/home";
+import {
+  UserProfile,
+  HeaderText,
+  PostTags,
+  SnsIcons,
+} from "@/components/common";
+import { Pagination, PostCards, SearchBar } from "@/components/home";
 
 const HomePage = () => {
   return (
@@ -17,6 +22,8 @@ const HomePage = () => {
       <SearchBar />
       <PostTags />
       <PostCards />
+      <Pagination />
+      <SnsIcons />
     </>
   );
 };

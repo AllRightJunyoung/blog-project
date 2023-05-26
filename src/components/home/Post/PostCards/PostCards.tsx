@@ -12,6 +12,8 @@ const PostCards = () => {
         time="24min"
       />
       <PostCard name="운동 가이드" title="운동" date="June 05" time="30min" />
+      <PostCard name="운동 가이드" title="운동" date="June 05" time="30min" />
+      <PostCard name="운동 가이드" title="운동" date="June 05" time="30min" />
     </Grid>
   );
 };
