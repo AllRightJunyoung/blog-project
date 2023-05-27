@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Footer, Main, Nav } from "@/components/home/Layout";
+import { Footer, Main, Nav, Header } from "@/components/home/Layout";
 const HomePage = () => {
   return (
     <>
@@ -10,6 +10,7 @@ const HomePage = () => {
           content="I post about programming and web development."
         />
       </Head>
+      <Header />
       <Nav />
       <Main />
       <Footer />
