@@ -1,7 +1,7 @@
 import { Avatar, AvatarGroup } from "@chakra-ui/react";
-import GithubIcon from "public/images/github.svg";
-import LinkedIn from "public/images/linkedIn.svg";
-import Instagram from "public/images/instagram.svg";
+import GithubIcon from "public/github.svg";
+import LinkedIn from "public/linkedIn.svg";
+import Instagram from "public/instagram.svg";
 
 const SnsIcons = () => {
   return (

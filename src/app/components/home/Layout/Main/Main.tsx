@@ -1,6 +1,8 @@
+"use client";
+
 import { Box } from "@chakra-ui/react";
-import { SearchBar, PostCards } from "@/components/home";
-import { Heading, PostTags } from "@/components/common";
+import { SearchBar, PostCards } from "@/app/components/home";
+import { Heading, PostTags } from "@/app/components/common";
 
 const Main = () => {
   return (

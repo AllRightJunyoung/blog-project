@@ -1,6 +1,8 @@
+"use client";
+
 import { Flex } from "@chakra-ui/react";
-import { FooterMessage, Pagination } from "@/components/home";
-import { SnsIcons } from "@/components/common";
+import { FooterMessage, Pagination } from "@/app/components/home";
+import { SnsIcons } from "@/app/components/common";
 
 const Footer = () => {
   return (

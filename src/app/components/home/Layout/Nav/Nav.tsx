@@ -1,4 +1,6 @@
-import { UserProfile } from "@/components/common";
+"use client";
+
+import { UserProfile } from "@/app/components/common";
 import { Box } from "@chakra-ui/react";
 
 const Nav = () => {
