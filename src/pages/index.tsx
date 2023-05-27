@@ -1,18 +1,5 @@
 import Head from "next/head";
-import {
-  UserProfile,
-  HeaderText,
-  PostTags,
-  SnsIcons,
-} from "@/components/common";
-import {
-  Pagination,
-  PostCards,
-  SearchBar,
-  FooterMessage,
-} from "@/components/home";
-import { Box, Flex } from "@chakra-ui/react";
-
+import { Footer, Main, Nav } from "@/components/home/Layout";
 const HomePage = () => {
   return (
     <>
@@ -23,18 +10,9 @@ const HomePage = () => {
           content="I post about programming and web development."
         />
       </Head>
-      <UserProfile />
-      <Box>
-        <HeaderText title="Posts" fontSize="3xl" />
-        <SearchBar />
-        <PostTags />
-        <PostCards />
-      </Box>
-      <Flex direction="column" alignItems="center">
-        <Pagination />
-        <SnsIcons />
-        <FooterMessage />
-      </Flex>
+      <Nav />
+      <Main />
+      <Footer />
     </>
   );
 };

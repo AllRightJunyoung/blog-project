@@ -1,4 +1,4 @@
-import { Link, Flex, Text } from "@chakra-ui/react";
+import { Link, Flex } from "@chakra-ui/react";
 import NextLink from "next/link";
 
 const NavBar = () => {

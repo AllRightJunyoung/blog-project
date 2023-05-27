@@ -2,7 +2,7 @@ import { Circle, HStack } from "@chakra-ui/react";
 
 const Pagination = () => {
   return (
-    <HStack spacing={5} marginTop={1} marginBottom={10}>
+    <HStack spacing={5} marginBottom={10}>
       <Circle size="10" border="1px solid #73CECF" color="pagination.fontColor">
         1
       </Circle>

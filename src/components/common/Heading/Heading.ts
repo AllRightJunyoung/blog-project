@@ -1,6 +1,6 @@
 import type { TypographyProps } from "@chakra-ui/react";
 
-export interface HeaderTextProps {
+export interface HeadingProps {
   title: string;
   fontSize: TypographyProps["fontSize"];
 }
