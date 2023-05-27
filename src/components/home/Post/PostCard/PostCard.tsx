@@ -1,5 +1,5 @@
 import { GridItem, Flex, Text, Box } from "@chakra-ui/react";
-import { CalendarIcon, TimeIcon } from "@chakra-ui/icons";
+import { CalendarIcon, TimeIcon, ViewIcon } from "@chakra-ui/icons";
 
 import { Image } from "@chakra-ui/react";
 import { faker } from "@faker-js/faker";
@@ -11,9 +11,8 @@ const PostCard = ({ name, date, time, title }: Props) => {
   return (
     <GridItem bg="card.background" borderRadius={10}>
       <Flex direction="column">
-        <Flex direction="column" align="center">
+        <Box>
           <Image
-            boxSize="320"
             objectFit="cover"
             alt="fake-image"
             src={image}
@@ -23,38 +22,56 @@ const PostCard = ({ name, date, time, title }: Props) => {
           <Text color="white" fontSize="18px" margin={5}>
             {name}
           </Text>
-        </Flex>
+        </Box>
         <Flex borderTop="1px solid #242E35">
-          <Box
+          <Flex
+            gap="5px"
+            flex="1"
+            paddingLeft={2}
+            alignItems="center"
+            textAlign="center"
+            justify-content="center"
             borderRight="1px solid #242E35"
             color="rgb(199, 99, 88)"
-            fontSize="14px"
-            padding="16px 30px"
+            fontSize="16px"
+            fontWeight={"bold"}
           >
-            {title}
-          </Box>
+            <ViewIcon />
+            <Text>{title}</Text>
+          </Flex>
           <Flex
-            justifyContent="center"
+            padding={{
+              sm: "16px 10px",
+              md: "16px 30px",
+              lg: "16px 18px",
+              xl: "16px 12px",
+            }}
             alignItems="center"
+            justify-content="center"
             borderRight="1px solid #242E35"
             color="rgb(100, 116, 139)"
             fontSize="14px"
-            padding="10px 40px"
-            gap="3px"
+            textAlign="center"
+            gap="5px"
           >
             <CalendarIcon />
             <Text>{date}</Text>
           </Flex>
           <Flex
+            padding={{
+              sm: "16px 10px",
+              md: "16px 30px",
+              lg: "16px 18px",
+              xl: "16px 12px",
+            }}
             alignItems="center"
-            justifyContent="center"
+            justify-content="center"
             color="rgb(100, 116, 139)"
             fontSize="14px"
-            padding="0px 15px"
-            gap="3px"
+            gap="5px"
           >
             <TimeIcon />
-            {time}
+            <Text>{time}</Text>
           </Flex>
         </Flex>
       </Flex>

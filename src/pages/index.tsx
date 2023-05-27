@@ -5,7 +5,13 @@ import {
   PostTags,
   SnsIcons,
 } from "@/components/common";
-import { Pagination, PostCards, SearchBar } from "@/components/home";
+import {
+  Pagination,
+  PostCards,
+  SearchBar,
+  FooterMessage,
+} from "@/components/home";
+import { Box, Flex } from "@chakra-ui/react";
 
 const HomePage = () => {
   return (
@@ -18,12 +24,17 @@ const HomePage = () => {
         />
       </Head>
       <UserProfile />
-      <HeaderText title="Posts" fontSize="3xl" />
-      <SearchBar />
-      <PostTags />
-      <PostCards />
-      <Pagination />
-      <SnsIcons />
+      <Box>
+        <HeaderText title="Posts" fontSize="3xl" />
+        <SearchBar />
+        <PostTags />
+        <PostCards />
+      </Box>
+      <Flex direction="column" alignItems="center">
+        <Pagination />
+        <SnsIcons />
+        <FooterMessage />
+      </Flex>
     </>
   );
 };
