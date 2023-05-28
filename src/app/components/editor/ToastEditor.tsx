@@ -1,4 +1,6 @@
 import "@toast-ui/editor/dist/toastui-editor.css";
+import "@toast-ui/editor/dist/theme/toastui-editor-dark.css";
+
 import { Editor } from "@toast-ui/react-editor";
 import type { ToastEditorProps } from "./ToastEditor.types";
 
@@ -20,11 +22,11 @@ const ToastEditor = ({ content, editorRef }: ToastEditorProps) => {
           placeholder="내용을 입력해주세요."
           initialValue={content || ""}
           previewStyle="vertical"
-          height="100vh"
-          initialEditType="wysiwyg"
+          height="70vh"
           toolbarItems={toolbarItems}
           useCommandShortcut={true}
           usageStatistics={false}
+          theme="dark"
         />
       )}
     </>
