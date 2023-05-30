@@ -33,7 +33,6 @@ const nextConfig = {
   images: {
     domains: ["picsum.photos", "loremflickr.com"],
   },
-
   // ...other config
 };
 
