@@ -1,3 +1,5 @@
+"use client";
+
 import { Avatar } from "@chakra-ui/react";
 import { Flex } from "@chakra-ui/react";
 import { Text } from "@chakra-ui/react";

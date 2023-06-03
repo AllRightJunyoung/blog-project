@@ -1,5 +1,3 @@
-"use client";
-
 import Header from "./components/home/Layout/Header";
 import { ChakraProviders } from "./providers/chakraUI";
 

@@ -1,3 +1,5 @@
+"use client";
+
 import { Flex, Text, Divider } from "@chakra-ui/react";
 import type { HeadingProps } from "./Heading";
 

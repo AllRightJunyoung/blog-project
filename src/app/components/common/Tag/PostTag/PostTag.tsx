@@ -1,3 +1,5 @@
+"use client";
+
 import { HStack, Tag, TagLabel } from "@chakra-ui/react";
 import type { Props } from "./PostTag.types";
 

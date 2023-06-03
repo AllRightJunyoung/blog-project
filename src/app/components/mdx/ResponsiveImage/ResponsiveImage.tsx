@@ -1,3 +1,4 @@
+"use client";
 import { Image } from "@chakra-ui/next-js";
 
 import type { ImageProps } from "@chakra-ui/next-js";

@@ -1,3 +1,5 @@
+"use client";
+
 import { Link, Flex } from "@chakra-ui/react";
 import NextLink from "next/link";
 

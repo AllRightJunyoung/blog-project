@@ -1,3 +1,5 @@
+"use client";
+
 import { Avatar, AvatarGroup } from "@chakra-ui/react";
 import GithubIcon from "public/github.svg";
 import LinkedIn from "public/linkedIn.svg";
