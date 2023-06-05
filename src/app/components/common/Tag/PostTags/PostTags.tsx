@@ -1,14 +1,15 @@
 "use client";
 
 import { HStack } from "@chakra-ui/react";
+import type { PostTagsProps } from "./PostTags.type";
 import PostTag from "../PostTag";
 
-const PostTags = () => {
+const PostTags = ({ tags }: PostTagsProps) => {
   return (
     <HStack spacing={3} marginLeft={5}>
-      <PostTag name="전체" active={true} />
-      <PostTag name="음식" active={false} />
-      <PostTag name="운동" active={false} />
+      {tags.map((tagName) => (
+        <PostTag name={tagName} active={true} />
+      ))}
     </HStack>
   );
 };

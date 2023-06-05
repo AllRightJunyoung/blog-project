@@ -7,8 +7,8 @@ const CodeBlock = ({ children, className }: CodeBlockProps) => {
 
   return (
     <Highlight
-      {...defaultProps}
       theme={themes.github}
+      {...defaultProps}
       code={children}
       language={language}
     >
