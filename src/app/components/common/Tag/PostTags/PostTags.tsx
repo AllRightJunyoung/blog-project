@@ -6,7 +6,7 @@ import PostTag from "../PostTag";
 
 const PostTags = ({ tags }: PostTagsProps) => {
   return (
-    <HStack spacing={3} marginLeft={5}>
+    <HStack spacing={3}>
       {tags.map((tagName) => (
         <PostTag name={tagName} active={true} />
       ))}

@@ -6,8 +6,10 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import Image from "next/image";
 import remarkGfm from "remark-gfm";
 
-import type { MarkdownProps } from "./Markdown.types";
+import type { MarkdownViewerProps } from "./MarkdownViewer.types";
 import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import "github-markdown-css";
+// import "github-markdown-light.css";
 
 const customMarkDownComponent = {
   img: (image: any) => {
@@ -32,19 +34,17 @@ const customMarkDownComponent = {
   },
 };
 
-const MarkDown = ({ children }: MarkdownProps) => {
+const MarkdownViewer = ({ children }: MarkdownViewerProps) => {
   return (
-    <Box margin={10} width="70vw">
-      <Box className="markdown-body" padding={10}>
-        <ReactMarkdown
-          components={customMarkDownComponent}
-          remarkPlugins={[remarkGfm]}
-        >
-          {children}
-        </ReactMarkdown>
-      </Box>
+    <Box className="markdown-body" padding={10} width="90vw">
+      <ReactMarkdown
+        components={customMarkDownComponent}
+        remarkPlugins={[remarkGfm]}
+      >
+        {children}
+      </ReactMarkdown>
     </Box>
   );
 };
 
-export default MarkDown;
+export default MarkdownViewer;

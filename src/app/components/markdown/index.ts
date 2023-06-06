@@ -1,1 +1,1 @@
-export { default as MarkDown } from "./Markdown";
+export { default as MarkDown } from "./MarkdownViewer";
