@@ -32,6 +32,7 @@
   "devDependencies": {
     "@next/eslint-plugin-next": "^13.4.2",
     "@svgr/webpack": "^8.0.1",
+    "@types/react-syntax-highlighter": "^15.5.7",
     "@typescript-eslint/eslint-plugin": "^5.59.6",
     "@typescript-eslint/parser": "^5.59.6",
     "eslint-config-airbnb": "^19.0.4",
@@ -43,6 +44,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "prettier": "^2.8.8",
     "prism-react-renderer": "^2.0.4",
-    "react-hook-form": "^7.44.2"
+    "react-hook-form": "^7.44.2",
+    "remark-gfm": "^3.0.1"
   }
 }

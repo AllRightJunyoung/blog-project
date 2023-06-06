@@ -4,13 +4,14 @@ import matter from "gray-matter";
 
 const postsDirectory = path.join(process.cwd(), "src/app/content");
 
-export const getPostData = (fileName: string) => {
-  const filePath = path.join(postsDirectory, fileName);
+export const getPostData = (postId: string) => {
+  const postSlug = postId.replace(/\.md$/, "");
+
+  const filePath = path.join(postsDirectory, `${postId}.md`);
   const fileContent = fs.readFileSync(filePath, "utf-8");
 
   const { data, content } = matter(fileContent);
 
-  const postSlug = fileName.replace(/\.md$/, "");
   const postData = {
     slug: postSlug,
     ...data,
