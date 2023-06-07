@@ -1,6 +1,5 @@
 import { GridItem, Flex, Text, Box } from "@chakra-ui/react";
 import { CalendarIcon, TimeIcon, ViewIcon } from "@chakra-ui/icons";
-
 import { Image } from "@chakra-ui/react";
 import type { PostCardProps } from "./PostCard.types";
 

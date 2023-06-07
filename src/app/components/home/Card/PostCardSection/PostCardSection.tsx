@@ -1,6 +1,7 @@
 import { Grid } from "@chakra-ui/react";
 import PostCard from "../PostCard";
 import { PostCardSectionProps } from "./PostCardSection.types";
+import uuid from "react-uuid";
 
 const PostCardSection = ({ data }: PostCardSectionProps) => {
   const postCardData = data.map((postData) => {
@@ -11,6 +12,7 @@ const PostCardSection = ({ data }: PostCardSectionProps) => {
         date={postData.date}
         time="3일전"
         thumbnail={postData.thumbnail}
+        key={uuid()}
       />
     );
   });
