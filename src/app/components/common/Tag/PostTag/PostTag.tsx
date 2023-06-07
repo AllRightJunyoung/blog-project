@@ -1,6 +1,6 @@
 "use client";
 
-import { HStack, Tag, TagLabel } from "@chakra-ui/react";
+import { Tag, TagLabel } from "@chakra-ui/react";
 import type { PostTagProps } from "./PostTag.types";
 
 const PostTag = ({ name, active }: PostTagProps) => {
