@@ -1,9 +1,13 @@
 "use client";
 
 import { Box } from "@chakra-ui/react";
-import { PostCardSection, SearchBar } from "@/app/components/home";
+import {
+  CategoryList,
+  PostCardSection,
+  SearchBar,
+} from "@/app/components/home";
 
-import { Heading, PostTagSection } from "@/app/components/common";
+import { Heading } from "@/app/components/common";
 import { MainProps } from "./Main.types";
 
 const Main = ({ data }: MainProps) => {
@@ -16,7 +20,7 @@ const Main = ({ data }: MainProps) => {
       <Heading title="Posts" fontSize="3xl" />
       <SearchBar />
       <Box marginTop={1} marginBottom={8}>
-        <PostTagSection tags={categoryList} />
+        <CategoryList categories={categoryList} />
       </Box>
       <PostCardSection data={data} />
     </Box>

@@ -1,11 +1,11 @@
 "use client";
 
-import { Heading, PostTags } from "../common";
+import { Heading } from "../../common";
 import { Box, Text, Flex } from "@chakra-ui/react";
 import { TimeIcon } from "@chakra-ui/icons";
-
 import type { PostDetailSectionProps } from "./PostDetailSection.types";
-import MarkdownViewer from "../markdown/MarkdownViewer";
+import MarkdownViewer from "../../markdown/MarkdownViewer";
+import { PostDetailTag } from "../../post/PostDetailTag";
 
 const PostDetailSection = ({
   title,
@@ -24,7 +24,7 @@ const PostDetailSection = ({
           </Text>
         </Flex>
         <Box marginTop={5}>
-          <PostTags tags={tags} />
+          <PostDetailTag tags={tags} />
         </Box>
       </Box>
 

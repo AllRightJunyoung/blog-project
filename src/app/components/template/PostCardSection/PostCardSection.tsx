@@ -1,5 +1,5 @@
 import { Grid } from "@chakra-ui/react";
-import PostCard from "../PostCard";
+import PostCard from "../../home/Card/PostCard";
 import { PostCardSectionProps } from "./PostCardSection.types";
 import uuid from "react-uuid";
 
@@ -7,6 +7,7 @@ const PostCardSection = ({ data }: PostCardSectionProps) => {
   const postCardData = data.map((postData) => {
     return (
       <PostCard
+        slug={postData.slug}
         title={postData.title}
         category={postData.category}
         date={postData.date}

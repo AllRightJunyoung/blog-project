@@ -7,7 +7,7 @@ const NavBar = () => {
   return (
     <Flex gap="20px" alignSelf="flex-end" padding="10px" marginEnd="5">
       <Flex>
-        <Link as={NextLink} href="/home" color="NavBar.fontColor" fontSize="xl">
+        <Link as={NextLink} href="/" color="NavBar.fontColor" fontSize="xl">
           Home
         </Link>
       </Flex>

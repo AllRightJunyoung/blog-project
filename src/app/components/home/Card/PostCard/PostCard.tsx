@@ -1,7 +1,10 @@
+"use client";
+
 import { GridItem, Flex, Text, Box } from "@chakra-ui/react";
 import { CalendarIcon, TimeIcon, ViewIcon } from "@chakra-ui/icons";
 import { Image } from "@chakra-ui/react";
 import type { PostCardProps } from "./PostCard.types";
+import { useRouter } from "next/navigation";
 
 const PostCard = ({
   title,
@@ -9,9 +12,17 @@ const PostCard = ({
   time,
   category,
   thumbnail,
+  slug,
 }: PostCardProps) => {
+  const router = useRouter();
+
   return (
-    <GridItem bg="card.background" borderRadius={10}>
+    <GridItem
+      bg="card.background"
+      borderRadius={10}
+      cursor="pointer"
+      onClick={() => router.push(`/posts/${slug}`)}
+    >
       <Flex direction="column">
         <Box>
           <Image
