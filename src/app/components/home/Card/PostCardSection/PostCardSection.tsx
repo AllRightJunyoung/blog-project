@@ -1,8 +1,8 @@
 import { Grid } from "@chakra-ui/react";
 import PostCard from "../PostCard";
-import { PostCardsProps } from "./PostCards.types";
+import { PostCardSectionProps } from "./PostCardSection.types";
 
-const PostCards = ({ data }: PostCardsProps) => {
+const PostCardSection = ({ data }: PostCardSectionProps) => {
   const postCardData = data.map((postData) => {
     return (
       <PostCard
@@ -30,4 +30,4 @@ const PostCards = ({ data }: PostCardsProps) => {
     </Grid>
   );
 };
-export default PostCards;
+export default PostCardSection;

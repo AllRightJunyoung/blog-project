@@ -1,4 +1,4 @@
 import type { PostData } from "@/app/posts/types";
-export type PostCardsProps = {
+export type PostCardSectionProps = {
   data: PostData[];
 };
