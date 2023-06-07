@@ -3,4 +3,5 @@ export type PostDetailSectionProps = {
   tags: string[];
   date: string;
   content: any;
+  category: string;
 };

@@ -16,6 +16,7 @@ export default async function PostDetailPage({ params: { slug } }: Props) {
       content={postData.content}
       date={postData.date}
       tags={postData.tags}
+      category={postData.category}
     />
   );
 }
