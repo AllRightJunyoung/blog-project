@@ -26,7 +26,6 @@ const PostCardSection = ({ data }: PostCardSectionProps) => {
         xl: "repeat(4,1fr)",
       }}
       gap={10}
-      margin={5}
     >
       {postCardData}
     </Grid>

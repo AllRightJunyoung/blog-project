@@ -1,18 +1,14 @@
-import { Footer, Main, Nav } from "@/app/components/home/Layout";
+import { Footer, Main } from "@/app/components/home/Layout";
 import { getAllPosts } from "./posts/utils";
 
 export const HomePage = () => {
   const postAllData = getAllPosts();
 
-  postAllData.forEach((postData) => {
-    console.log(postData.category, postData.title, postData.date);
-  });
   return (
-    <>
-      <Nav />
+    <section>
       <Main data={postAllData} />
       <Footer />
-    </>
+    </section>
   );
 };
 

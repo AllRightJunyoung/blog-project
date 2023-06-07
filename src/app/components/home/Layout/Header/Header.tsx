@@ -1,6 +1,6 @@
 "use client";
 
-import { Link, Flex } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 import { NavBar } from "@/app/components/common";
 
 const Header = () => {

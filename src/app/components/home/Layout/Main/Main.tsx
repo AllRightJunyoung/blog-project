@@ -15,7 +15,9 @@ const Main = ({ data }: MainProps) => {
     <Box margin={10}>
       <Heading title="Posts" fontSize="3xl" />
       <SearchBar />
-      <PostTagSection tags={categoryList} />
+      <Box marginTop={1} marginBottom={8}>
+        <PostTagSection tags={categoryList} />
+      </Box>
       <PostCardSection data={data} />
     </Box>
   );

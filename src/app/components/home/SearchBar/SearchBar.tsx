@@ -3,18 +3,23 @@ import SearchIcon from "public/search.svg";
 
 const SearchBar = () => {
   return (
-    <Flex flexDirection="row" alignItems="center">
+    <Flex
+      flexDirection="row"
+      alignItems="center"
+      marginTop={5}
+      marginBottom={5}
+      gap={1}
+    >
       <Input
         placeholder="검색"
         _placeholder={{ color: "SearchBar.fontColor" }}
         color="white"
-        margin={5}
         size="lg"
         background="SearchBar.background"
         borderRadius="xl"
         border="none"
         focusBorderColor="SearchBar.background"
-        width="30%"
+        width={500}
       />
       <SearchIcon width="50" height="50" />
     </Flex>
