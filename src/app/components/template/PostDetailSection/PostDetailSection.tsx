@@ -5,7 +5,7 @@ import { Box, Text, Flex } from "@chakra-ui/react";
 import { TimeIcon } from "@chakra-ui/icons";
 import type { PostDetailSectionProps } from "./PostDetailSection.types";
 import MarkdownViewer from "../../markdown/MarkdownViewer";
-import { PostDetailTag } from "../../post/PostDetailTag";
+import { PostDetailTags } from "../../post/PostDetailTags";
 
 const PostDetailSection = ({
   title,
@@ -24,7 +24,7 @@ const PostDetailSection = ({
           </Text>
         </Flex>
         <Box marginTop={5}>
-          <PostDetailTag tags={tags} />
+          <PostDetailTags tags={tags} />
         </Box>
       </Box>
 
