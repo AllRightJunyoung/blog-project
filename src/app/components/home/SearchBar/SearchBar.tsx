@@ -1,5 +1,5 @@
 import { Input, Flex } from "@chakra-ui/react";
-import SearchIcon from "public/search.svg";
+import SearchIcon from "public/icons/search.svg";
 
 const SearchBar = () => {
   return (

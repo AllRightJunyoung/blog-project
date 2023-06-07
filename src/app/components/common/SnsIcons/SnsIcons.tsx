@@ -1,9 +1,9 @@
 "use client";
 
 import { Avatar, AvatarGroup } from "@chakra-ui/react";
-import GithubIcon from "public/github.svg";
-import LinkedIn from "public/linkedIn.svg";
-import Instagram from "public/instagram.svg";
+import GithubIcon from "public/icons/github.svg";
+import LinkedIn from "public/icons/linkedIn.svg";
+import Instagram from "public/icons/instagram.svg";
 
 const SnsIcons = () => {
   return (
