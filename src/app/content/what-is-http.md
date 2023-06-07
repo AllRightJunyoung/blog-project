@@ -3,7 +3,9 @@ slug: "what-is-http"
 title: "HTTP가 무엇인가"
 description: "읽고 쓰고 맛보고 즐기고"
 tags: ["computer-science"]
+category: "cs"
 date: "2022/04/29"
+thumbnail: "/images/posts/what-is-http/1.png"
 ---
 
 > 해당 글은 [그림으로 배우는 HTTP & Network basic](http://www.yes24.com/Product/Goods/15894097)을 읽고 정리한 글입니다.

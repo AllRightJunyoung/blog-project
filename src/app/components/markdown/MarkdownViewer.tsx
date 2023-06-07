@@ -9,7 +9,6 @@ import remarkGfm from "remark-gfm";
 import type { MarkdownViewerProps } from "./MarkdownViewer.types";
 import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import "github-markdown-css";
-// import "github-markdown-light.css";
 
 const customMarkDownComponent = {
   img: (image: any) => {

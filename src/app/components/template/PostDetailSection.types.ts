@@ -1,4 +1,4 @@
-export type PostSectionProps = {
+export type PostDetailSectionProps = {
   title: string;
   tags: string[];
   date: string;

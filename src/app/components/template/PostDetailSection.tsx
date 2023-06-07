@@ -4,11 +4,15 @@ import { Heading, PostTags } from "../common";
 import { Box, Text, Flex } from "@chakra-ui/react";
 import { TimeIcon } from "@chakra-ui/icons";
 
-import type { PostSectionProps } from "./PostSection.types";
-import "github-markdown-css";
+import type { PostDetailSectionProps } from "./PostDetailSection.types";
 import MarkdownViewer from "../markdown/MarkdownViewer";
 
-const PostSection = ({ title, content, date, tags }: PostSectionProps) => {
+const PostDetailSection = ({
+  title,
+  content,
+  date,
+  tags,
+}: PostDetailSectionProps) => {
   return (
     <Box margin={20}>
       <Box>
@@ -31,4 +35,4 @@ const PostSection = ({ title, content, date, tags }: PostSectionProps) => {
   );
 };
 
-export default PostSection;
+export default PostDetailSection;

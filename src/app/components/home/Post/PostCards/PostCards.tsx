@@ -1,7 +1,20 @@
 import { Grid } from "@chakra-ui/react";
 import PostCard from "../PostCard";
+import { PostCardsProps } from "./PostCards.types";
 
-const PostCards = () => {
+const PostCards = ({ data }: PostCardsProps) => {
+  const postCardData = data.map((postData) => {
+    return (
+      <PostCard
+        title={postData.title}
+        category={postData.category}
+        date={postData.date}
+        time="3일전"
+        thumbnail={postData.thumbnail}
+      />
+    );
+  });
+
   return (
     <Grid
       templateColumns={{
@@ -10,33 +23,10 @@ const PostCards = () => {
         lg: "repeat(3,1fr)",
         xl: "repeat(4,1fr)",
       }}
-      gap={5}
-      margin={10}
+      gap={10}
+      margin={5}
     >
-      <PostCard
-        name="제주도 여행 가이드"
-        title="여행"
-        date="2023/06/01"
-        time="3일전"
-      />
-      <PostCard
-        name="제주도 여행 가이드"
-        title="여행"
-        date="2023/06/01"
-        time="3일전"
-      />
-      <PostCard
-        name="제주도 여행 가이드"
-        title="여행"
-        date="2023/06/01"
-        time="3일전"
-      />
-      <PostCard
-        name="제주도 여행 가이드"
-        title="여행"
-        date="2023/06/01"
-        time="3일전"
-      />
+      {postCardData}
     </Grid>
   );
 };

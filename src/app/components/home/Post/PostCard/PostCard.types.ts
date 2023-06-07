@@ -1,6 +1,5 @@
-export interface Props {
-  name: string;
-  title: string;
-  date: string;
+import type { PostData } from "@/app/posts/types";
+export interface PostCardProps
+  extends Pick<PostData, "title" | "date" | "category" | "thumbnail"> {
   time: string;
 }

@@ -1,4 +1,4 @@
-import PostSection from "../../components/template/PostSection";
+import PostSection from "../../components/template/PostDetailSection";
 import { getPostData } from "../utils";
 
 type Props = {

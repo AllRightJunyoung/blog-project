@@ -3,7 +3,9 @@ slug: "typescript"
 title: "타입스크립트"
 description: "읽고 쓰고 맛보고 즐기고"
 tags: ["typescript"]
+category: "개발"
 date: "2022/04/29"
+thumbnail: "/images/posts/typescript/ts_image.png"
 ---
 
 ## 이제는 거의 모든 프로젝트에서 사용하는 Typescript!

@@ -2,25 +2,28 @@ import { GridItem, Flex, Text, Box } from "@chakra-ui/react";
 import { CalendarIcon, TimeIcon, ViewIcon } from "@chakra-ui/icons";
 
 import { Image } from "@chakra-ui/react";
-import { faker } from "@faker-js/faker";
-import type { Props } from "./PostCard.types";
+import type { PostCardProps } from "./PostCard.types";
 
-const PostCard = ({ name, date, time, title }: Props) => {
-  const image = faker.image.url();
-
+const PostCard = ({
+  title,
+  date,
+  time,
+  category,
+  thumbnail,
+}: PostCardProps) => {
   return (
     <GridItem bg="card.background" borderRadius={10}>
       <Flex direction="column">
         <Box>
           <Image
             objectFit="cover"
-            alt="fake-image"
-            src={image}
+            alt={title}
+            src={thumbnail}
             border="2px solid rgb(225, 113, 139)"
             borderRadius="20px"
           />
           <Text color="white" fontSize="18px" margin={5}>
-            {name}
+            {title}
           </Text>
         </Box>
         <Flex borderTop="1px solid #242E35">
@@ -37,7 +40,7 @@ const PostCard = ({ name, date, time, title }: Props) => {
             fontWeight={"bold"}
           >
             <ViewIcon />
-            <Text>{title}</Text>
+            <Text>{category}</Text>
           </Flex>
           <Flex
             padding={{
