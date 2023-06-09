@@ -9,6 +9,7 @@ import {
 
 import { Heading } from "@/app/components/common";
 import { MainProps } from "./Main.types";
+import { RecoilRoot } from "recoil";
 
 const Main = ({ data }: MainProps) => {
   const categoryList = data.map((postData) => {
@@ -16,14 +17,16 @@ const Main = ({ data }: MainProps) => {
   });
 
   return (
-    <Box margin={10}>
-      <Heading title="Posts" fontSize="3xl" />
-      <SearchBar />
-      <Box marginTop={1} marginBottom={8}>
-        <CategoryList categories={categoryList} />
+    <RecoilRoot>
+      <Box margin={10}>
+        <Heading title="Posts" fontSize="3xl" />
+        <SearchBar />
+        <Box marginTop={1} marginBottom={8}>
+          <CategoryList categories={categoryList} />
+        </Box>
+        <PostCardSection data={data} />
       </Box>
-      <PostCardSection data={data} />
-    </Box>
+    </RecoilRoot>
   );
 };
 export default Main;

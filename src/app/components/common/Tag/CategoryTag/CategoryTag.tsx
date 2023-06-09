@@ -1,16 +1,35 @@
 import { Tag, TagLabel } from "@chakra-ui/react";
 import type { CategoryTagProps } from "./CategoryTag.types";
-const CategoryTag = ({ name, active }: CategoryTagProps) => {
+import { useRecoilState } from "recoil";
+import { CategoryTagState } from "@/app/recoil/atoms";
+
+const CategoryTag = ({ name }: CategoryTagProps) => {
+  const [categoryTag, setCategoryTag] = useRecoilState(CategoryTagState);
+
+  const handleTag = () => {
+    setCategoryTag(name);
+  };
+
   return (
     <Tag
       size="lg"
       key="lg"
       variant="solid"
-      background={active ? "tag.active.background" : "tag.inactive.background"}
+      background={
+        categoryTag === name
+          ? "tag.active.background"
+          : "tag.inactive.background"
+      }
       borderRadius={10}
+      cursor="pointer"
+      onClick={handleTag}
     >
       <TagLabel
-        color={active ? "tag.active.fontColor" : "tag.inactive.fontColor"}
+        color={
+          categoryTag === name
+            ? "tag.active.fontColor"
+            : "tag.inactive.fontColor"
+        }
         fontSize="md"
       >
         {name}

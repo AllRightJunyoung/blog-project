@@ -8,9 +8,9 @@ import uuid from "react-uuid";
 const CategoryList = ({ categories }: CategoryListProps) => {
   return (
     <HStack spacing={3}>
-      <CategoryTag name="All" active={true} key={uuid()} />
+      <CategoryTag name="All" key={uuid()} />
       {categories.map((category) => (
-        <CategoryTag name={category} active={false} key={uuid()} />
+        <CategoryTag name={category} key={uuid()} />
       ))}
     </HStack>
   );

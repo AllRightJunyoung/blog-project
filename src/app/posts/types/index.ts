@@ -1,4 +1,4 @@
-export type PostData = {
+export type PostsType = {
   slug: string;
   title: string;
   description: string;
@@ -8,3 +8,11 @@ export type PostData = {
   content: string;
   thumbnail: string;
 };
+
+export interface PostCardType
+  extends Pick<
+    PostsType,
+    "slug" | "title" | "category" | "date" | "thumbnail"
+  > {
+  time: string;
+}

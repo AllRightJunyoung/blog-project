@@ -1,3 +1,4 @@
+import { RecoilRoot } from "recoil";
 import { Footer, Main } from "@/app/components/home/Layout";
 import { getAllPosts } from "./posts/utils";
 
