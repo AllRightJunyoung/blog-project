@@ -5,7 +5,6 @@ import { Box } from "@chakra-ui/react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import Image from "next/image";
 import remarkGfm from "remark-gfm";
-
 import type { MarkdownViewerProps } from "./MarkdownViewer.types";
 import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import "github-markdown-css";
@@ -31,11 +30,37 @@ const customMarkDownComponent = {
       <code {...props}>{children}</code>
     );
   },
+
+  h1: ({ children }) => {
+    return (
+      <>
+        <h1 id={String(children).replaceAll(" ", "-")}>{children}</h1>
+      </>
+    );
+  },
+
+  h2: ({ children }) => {
+    return (
+      <>
+        <h2 id={String(children).replaceAll(" ", "-")}>{children}</h2>
+      </>
+    );
+  },
+  h3: ({ children }) => {
+    <>
+      <h3 id={String(children).replaceAll(" ", "-")}>{children}</h3>
+    </>;
+  },
 };
 
 const MarkdownViewer = ({ children }: MarkdownViewerProps) => {
   return (
-    <Box className="markdown-body" padding={10} width="90vw">
+    <Box
+      padding={10}
+      width="90vw"
+      className="markdown-body"
+      bgColor="blackAlpha.300"
+    >
       <ReactMarkdown
         components={customMarkDownComponent}
         remarkPlugins={[remarkGfm]}

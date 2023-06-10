@@ -9,7 +9,7 @@ const TableOfContents = () => {
   useEffect(() => {
     const article = document.querySelector("article");
     if (article) {
-      const headingElements = Array.from(article.querySelectorAll("h2,h3"));
+      const headingElements = Array.from(article.querySelectorAll("h1,h2"));
       setHeadingElements(headingElements);
     }
   }, []);

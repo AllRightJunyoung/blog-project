@@ -8,9 +8,9 @@ date: "2022/04/29"
 thumbnail: "/images/posts/typescript/ts_image.png"
 ---
 
-## 이제는 거의 모든 프로젝트에서 사용하는 Typescript!
+# 이제는 거의 모든 프로젝트에서 사용하는 Typescript!
 
-### Typescript의 특징
+## Typescript의 특징
 
 - 컴파일 언어, 정적타입 언어, 런타임 오류 방지
 - 자바스크립트 슈퍼셋(상위확장)
