@@ -18,7 +18,14 @@ const TableOfContents = () => {
 
   return (
     <section>
-      <Box width="20vw" bg="white" position={"sticky"}>
+      <Box
+        width="20vw"
+        bg="white"
+        height="90vh"
+        overflowY="scroll"
+        position="sticky"
+        top={14}
+      >
         <TableOfItem headingElements={headingElements} />
       </Box>
     </section>

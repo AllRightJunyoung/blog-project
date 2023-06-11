@@ -39,7 +39,7 @@ const PostDetailSection = ({
             <PostDetailTags tags={tags} />
           </Box>
         </Box>
-        <Flex marginTop={15} gap={10}>
+        <Flex marginTop={15} gap={5}>
           <MarkdownViewer>{content}</MarkdownViewer>
           <TableOfContents />
         </Flex>

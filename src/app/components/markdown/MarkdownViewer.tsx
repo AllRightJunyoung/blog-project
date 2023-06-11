@@ -46,10 +46,10 @@ const customMarkDownComponent = {
         <Heading
           as="h1"
           id={String(children).replaceAll(" ", "-")}
-          color="#357276"
+          color="#FF8945"
           fontSize="28px"
-          mb={1}
-          mt={5}
+          mt={10}
+          mb={3}
         >
           {children}
         </Heading>
@@ -65,7 +65,7 @@ const customMarkDownComponent = {
           color="#9FD5D5"
           fontSize="24px"
           id={String(children).replaceAll(" ", "-")}
-          mt={5}
+          mt={10}
           mb={3}
         >
           {children}
@@ -107,7 +107,9 @@ const customMarkDownComponent = {
   },
   strong: ({ children }) => {
     return (
-      <strong style={{ fontSize: "16px", color: "teal", fontWeight: "bold" }}>
+      <strong
+        style={{ fontSize: "16px", color: "#9FD5D5", fontWeight: "bold" }}
+      >
         {children}
       </strong>
     );
@@ -132,7 +134,7 @@ const customMarkDownComponent = {
 
 const MarkdownViewer = ({ children }: MarkdownViewerProps) => {
   return (
-    <Box padding={10} width="90vw" bgColor="blackAlpha.300">
+    <Box padding={10} bgColor="blackAlpha.300" width="70vw">
       <ReactMarkdown
         components={customMarkDownComponent}
         remarkPlugins={[remarkGfm]}

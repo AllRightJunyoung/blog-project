@@ -1,4 +1,11 @@
-import { Text, Box, OrderedList, ListItem, Link } from "@chakra-ui/react";
+import {
+  Heading,
+  Box,
+  UnorderedList,
+  ListItem,
+  Link,
+  List,
+} from "@chakra-ui/react";
 
 import uuid from "react-uuid";
 
@@ -9,21 +16,44 @@ type Props = {
 
 const TableOfItem = ({ headingElements, activeId }: Props) => {
   return (
-    <Box>
-      <Text>Toc</Text>
-      <OrderedList>
+    <Box bg="#141E25">
+      <Heading
+        as="h3"
+        size="md"
+        fontWeight="bold"
+        textAlign="center"
+        color="white"
+        fontSize="16px"
+        padding={3}
+      >
+        ON THIS PAGE
+      </Heading>
+      <List>
         {headingElements.map((el, index) =>
-          el.nodeName === "H2" ? (
-            <ListItem key={uuid()} color="red.500">
+          el.nodeName === "H1" ? (
+            <ListItem
+              key={uuid()}
+              color="#FF8945"
+              fontWeight="bold"
+              mt={5}
+              padding={2}
+              fontSize="14px"
+            >
               <Link href={`#${el.id}`}> {el.innerHTML}</Link>
             </ListItem>
           ) : (
-            <ListItem key={uuid()}>
+            <ListItem
+              key={uuid()}
+              color="#9FD5D5"
+              fontWeight="bold"
+              paddingLeft={8}
+              fontSize="12px"
+            >
               <Link href={`#${el.id}`}>{el.innerHTML}</Link>
             </ListItem>
           ),
         )}
-      </OrderedList>
+      </List>
     </Box>
   );
 };
