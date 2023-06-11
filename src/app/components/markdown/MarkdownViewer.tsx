@@ -1,13 +1,22 @@
 "use client";
 
 import ReactMarkdown from "react-markdown";
-import { Box } from "@chakra-ui/react";
+import {
+  Box,
+  Heading,
+  Text,
+  Table,
+  Thead,
+  Td,
+  Tr,
+  Th,
+  Code,
+} from "@chakra-ui/react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import Image from "next/image";
 import remarkGfm from "remark-gfm";
 import type { MarkdownViewerProps } from "./MarkdownViewer.types";
 import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
-import "github-markdown-css";
 
 const customMarkDownComponent = {
   img: (image: any) => {
@@ -27,14 +36,23 @@ const customMarkDownComponent = {
         {String(children).replace(/\n$/, "")}
       </SyntaxHighlighter>
     ) : (
-      <code {...props}>{children}</code>
+      <Code colorScheme="teal">{children}</Code>
     );
   },
 
   h1: ({ children }) => {
     return (
       <>
-        <h1 id={String(children).replaceAll(" ", "-")}>{children}</h1>
+        <Heading
+          as="h1"
+          id={String(children).replaceAll(" ", "-")}
+          color="#357276"
+          fontSize="28px"
+          mb={1}
+          mt={5}
+        >
+          {children}
+        </Heading>
       </>
     );
   },
@@ -42,25 +60,79 @@ const customMarkDownComponent = {
   h2: ({ children }) => {
     return (
       <>
-        <h2 id={String(children).replaceAll(" ", "-")}>{children}</h2>
+        <Heading
+          as="h2"
+          color="#9FD5D5"
+          fontSize="24px"
+          id={String(children).replaceAll(" ", "-")}
+          mt={5}
+          mb={3}
+        >
+          {children}
+        </Heading>
       </>
     );
   },
-  h3: ({ children }) => {
-    <>
-      <h3 id={String(children).replaceAll(" ", "-")}>{children}</h3>
-    </>;
+  p: ({ children, ...props }) => {
+    return (
+      <Text marginTop={1} mb={3} fontSize="16px" color="white">
+        {children}
+      </Text>
+    );
+  },
+  ul: ({ children }) => {
+    return <ul>{children}</ul>;
+  },
+  li: ({ children }) => {
+    return <li style={{ color: "white" }}>{children}</li>;
+  },
+  table: ({ children }) => {
+    return (
+      <Table margin={5} variant="simple" color="white">
+        {children}
+      </Table>
+    );
+  },
+  thead: ({ children }) => {
+    return <Thead color="white">{children}</Thead>;
+  },
+  td: ({ children }) => {
+    return <Td color="white">{children}</Td>;
+  },
+  tr: ({ children }) => {
+    return <Tr color="white">{children}</Tr>;
+  },
+  th: ({ children }) => {
+    return <Th color="white">{children}</Th>;
+  },
+  strong: ({ children }) => {
+    return (
+      <strong style={{ fontSize: "16px", color: "teal", fontWeight: "bold" }}>
+        {children}
+      </strong>
+    );
+  },
+  blockquote: ({ children }) => {
+    return (
+      <blockquote
+        style={{
+          color: "white",
+          marginTop: "0.25rem",
+          marginBottom: "1.6em",
+          paddingLeft: "1em",
+          borderLeftWidth: "5px",
+          borderColor: "teal",
+        }}
+      >
+        {children}
+      </blockquote>
+    );
   },
 };
 
 const MarkdownViewer = ({ children }: MarkdownViewerProps) => {
   return (
-    <Box
-      padding={10}
-      width="90vw"
-      className="markdown-body"
-      bgColor="blackAlpha.300"
-    >
+    <Box padding={10} width="90vw" bgColor="blackAlpha.300">
       <ReactMarkdown
         components={customMarkDownComponent}
         remarkPlugins={[remarkGfm]}

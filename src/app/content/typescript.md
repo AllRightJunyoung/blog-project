@@ -15,7 +15,7 @@ thumbnail: "/images/posts/typescript/ts_image.png"
 - 컴파일 언어, 정적타입 언어, 런타임 오류 방지
 - 자바스크립트 슈퍼셋(상위확장)
 
-### Typescript를 고려해야 하는 이유
+## Typescript를 고려해야 하는 이유
 
 - 객체 지향 프로그래밍 지원
 - 높은 수준의 코드 탐색과 디버깅
@@ -23,9 +23,9 @@ thumbnail: "/images/posts/typescript/ts_image.png"
 - 강력한 생태계
 - 점진적 전환도 가능
 
-## TS의 타입
+# TS의 타입
 
-### TS의 기본 데이터 타입
+## TS의 기본 데이터 타입
 
 TS에는 JS 기본 데이터 타입 이외의 타입이 더 있다.
 
@@ -126,9 +126,9 @@ TS에는 JS 기본 데이터 타입 이외의 타입이 더 있다.
    ];
    ```
 
-## TS의 타입 작동 방식
+# TS의 타입 작동 방식
 
-### 타입 추론
+## 타입 추론
 
 변수를 생성하면서 동시에 특정 값을 할당하는 경우 TS는 **그 값의 타입**을 해당 변수의 타입으로 사용한다.
 
@@ -159,7 +159,7 @@ TS에는 JS 기본 데이터 타입 이외의 타입이 더 있다.
     // 반드시 null 또는 undefined가 아닌 경우에 사용하기
     ```
 
-### 타입 정의
+# 타입 정의
 
 interface로 객체의 형태를 명시적으로 선언한다. 또한 클래스에게도 선언할 수 있으며, 함수에서 매개변수와 리턴값을 명시하는데 선언할 수 있다.
 
@@ -182,7 +182,7 @@ class UserAccount {
 const user: User = new UserAccount("Murphy", 1);
 ```
 
-### 타입 단언
+## 타입 단언
 
 타입스크립트보다 개발자가 타입에 대한 정보를 더 잘 아는 경우에 사용한다. 타입 단언을 사용하면 타입을 좀 더 구체적으로 명시할 수 있다.
 
@@ -195,7 +195,7 @@ const user: User = new UserAccount("Murphy", 1);
 
 또한 지나치게 보수적으로 작동해 타입이 허용되지 않을 경우 `any`나 `unknown`으로 타입 단언을 사용하기도 한다.
 
-### 타입 구성(Composing Types)
+# 타입 구성(Composing Types)
 
 여러가지 타입을 이용하여 새 타입을 작성하기 위해 유니언과 제네릭을 많이 사용한다.
 
@@ -223,9 +223,9 @@ Argument of type '"centre"' is not assignable to parameter of type '"left" | "ri
 
 - **"left" | "right" | "center"** 와 같이 특정 문자열만 반환하고 싶을 때 리터럴 타입을 유니언과 함께 사용하면 유용하다.
 
-## Interface와 Type Alias
+# Interface와 Type Alias
 
-### Type Alias 타입 별칭
+## Type Alias 타입 별칭
 
 같은 타입을 한번 이상 재사용하거나 다른 이름으로 부르고 싶은 경우
 
@@ -233,7 +233,7 @@ Argument of type '"centre"' is not assignable to parameter of type '"left" | "ri
 type ID = number | string;
 ```
 
-### Interface 인터페이스
+# Interface 인터페이스
 
 인터페이스 선언은 객체 타입을 만드는 또 다른 방법. 자바스크립트로 컴파일 되면 사라진다
 
@@ -249,7 +249,7 @@ function showName(player: Player) {
 }
 ```
 
-### Interface와 Type의 차이
+## Interface와 Type의 차이
 
 | 구분             | interface             | type                                               |
 | ---------------- | --------------------- | -------------------------------------------------- |
@@ -333,7 +333,7 @@ function showName(player: Player) {
 >
 > [🔗 Interface vs Type](https://stackoverflow.com/questions/37233735/interfaces-vs-types-in-typescript/52682220#52682220)
 
-## Index Signatures
+# Index Signatures
 
 프로퍼티의 이름을 미리 알지 못하지만 값의 형태는 알고 있을 때 index signature을 사용한다.
 
@@ -346,9 +346,9 @@ const myArray: StringArray = getStringArray();
 const secondItem = myArray[1];
 ```
 
-## Function
+# Function
 
-### 함수 타입 표현식
+## 함수 타입 표현식
 
 ```tsx
 type GreetFunction = (a: string) => void;
@@ -357,7 +357,7 @@ function greeter(fn: GreetFunction) {
 }
 ```
 
-### Call Signatures
+## Call Signatures
 
 함수에 넣는 인자의 타입과 함수의 반환 타입을 알려주는 함수 타입을 말한다. 함수를 어떻게 구현해야 하는지 알려준다. 함수 위에 마우스를 올렸을 때 볼 수도 있다.
 
@@ -387,7 +387,7 @@ minus({a: 5, b: 3});
 
 함수를 구현하기 전에 먼저 함수에 대한 타입을 만들어 어떻게 작동하는지 서술해둘 수 있다.
 
-### Overloading
+## Overloading
 
 하나의 함수가 **여러개의 Call Signature을 갖고 있을 때** 발생한다. 보통 오버로딩을 하는 경우는 많이 없지만 외부 라이브러리 같은 경우 오버로딩으로 디자인되어 있는 경우가 많다.
 
@@ -422,7 +422,7 @@ router.push({
 });
 ```
 
-### Generic을 통해 Polymorphism 다형성 구현
+## Generic을 통해 Polymorphism 다형성 구현
 
 Polymorphism은 다양한 형태를 도출해낼 수 있다는 것을 뜻한다. 인자들과 반환값의 형태(타입)에 따라 그에 상응하는 형태(타입)를 가질 수 있다.
 
@@ -501,9 +501,9 @@ Call signature 작성시 **들어올 확실한 타입을 미리 알 수 없을 �
   Argument of type 'number' is not assignable to parameter of type '{ length: number; }'.
   ```
 
-## Class와 Interfaces
+# Class와 Interfaces
 
-### Classes
+## Classes
 
 자바스크립트엔 없는, 자바스크립트보다 **좀 더 객체지향적인 코드**를 작성할 수 있는 기능들을 제공한다. (상속, 추상화, 캡슐화, 다형성)
 
@@ -623,7 +623,7 @@ class Sonar implements Pingable {
 }
 ```
 
-## @ts-check + JSDoc
+# @ts-check + JSDoc
 
 자바스크립트에서 타입스크립트로 이전하는 경우 js 파일에 ts 문법을 적용하고 싶은 경우 사용한다. .js파일의 첫번째 줄에 `@ts-check` 를 추가한다.
 

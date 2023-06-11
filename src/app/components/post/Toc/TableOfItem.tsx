@@ -4,7 +4,7 @@ import uuid from "react-uuid";
 
 type Props = {
   headingElements: Element[];
-  activeId: string;
+  activeId?: string;
 };
 
 const TableOfItem = ({ headingElements, activeId }: Props) => {

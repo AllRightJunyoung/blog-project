@@ -1,9 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import TableOfItem from "./TableOfItem";
+import { Box } from "@chakra-ui/react";
 
 const TableOfContents = () => {
-  const [headingElements, setHeadingElements] = useState<Element[]>();
+  const [headingElements, setHeadingElements] = useState<Element[]>([]);
   const [activeId, setActiveId] = useState<string>("");
 
   useEffect(() => {
@@ -13,5 +15,13 @@ const TableOfContents = () => {
       setHeadingElements(headingElements);
     }
   }, []);
+
+  return (
+    <section>
+      <Box width="20vw" bg="white" position={"sticky"}>
+        <TableOfItem headingElements={headingElements} />
+      </Box>
+    </section>
+  );
 };
 export default TableOfContents;
