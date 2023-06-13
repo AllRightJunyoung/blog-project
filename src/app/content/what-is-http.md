@@ -6,6 +6,7 @@ tags: ["computer-science"]
 category: "cs"
 date: "2022/04/29"
 thumbnail: "/images/posts/what-is-http/1.png"
+featured: true
 ---
 
 > 해당 글은 [그림으로 배우는 HTTP & Network basic](http://www.yes24.com/Product/Goods/15894097)을 읽고 정리한 글입니다.

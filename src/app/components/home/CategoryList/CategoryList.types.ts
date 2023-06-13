@@ -1,3 +1,5 @@
+import { PostsType } from "@/app/posts/types";
+
 export type CategoryListProps = {
-  categories: string[];
+  data: PostsType[];
 };

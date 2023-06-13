@@ -7,12 +7,21 @@ export type PostsType = {
   date: string;
   content: string;
   thumbnail: string;
+  featured: boolean;
 };
 
 export interface PostCardType
   extends Pick<
     PostsType,
     "slug" | "title" | "category" | "date" | "thumbnail"
+  > {
+  time: string;
+}
+
+export interface FeaturedPostCardType
+  extends Pick<
+    PostsType,
+    "slug" | "title" | "category" | "date" | "thumbnail" | "featured"
   > {
   time: string;
 }

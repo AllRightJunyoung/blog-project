@@ -6,6 +6,7 @@ tags: ["typescript"]
 category: "개발"
 date: "2022/04/29"
 thumbnail: "/images/posts/typescript/ts_image.png"
+featured: true
 ---
 
 # 이제는 거의 모든 프로젝트에서 사용하는 Typescript!

@@ -1,5 +1,2 @@
-import type { PostData } from "@/app/posts/types";
-export interface PostCardProps
-  extends Pick<PostData, "title" | "date" | "category" | "thumbnail" | "slug"> {
-  time: string;
-}
+import type { PostCardType } from "@/app/posts/types";
+export type PostCardProps = PostCardType;

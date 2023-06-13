@@ -2,43 +2,24 @@ import uuid from "react-uuid";
 import { Grid } from "@chakra-ui/react";
 import PostCard from "../../home/PostCard";
 import { PostCardSectionProps } from "./PostCardSection.types";
-import { AllPostsState, PostCardSectionState } from "@/app/recoil/atoms";
+import { AllPostState, PostCardSectionState } from "@/app/recoil/atoms";
 import { useRecoilValue, useSetRecoilState } from "recoil";
-
 import { useEffect } from "react";
 
 const PostCardSection = ({ data }: PostCardSectionProps) => {
-  const setAllPosts = useSetRecoilState(AllPostsState);
-  const postData = useRecoilValue(PostCardSectionState);
+  const setAllPosts = useSetRecoilState(AllPostState);
+  const postCardData = useRecoilValue(PostCardSectionState);
 
   const AllPostData = data.map((postData) => {
     return {
-      slug: postData.slug,
-      title: postData.title,
-      category: postData.category,
-      date: postData.date,
+      ...postData,
       time: "3일전",
-      thumbnail: postData.thumbnail,
     };
   });
 
   useEffect(() => {
     setAllPosts(AllPostData);
   }, []);
-
-  const postCards = postData.map((post) => {
-    return (
-      <PostCard
-        slug={post.slug}
-        title={post.title}
-        category={post.category}
-        date={post.date}
-        time="3일전"
-        thumbnail={post.thumbnail}
-        key={uuid()}
-      />
-    );
-  });
 
   return (
     <Grid
@@ -50,7 +31,23 @@ const PostCardSection = ({ data }: PostCardSectionProps) => {
       }}
       gap={10}
     >
-      {postCards}
+      {postCardData ? (
+        postCardData.map((post) => {
+          return (
+            <PostCard
+              slug={post.slug}
+              title={post.title}
+              category={post.category}
+              date={post.date}
+              time={"3일전"}
+              thumbnail={post.thumbnail}
+              key={uuid()}
+            />
+          );
+        })
+      ) : (
+        <div>Loading...</div>
+      )}
     </Grid>
   );
 };

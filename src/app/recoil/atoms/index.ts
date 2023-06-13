@@ -1,23 +1,32 @@
 import { atom, selector } from "recoil";
-import type { PostCardType } from "@/app/posts/types";
+import type { PostsType } from "@/app/posts/types";
 
-export const AllPostsState = atom({
-  key: "AllPostsState",
-  default: [] as PostCardType[],
+export const AllPostState = atom({
+  key: "AllPostState",
+  default: [] as PostsType[],
 });
 export const CategoryTagState = atom({
-  key: "CategoryTag",
+  key: "CategoryTagState",
   default: "All",
 });
 
 export const PostCardSectionState = selector({
   key: "PostCardSectionState",
   get: ({ get }) => {
-    const Allposts = get(AllPostsState);
+    const allPosts = get(AllPostState);
     const category = get(CategoryTagState);
-    const filteredCategoryPosts = Allposts.filter(
+    const filteredCategoryPosts = allPosts.filter(
       (post) => post.category === category,
     );
-    return category === "All" ? Allposts : filteredCategoryPosts;
+    return category === "All" ? allPosts : filteredCategoryPosts;
+  },
+});
+
+export const FeaturedPostsState = selector({
+  key: "FeaturedPostsState",
+  get: ({ get }) => {
+    const allPosts = get(AllPostState);
+    const featuredPosts = allPosts.filter((post) => post.featured === true);
+    return featuredPosts;
   },
 });
