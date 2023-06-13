@@ -2,7 +2,11 @@ import uuid from "react-uuid";
 import { Grid } from "@chakra-ui/react";
 import PostCard from "../../home/PostCard";
 import { PostCardSectionProps } from "./PostCardSection.types";
-import { AllPostState, PostCardSectionState } from "@/app/recoil/atoms";
+import {
+  AllPostState,
+  PostCardSectionState,
+} from "@/app/components/home/recoil";
+
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { useEffect } from "react";
 

@@ -1,7 +1,7 @@
 import { Tag, TagLabel } from "@chakra-ui/react";
 import type { CategoryTagProps } from "./CategoryTag.types";
 import { useRecoilState } from "recoil";
-import { CategoryTagState } from "@/app/recoil/atoms";
+import { CategoryTagState } from "@/app/components/home/recoil";
 
 const CategoryTag = ({ name }: CategoryTagProps) => {
   const [categoryTag, setCategoryTag] = useRecoilState(CategoryTagState);

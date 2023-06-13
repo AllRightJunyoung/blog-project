@@ -1,4 +1,5 @@
 "use client";
+
 import { RecoilRoot } from "recoil";
 import type { LayoutProps } from "./Layout.types";
 import { Nav, Main, Footer } from "@/app/components/home/Layout";
