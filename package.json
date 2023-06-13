@@ -27,6 +27,7 @@
     "react-dom": "18.2.0",
     "react-markdown": "^8.0.7",
     "recoil": "^0.7.7",
+    "swiper": "^9.4.0",
     "typescript": "5.0.4"
   },
   "devDependencies": {

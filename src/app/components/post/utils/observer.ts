@@ -1,9 +1,19 @@
-export const getIntersectionObserver = () => {
-  const observer = new IntersectionObserver( // observer 생성
-    (entries) => {
-      console.log(entries);
-    }, // callback
-    options, // options
-  );
+import { Dispatch, SetStateAction } from "react";
+
+const option = {
+  rootMargin: "-80px 0px -80% 0px",
+  threshold: 1.0,
+};
+
+export const getIntersectionObserver = (
+  setState: Dispatch<SetStateAction<string>>,
+) => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        setState(entry.target.id);
+      }
+    });
+  }, option);
   return observer;
 };

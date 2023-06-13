@@ -1,20 +1,15 @@
-import {
-  Heading,
-  Box,
-  UnorderedList,
-  ListItem,
-  Link,
-  List,
-} from "@chakra-ui/react";
+import { Heading, Box, ListItem, Link, List } from "@chakra-ui/react";
 
 import uuid from "react-uuid";
+import { Dispatch, SetStateAction } from "react";
 
 type Props = {
   headingElements: Element[];
-  activeId?: string;
+  activeId: string;
+  setActiveId: Dispatch<SetStateAction<string>>;
 };
 
-const TableOfItem = ({ headingElements, activeId }: Props) => {
+const TableOfItem = ({ headingElements, activeId, setActiveId }: Props) => {
   return (
     <Box bg="#141E25">
       <Heading
@@ -38,8 +33,11 @@ const TableOfItem = ({ headingElements, activeId }: Props) => {
               mt={5}
               padding={2}
               fontSize="14px"
+              borderLeft={`${el.id === activeId ? `5px solid teal` : "none"}`}
             >
-              <Link href={`#${el.id}`}> {el.innerHTML}</Link>
+              <Link href={`#${el.id}`} onClick={() => setActiveId(el.id)}>
+                {el.innerHTML}
+              </Link>
             </ListItem>
           ) : (
             <ListItem
@@ -48,8 +46,11 @@ const TableOfItem = ({ headingElements, activeId }: Props) => {
               fontWeight="bold"
               paddingLeft={8}
               fontSize="12px"
+              borderLeft={`${el.id === activeId ? `5px solid teal` : "none"}`}
             >
-              <Link href={`#${el.id}`}>{el.innerHTML}</Link>
+              <Link href={`#${el.id}`} onClick={() => setActiveId(el.id)}>
+                {el.innerHTML}
+              </Link>
             </ListItem>
           ),
         )}
