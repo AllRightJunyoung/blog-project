@@ -1,5 +1,5 @@
 import { RecoilRoot } from "recoil";
-import { Footer, Main } from "@/app/components/home/Layout";
+import { Footer, Main, Nav } from "@/app/components/home/Layout";
 import { getAllPosts } from "./posts/utils";
 
 export const HomePage = () => {
@@ -7,6 +7,7 @@ export const HomePage = () => {
 
   return (
     <section>
+      <Nav />
       <Main data={postAllData} />
       <Footer />
     </section>
