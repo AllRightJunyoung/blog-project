@@ -1,7 +1,7 @@
 ---
 slug: "typescript"
 title: "타입스크립트"
-description: "읽고 쓰고 맛보고 즐기고"
+description: "타입스크립트에 대해 알아보자"
 tags: ["typescript"]
 category: "개발"
 date: "2022/04/29"

@@ -6,7 +6,7 @@ import type { HeadingProps } from "./Heading";
 const Heading = ({ title, fontSize }: HeadingProps) => {
   return (
     <Flex flexDirection="column">
-      <Text fontSize={fontSize} color="white">
+      <Text fontSize={fontSize} color="white" fontWeight="bold">
         {title}
       </Text>
       <Divider color="divider.color" border="1px" />

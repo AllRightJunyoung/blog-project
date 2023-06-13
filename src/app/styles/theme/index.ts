@@ -14,6 +14,13 @@ export const CustomTheme = extendTheme({
       "html, body": {
         backgroundColor: "#17242c",
       },
+      ".swiper .swiper-pagination": {
+        position: "absolute",
+      },
+      ".swiper .swiper-pagination-bullet": {
+        backgroundColor: "white",
+        margin: "0 10px",
+      },
     },
   },
   breakpoints,

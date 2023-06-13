@@ -13,7 +13,7 @@ import { MainProps } from "./Main.types";
 const Main = ({ data }: MainProps) => {
   return (
     <Box margin={10}>
-      <Heading title="Posts" fontSize="3xl" />
+      <Heading title="Posts" fontSize="4xl" />
       <SearchBar />
       <Box marginTop={1} marginBottom={8}>
         <CategoryList data={data} />

@@ -1,7 +1,7 @@
 ---
 slug: "what-is-http"
 title: "HTTP가 무엇인가"
-description: "읽고 쓰고 맛보고 즐기고"
+description: "http 역사에 대해 알아보자"
 tags: ["computer-science"]
 category: "cs"
 date: "2022/04/29"

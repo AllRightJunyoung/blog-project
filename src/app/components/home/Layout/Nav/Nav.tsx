@@ -5,9 +5,7 @@ import FeaturedPost from "../../FeaturedPost/FeaturedPost";
 const Nav = () => {
   return (
     <nav>
-      <Flex direction="column" alignItems="center" margin={5}>
-        <FeaturedPost />
-      </Flex>
+      <FeaturedPost />
     </nav>
   );
 };
