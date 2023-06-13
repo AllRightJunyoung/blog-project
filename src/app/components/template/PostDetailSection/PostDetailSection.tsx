@@ -6,7 +6,7 @@ import { TimeIcon, InfoOutlineIcon } from "@chakra-ui/icons";
 import type { PostDetailSectionProps } from "./PostDetailSection.types";
 import MarkdownViewer from "../../markdown/MarkdownViewer";
 import { PostDetailTags } from "../../post/PostDetailTags";
-import TableOfContents from "../../post/Toc/TableOfContents";
+import { TableOfContents } from "../../post/Toc";
 
 const PostDetailSection = ({
   title,

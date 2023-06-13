@@ -1,15 +1,12 @@
 import { Heading, Box, ListItem, Link, List } from "@chakra-ui/react";
-
 import uuid from "react-uuid";
-import { Dispatch, SetStateAction } from "react";
+import type { TableOfItemProps } from "./TableOfItem.types";
 
-type Props = {
-  headingElements: Element[];
-  activeId: string;
-  setActiveId: Dispatch<SetStateAction<string>>;
-};
-
-const TableOfItem = ({ headingElements, activeId, setActiveId }: Props) => {
+const TableOfItem = ({
+  headingElements,
+  activeId,
+  setActiveId,
+}: TableOfItemProps) => {
   return (
     <Box bg="#141E25">
       <Heading
