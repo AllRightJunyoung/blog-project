@@ -9,8 +9,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper";
 import { BellIcon, SunIcon, CalendarIcon } from "@chakra-ui/icons";
 import { FeaturedPostTags } from "../FeaturedPostTags";
+import { useRouter } from "next/navigation";
 
 const FeautredPostCarousel = ({ data }: CarouselProps) => {
+  const router = useRouter();
+
   return (
     <Flex width={720}>
       <Swiper
@@ -25,19 +28,34 @@ const FeautredPostCarousel = ({ data }: CarouselProps) => {
               <Flex direction="column" gap={2}>
                 <FeaturedPostTags tags={data[idx].tags} />
                 <Flex gap={1} direction="column" marginBottom={5}>
-                  <Flex alignItems="center" gap={2}>
+                  <Flex
+                    alignItems="center"
+                    gap={2}
+                    cursor="pointer"
+                    onClick={() => router.push(`/posts/${post.slug}`)}
+                  >
                     <BellIcon color="yellow" w={6} h={6} />
                     <Text fontSize="3xl" color="white">
                       {post.title}
                     </Text>
                   </Flex>
-                  <Flex alignItems="center" gap={2}>
+                  <Flex
+                    alignItems="center"
+                    gap={2}
+                    cursor="pointer"
+                    onClick={() => router.push(`/posts/${post.slug}`)}
+                  >
                     <SunIcon color="orange" w={5} h={5} />
                     <Text fontSize="2xl" color="white">
                       {post.description}
                     </Text>
                   </Flex>
-                  <Flex alignItems="center" gap={3}>
+                  <Flex
+                    alignItems="center"
+                    gap={3}
+                    cursor="pointer"
+                    onClick={() => router.push(`/posts/${post.slug}`)}
+                  >
                     <CalendarIcon color="white" w={4} h={4} />
                     <Text fontSize="lg" color="white">
                       {post.date}
