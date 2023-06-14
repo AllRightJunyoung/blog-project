@@ -1,19 +1,24 @@
 "use client";
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 import type { CarouselProps } from "./Carousel.types";
-
-import { Text, Image, Flex } from "@chakra-ui/react";
+import { Text, Image, Flex, Box } from "@chakra-ui/react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper";
+import { Pagination, Autoplay } from "swiper";
 import { BellIcon, SunIcon, CalendarIcon } from "@chakra-ui/icons";
 import { FeaturedPostTags } from "../FeaturedPostTags";
 
 const FeautredPostCarousel = ({ data }: CarouselProps) => {
   return (
     <Flex width={720}>
-      <Swiper modules={[Pagination]} speed={600} pagination={true}>
+      <Swiper
+        modules={[Pagination, Autoplay]}
+        speed={600}
+        pagination={true}
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
+      >
         {data.map((post, idx) => {
           return (
             <SwiperSlide>
@@ -39,11 +44,14 @@ const FeautredPostCarousel = ({ data }: CarouselProps) => {
                     </Text>
                   </Flex>
                 </Flex>
-                <Image
-                  objectFit="cover"
-                  src={post.thumbnail}
-                  borderRadius={"xl"}
-                />
+
+                <Flex alignItems="center">
+                  <Image
+                    objectFit="cover"
+                    src={post.thumbnail}
+                    borderRadius={"xl"}
+                  />
+                </Flex>
               </Flex>
             </SwiperSlide>
           );

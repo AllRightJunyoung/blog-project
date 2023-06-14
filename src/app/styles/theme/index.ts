@@ -20,6 +20,14 @@ export const CustomTheme = extendTheme({
       ".swiper .swiper-pagination-bullet": {
         backgroundColor: "white",
         margin: "0 10px",
+        width: "16px",
+        height: "16px",
+      },
+      ".swiper .swiper-button-next::after": {
+        content: `""`,
+      },
+      ".swiper .swiper-button-prev::after": {
+        content: `""`,
       },
     },
   },
