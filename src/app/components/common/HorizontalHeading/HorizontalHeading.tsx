@@ -1,9 +1,9 @@
 "use client";
 
 import { Flex, Text, Divider } from "@chakra-ui/react";
-import type { HeadingProps } from "./Heading";
+import type { HorizontalHeadingProps } from "./HorizontalHeading";
 
-const Heading = ({ title, fontSize }: HeadingProps) => {
+const HorizontalHeading = ({ title, fontSize }: HorizontalHeadingProps) => {
   return (
     <Flex flexDirection="column">
       <Text fontSize={fontSize} color="white" fontWeight="bold">
@@ -14,4 +14,4 @@ const Heading = ({ title, fontSize }: HeadingProps) => {
   );
 };
 
-export default Heading;
+export default HorizontalHeading;

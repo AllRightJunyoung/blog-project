@@ -1,4 +1,4 @@
-export { default as Heading } from "./Heading";
+export { default as HorizontalHeading } from "./HorizontalHeading";
 export { default as NavBar } from "./NavBar";
 export { default as PostTag } from "./Tag/PostTag";
 export { default as CategoryTag } from "./Tag/CategoryTag";

@@ -2,13 +2,13 @@
 import "swiper/css";
 import "swiper/css/pagination";
 
+import type { CarouselProps } from "./Carousel.types";
+
 import { Text, Image, Flex } from "@chakra-ui/react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
-import type { CarouselProps } from "./Carousel.types";
-
-import { BellIcon, SunIcon } from "@chakra-ui/icons";
-import FeaturedPostTags from "../FeaturedPostTags/FeaturedPostTags";
+import { BellIcon, SunIcon, CalendarIcon } from "@chakra-ui/icons";
+import { FeaturedPostTags } from "../FeaturedPostTags";
 
 const FeautredPostCarousel = ({ data }: CarouselProps) => {
   return (
@@ -27,9 +27,15 @@ const FeautredPostCarousel = ({ data }: CarouselProps) => {
                     </Text>
                   </Flex>
                   <Flex alignItems="center" gap={2}>
-                    <SunIcon color="orange" w={4} h={4} />
-                    <Text fontSize="xl" color="white">
+                    <SunIcon color="orange" w={5} h={5} />
+                    <Text fontSize="2xl" color="white">
                       {post.description}
+                    </Text>
+                  </Flex>
+                  <Flex alignItems="center" gap={3}>
+                    <CalendarIcon color="white" w={4} h={4} />
+                    <Text fontSize="lg" color="white">
+                      {post.date}
                     </Text>
                   </Flex>
                 </Flex>

@@ -4,7 +4,6 @@ import { Flex, Heading } from "@chakra-ui/react";
 import { useRecoilValue } from "recoil";
 import { FeaturedPostsState } from "../recoil";
 import FeautredPostCarousel from "./Carousel";
-import FeaturedPostTags from "./FeaturedPostTags/FeaturedPostTags";
 
 const FeaturedPost = () => {
   const featuredPost = useRecoilValue(FeaturedPostsState);
