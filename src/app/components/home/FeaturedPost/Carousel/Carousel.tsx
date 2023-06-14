@@ -4,6 +4,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import type { CarouselProps } from "./Carousel.types";
+import uuid from "react-uuid";
 import { Text, Image, Flex, Box } from "@chakra-ui/react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper";
@@ -24,7 +25,7 @@ const FeautredPostCarousel = ({ data }: CarouselProps) => {
       >
         {data.map((post, idx) => {
           return (
-            <SwiperSlide>
+            <SwiperSlide key={uuid()}>
               <Flex direction="column" gap={2}>
                 <FeaturedPostTags tags={data[idx].tags} />
                 <Flex gap={1} direction="column" marginBottom={5}>
