@@ -4,7 +4,6 @@ import { Flex, Heading } from "@chakra-ui/react";
 import { useRecoilValue } from "recoil";
 import { FeaturedPostsState } from "../recoil";
 import FeautredPostCarousel from "./Carousel";
-import { FaArrowAltCircleLeft, FaArrowCircleRight } from "react-icons/fa";
 
 const FeaturedPost = () => {
   const featuredPost = useRecoilValue(FeaturedPostsState);
@@ -15,7 +14,6 @@ const FeaturedPost = () => {
         <Heading as="h2" size="xl" color="white" fontStyle="italic">
           Featured Post
         </Heading>
-
         <FeautredPostCarousel data={featuredPost} />
       </Flex>
     </Flex>
