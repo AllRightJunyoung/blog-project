@@ -6,9 +6,10 @@ import type { CategoryListProps } from "./CategoryList.types";
 import uuid from "react-uuid";
 
 const CategoryList = ({ data }: CategoryListProps) => {
-  const categories = data.map((postData) => {
+  let categories = data.map((postData) => {
     return postData.category;
   });
+  categories = [...new Set(categories)];
 
   return (
     <HStack spacing={3}>
