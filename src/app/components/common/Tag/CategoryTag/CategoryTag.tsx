@@ -1,13 +1,18 @@
 import { Tag, TagLabel } from "@chakra-ui/react";
 import type { CategoryTagProps } from "./CategoryTag.types";
-import { useRecoilState } from "recoil";
-import { CategoryTagState } from "@/app/components/home/recoil";
+import { useRecoilState, useSetRecoilState } from "recoil";
+import {
+  CategoryTagState,
+  currentPageState,
+} from "@/app/components/home/recoil";
 
 const CategoryTag = ({ name }: CategoryTagProps) => {
   const [categoryTag, setCategoryTag] = useRecoilState(CategoryTagState);
+  const setCurrentPage = useSetRecoilState(currentPageState);
 
   const handleTag = () => {
     setCategoryTag(name);
+    setCurrentPage(1);
   };
 
   return (

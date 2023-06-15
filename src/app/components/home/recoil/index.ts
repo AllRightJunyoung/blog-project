@@ -40,3 +40,15 @@ export const FeaturedPostsState = selector({
     return featuredPosts;
   },
 });
+
+export const PaginationState = selector({
+  key: "PaginationState",
+  get: ({ get }) => {
+    const allPosts = get(AllPostState);
+    const category = get(CategoryTagState);
+    const filteredCategoryPosts = allPosts.filter(
+      (post) => post.category === category,
+    );
+    return category === "All" ? allPosts : filteredCategoryPosts;
+  },
+});
