@@ -1,5 +1,6 @@
 import { atom, selector } from "recoil";
 import type { PostsType } from "@/app/posts/types";
+import { getSearchPost } from "../utils/search";
 
 export const AllPostState = atom({
   key: "AllPostState",
@@ -23,12 +24,21 @@ export const PostCardSectionState = selector({
     const offset = (currentPage - 1) * POST_LENGTH;
     const allPosts = get(AllPostState);
     const category = get(CategoryTagState);
+    const searchBarInput = get(SearchBarInputState);
+
     const filteredCategoryPosts = allPosts.filter(
       (post) => post.category === category,
     );
-    return category === "All"
-      ? allPosts.slice(offset, offset + POST_LENGTH)
-      : filteredCategoryPosts.slice(offset, offset + POST_LENGTH);
+
+    const currentPosts = category === "All" ? allPosts : filteredCategoryPosts;
+    const searchPost = getSearchPost(searchBarInput, currentPosts);
+
+    const pagingPosts =
+      category === "All"
+        ? allPosts.slice(offset, offset + POST_LENGTH)
+        : filteredCategoryPosts.slice(offset, offset + POST_LENGTH);
+
+    return !searchBarInput.length ? pagingPosts : searchPost;
   },
 });
 
@@ -51,4 +61,9 @@ export const PaginationState = selector({
     );
     return category === "All" ? allPosts : filteredCategoryPosts;
   },
+});
+
+export const SearchBarInputState = atom({
+  key: "SearchBarInputState",
+  default: "",
 });

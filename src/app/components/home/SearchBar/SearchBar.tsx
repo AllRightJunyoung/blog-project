@@ -1,7 +1,15 @@
 import { Input, Flex } from "@chakra-ui/react";
 import SearchIcon from "public/icons/search.svg";
+import { useSetRecoilState } from "recoil";
+import { SearchBarInputState } from "../recoil";
 
 const SearchBar = () => {
+  const setSearchBarInput = useSetRecoilState(SearchBarInputState);
+
+  const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchBarInput(e.target.value);
+  };
+
   return (
     <Flex
       flexDirection="row"
@@ -20,6 +28,7 @@ const SearchBar = () => {
         border="none"
         focusBorderColor="SearchBar.background"
         width={500}
+        onChange={handleInput}
       />
       <SearchIcon width="50" height="50" />
     </Flex>

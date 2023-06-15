@@ -17,7 +17,6 @@ const Pagination = () => {
 };
 
 const createCircle = (posts: any[]) => {
-  console.log(posts);
   const [currentPage, setCurrentPage] = useRecoilState(currentPageState);
   const pageLength = posts.length <= 4 ? 1 : Math.ceil(posts.length / 4);
   const circles = [];

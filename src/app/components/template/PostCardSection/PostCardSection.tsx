@@ -9,7 +9,7 @@ import {
 
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { useEffect } from "react";
-import { getDiffDate } from "../../post/utils/date";
+import { getDiffDate } from "../../home/utils/date";
 
 const PostCardSection = ({ data }: PostCardSectionProps) => {
   const setAllPosts = useSetRecoilState(AllPostState);
