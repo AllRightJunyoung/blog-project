@@ -1,5 +1,5 @@
 import { Circle, HStack } from "@chakra-ui/react";
-import { useRecoilValue } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 import { AllPostState, currentPageState } from "../recoil";
 import uuid from "react-uuid";
 
@@ -17,16 +17,21 @@ const Pagination = () => {
 };
 
 const createCircle = (allpost: any[]) => {
-  const currentPage = useRecoilValue(currentPageState);
-  const pageLength = allpost.length <= 4 ? 1 : Math.floor(allpost.length / 4);
+  const [currentPage, setCurrentPage] = useRecoilState(currentPageState);
+
+  const pageLength = allpost.length <= 4 ? 1 : Math.round(allpost.length / 4);
+
   const circles = [];
   for (let i = 0; i < pageLength; i++) {
     circles.push(
       <Circle
         size="10"
         border="1px solid #73CECF"
-        color={currentPage === i + 1 ? "pagination.fontColor" : "white"}
+        color={"pagination.fontColor"}
+        opacity={currentPage === i + 1 ? 1 : 0.5}
         key={uuid()}
+        cursor="pointer"
+        onClick={() => setCurrentPage(i + 1)}
       >
         {i + 1}
       </Circle>,
