@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation";
 const PostCard = ({
   title,
   date,
-  time,
+  diffDate,
   category,
   thumbnail,
   slug,
@@ -84,7 +84,7 @@ const PostCard = ({
             gap="5px"
           >
             <TimeIcon />
-            <Text>{time}</Text>
+            <Text>{diffDate}</Text>
           </Flex>
         </Flex>
       </Flex>

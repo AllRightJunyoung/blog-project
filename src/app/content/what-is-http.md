@@ -4,7 +4,7 @@ title: "HTTP가 무엇인가"
 description: "http 역사에 대해 알아보자"
 tags: ["computer-science"]
 category: "cs"
-date: "2022/04/29"
+date: "2023-04-29"
 thumbnail: "/images/posts/what-is-http/1.png"
 featured: true
 ---

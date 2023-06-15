@@ -1,7 +1,6 @@
 import { Circle, HStack } from "@chakra-ui/react";
 import { useRecoilValue } from "recoil";
 import { AllPostState, currentPageState } from "../recoil";
-
 import uuid from "react-uuid";
 
 const Pagination = () => {

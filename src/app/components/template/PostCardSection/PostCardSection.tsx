@@ -9,6 +9,7 @@ import {
 
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { useEffect } from "react";
+import { getDiffDate } from "../../post/utils/date";
 
 const PostCardSection = ({ data }: PostCardSectionProps) => {
   const setAllPosts = useSetRecoilState(AllPostState);
@@ -17,7 +18,6 @@ const PostCardSection = ({ data }: PostCardSectionProps) => {
   const AllPostData = data.map((postData) => {
     return {
       ...postData,
-      time: "3일전",
     };
   });
 
@@ -43,7 +43,7 @@ const PostCardSection = ({ data }: PostCardSectionProps) => {
               title={post.title}
               category={post.category}
               date={post.date}
-              time={"3일전"}
+              diffDate={getDiffDate(post.date)}
               thumbnail={post.thumbnail}
               key={uuid()}
             />

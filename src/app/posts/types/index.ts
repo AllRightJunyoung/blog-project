@@ -15,7 +15,7 @@ export interface PostCardType
     PostsType,
     "slug" | "title" | "category" | "date" | "thumbnail"
   > {
-  time: string;
+  diffDate: string;
 }
 
 export interface FeaturedPostCardType
@@ -23,5 +23,5 @@ export interface FeaturedPostCardType
     PostsType,
     "slug" | "title" | "category" | "date" | "thumbnail" | "featured"
   > {
-  time: string;
+  diffDate: string;
 }
