@@ -15,6 +15,10 @@ export const currentPageState = atom({
   key: "currentPageState",
   default: 1,
 });
+export const SearchBarInputState = atom({
+  key: "SearchBarInputState",
+  default: "",
+});
 
 export const PostCardSectionState = selector({
   key: "PostCardSectionState",
@@ -51,7 +55,7 @@ export const FeaturedPostsState = selector({
   },
 });
 
-export const PaginationState = selector({
+export const PaginationPostState = selector({
   key: "PaginationState",
   get: ({ get }) => {
     const allPosts = get(AllPostState);
@@ -61,9 +65,4 @@ export const PaginationState = selector({
     );
     return category === "All" ? allPosts : filteredCategoryPosts;
   },
-});
-
-export const SearchBarInputState = atom({
-  key: "SearchBarInputState",
-  default: "",
 });

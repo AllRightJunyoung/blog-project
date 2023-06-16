@@ -1,28 +1,28 @@
 import { Circle, HStack } from "@chakra-ui/react";
 import { useRecoilState, useRecoilValue } from "recoil";
-import { PaginationState, currentPageState } from "../recoil";
+import { PaginationPostState, currentPageState } from "../recoil";
 import uuid from "react-uuid";
 
 const Pagination = () => {
-  const posts = useRecoilValue(PaginationState);
-  const circles = createCircle(posts);
+  const posts = useRecoilValue(PaginationPostState);
+  const paginationCircles = createPaginationCircle(posts);
 
   return (
     <HStack spacing={5} marginBottom={10}>
-      {circles.map((circle) => {
-        return circle;
+      {paginationCircles.map((paginationCircle) => {
+        return paginationCircle;
       })}
     </HStack>
   );
 };
 
-const createCircle = (posts: any[]) => {
+const createPaginationCircle = (posts: any[]) => {
   const [currentPage, setCurrentPage] = useRecoilState(currentPageState);
   const pageLength = posts.length <= 4 ? 1 : Math.ceil(posts.length / 4);
-  const circles = [];
+  const paginationCircles = [];
 
   for (let i = 0; i < pageLength; i++) {
-    circles.push(
+    paginationCircles.push(
       <Circle
         size="10"
         border="1px solid #73CECF"
@@ -36,7 +36,7 @@ const createCircle = (posts: any[]) => {
       </Circle>,
     );
   }
-  return circles;
+  return paginationCircles;
 };
 
 export default Pagination;
