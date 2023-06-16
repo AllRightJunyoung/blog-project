@@ -1,5 +1,5 @@
 import uuid from "react-uuid";
-import { Grid } from "@chakra-ui/react";
+import { Grid, Spinner } from "@chakra-ui/react";
 import PostCard from "../../home/PostCard";
 import { PostCardSectionProps } from "./PostCardSection.types";
 import {
@@ -50,7 +50,13 @@ const PostCardSection = ({ data }: PostCardSectionProps) => {
           );
         })
       ) : (
-        <div>Loading...</div>
+        <Spinner
+          thickness="7px"
+          speed="0.65s"
+          emptyColor="gray.200"
+          color="teal"
+          size="xl"
+        />
       )}
     </Grid>
   );
