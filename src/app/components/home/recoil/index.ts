@@ -35,14 +35,17 @@ export const PostCardSectionState = selector({
     );
 
     const currentPosts = category === "All" ? allPosts : filteredCategoryPosts;
-    const searchPost = getSearchPost(searchBarInput, currentPosts);
+    const searchPost = getSearchPost(searchBarInput, currentPosts).slice(
+      offset,
+      offset + POST_LENGTH,
+    );
 
     const pagingPosts =
       category === "All"
         ? allPosts.slice(offset, offset + POST_LENGTH)
         : filteredCategoryPosts.slice(offset, offset + POST_LENGTH);
 
-    return !searchBarInput.length ? pagingPosts : searchPost;
+    return searchBarInput.length === 0 ? pagingPosts : searchPost;
   },
 });
 
@@ -63,6 +66,11 @@ export const PaginationPostState = selector({
     const filteredCategoryPosts = allPosts.filter(
       (post) => post.category === category,
     );
-    return category === "All" ? allPosts : filteredCategoryPosts;
+
+    const searchBarInput = get(SearchBarInputState);
+    const currentPosts = category === "All" ? allPosts : filteredCategoryPosts;
+    const searchPost = getSearchPost(searchBarInput, currentPosts);
+
+    return searchBarInput.length === 0 ? currentPosts : searchPost;
   },
 });
