@@ -12,6 +12,10 @@ const Pagination = () => {
   const posts = useRecoilValue(PaginationPostState);
   const paginationCircles = createPaginationCircle(posts);
 
+  if (posts.length === 0) {
+    return <></>;
+  }
+
   return (
     <HStack spacing={5} marginBottom={10}>
       {paginationCircles.map((paginationCircle) => {
@@ -23,6 +27,7 @@ const Pagination = () => {
 
 const createPaginationCircle = (posts: any[]) => {
   const [currentPage, setCurrentPage] = useRecoilState(currentPageState);
+
   const pageLength = posts.length <= 4 ? 1 : Math.ceil(posts.length / 4);
   const paginationCircles = [];
 
