@@ -11,7 +11,7 @@ const FeaturedPost = () => {
   return (
     <Flex padding={10} direction="column" alignItems="center">
       <Flex direction="column" gap={5}>
-        <Heading as="h2" size="xl" color="white" fontStyle="italic">
+        <Heading as="h2" size="xl" color="white" fontStyle="italic" padding={5}>
           Featured Post
         </Heading>
         <FeautredPostCarousel data={featuredPost} />
