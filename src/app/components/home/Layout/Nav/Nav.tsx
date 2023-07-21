@@ -1,12 +1,13 @@
 "use client";
-import { Flex } from "@chakra-ui/react";
 import FeaturedPost from "../../FeaturedPost/FeaturedPost";
+
+import { Box } from "@chakra-ui/react";
 
 const Nav = () => {
   return (
-    <nav>
+    <Box>
       <FeaturedPost />
-    </nav>
+    </Box>
   );
 };
 

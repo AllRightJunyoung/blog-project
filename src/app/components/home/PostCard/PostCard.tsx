@@ -36,7 +36,12 @@ const PostCard = ({
             {title}
           </Text>
         </Box>
-        <Flex borderTop="1px solid #242E35">
+        <Flex
+          borderTop="1px solid #242E35"
+          height={{
+            base: "40px",
+          }}
+        >
           <Flex
             gap="5px"
             flex="1"
@@ -54,10 +59,7 @@ const PostCard = ({
           </Flex>
           <Flex
             padding={{
-              sm: "16px 10px",
-              md: "16px 30px",
-              lg: "16px 18px",
-              xl: "16px 12px",
+              base: "16px 12px",
             }}
             alignItems="center"
             justify-content="center"
@@ -72,10 +74,7 @@ const PostCard = ({
           </Flex>
           <Flex
             padding={{
-              sm: "16px 10px",
-              md: "16px 30px",
-              lg: "16px 18px",
-              xl: "16px 12px",
+              base: "16px 12px",
             }}
             alignItems="center"
             justify-content="center"
