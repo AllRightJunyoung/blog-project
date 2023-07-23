@@ -26,14 +26,18 @@ const TableOfContents = () => {
   return (
     <section>
       <Box
-        width="20vw"
         bg="white"
-        height="90vh"
         overflowY="scroll"
         position="sticky"
-        top={14}
+        height="100vh"
+        top={1}
+        display={{ xl: "block", lg: "none", base: "none" }}
       >
-        <TableOfItem headingElements={headingElements} activeId={activeId} setActiveId={setActiveId}/>
+        <TableOfItem
+          headingElements={headingElements}
+          activeId={activeId}
+          setActiveId={setActiveId}
+        />
       </Box>
     </section>
   );

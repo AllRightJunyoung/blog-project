@@ -1,7 +1,7 @@
 "use client";
 
 import { HorizontalHeading } from "../../common";
-import { Box, Text, Flex } from "@chakra-ui/react";
+import { Box, Text, Flex, useMediaQuery } from "@chakra-ui/react";
 import { TimeIcon, InfoOutlineIcon } from "@chakra-ui/icons";
 import type { PostDetailSectionProps } from "./PostDetailSection.types";
 import MarkdownViewer from "../../markdown/MarkdownViewer";
@@ -17,8 +17,8 @@ const PostDetailSection = ({
 }: PostDetailSectionProps) => {
   return (
     <article>
-      <Box margin={20}>
-        <Box>
+      <Box>
+        <Box padding={10}>
           <HorizontalHeading title={title} fontSize="4xl" />
           <Flex gap={5}>
             <Flex alignItems="center" gap={2} marginTop={3} marginBottom={3}>
@@ -39,7 +39,7 @@ const PostDetailSection = ({
             <PostDetailTags tags={tags} />
           </Box>
         </Box>
-        <Flex marginTop={15} gap={5}>
+        <Flex padding={3} gap={5}>
           <MarkdownViewer>{content}</MarkdownViewer>
           <TableOfContents />
         </Flex>

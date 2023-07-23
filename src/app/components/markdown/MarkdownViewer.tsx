@@ -3,14 +3,18 @@
 import ReactMarkdown from "react-markdown";
 import {
   Box,
+  ListItem,
   Heading,
   Text,
   Table,
   Thead,
+  Highlight,
   Td,
   Tr,
   Th,
   Code,
+  OrderedList,
+  UnorderedList,
 } from "@chakra-ui/react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import Image from "next/image";
@@ -32,6 +36,15 @@ const customMarkDownComponent = {
         PreTag="div"
         {...props}
         style={atomDark}
+        customStyle={{
+          margin: 0,
+          paddingTop: 25,
+          paddingBottom: 25,
+          borderRadius: 0,
+          borderWidth: 0,
+          fontSize: "13px",
+          height: "auto",
+        }}
       >
         {String(children).replace(/\n$/, "")}
       </SyntaxHighlighter>
@@ -45,11 +58,11 @@ const customMarkDownComponent = {
       <>
         <Heading
           as="h1"
+          size={{ lg: "lg", base: "md" }}
           id={String(children).replaceAll(" ", "-")}
           color="#FF8945"
-          fontSize="28px"
-          mt={10}
-          mb={3}
+          mt={5}
+          mb={5}
         >
           {children}
         </Heading>
@@ -62,10 +75,26 @@ const customMarkDownComponent = {
       <>
         <Heading
           as="h2"
+          size={{ lg: "md", base: "sm" }}
           color="#9FD5D5"
-          fontSize="24px"
           id={String(children).replaceAll(" ", "-")}
-          mt={10}
+          mt={6}
+          mb={3}
+        >
+          {children}
+        </Heading>
+      </>
+    );
+  },
+  h3: ({ children }) => {
+    return (
+      <>
+        <Heading
+          as="h3"
+          size={{ lg: "sm", base: "xs" }}
+          color="#9FD5D5"
+          id={String(children).replaceAll(" ", "-")}
+          mt={6}
           mb={3}
         >
           {children}
@@ -75,20 +104,42 @@ const customMarkDownComponent = {
   },
   p: ({ children, ...props }) => {
     return (
-      <Text marginTop={1} mb={3} fontSize="16px" color="white">
+      <Text mt={2} mb={5} fontSize={{ lg: "16px", base: "14px" }} color="white">
         {children}
       </Text>
     );
   },
+  ol: ({ children }) => {
+    return (
+      <OrderedList color="white" fontSize={{ lg: "16px", base: "14px" }}>
+        {children}
+      </OrderedList>
+    );
+  },
   ul: ({ children }) => {
-    return <ul>{children}</ul>;
+    return (
+      <UnorderedList color="white" fontSize={{ lg: "16px", base: "14px" }}>
+        {children}
+      </UnorderedList>
+    );
   },
   li: ({ children }) => {
-    return <li style={{ color: "white" }}>{children}</li>;
+    return (
+      <ListItem mt={2} mb={2}>
+        {children}
+      </ListItem>
+    );
   },
   table: ({ children }) => {
     return (
-      <Table margin={5} variant="simple" color="white">
+      <Table
+        mb={3}
+        mt={3}
+        variant="simple"
+        color="white"
+        size={{ lg: "md", base: "sm" }}
+        layout="auto"
+      >
         {children}
       </Table>
     );
@@ -107,13 +158,17 @@ const customMarkDownComponent = {
   },
   strong: ({ children }) => {
     return (
-      <strong
-        style={{ fontSize: "16px", color: "#9FD5D5", fontWeight: "bold" }}
+      <Text
+        as="b"
+        fontSize={{ lg: "16px", base: "14px" }}
+        color="#9FD5D5"
+        fontWeight="bold"
       >
         {children}
-      </strong>
+      </Text>
     );
   },
+
   blockquote: ({ children }) => {
     return (
       <blockquote
@@ -134,7 +189,7 @@ const customMarkDownComponent = {
 
 const MarkdownViewer = ({ children }: MarkdownViewerProps) => {
   return (
-    <Box padding={10} bgColor="blackAlpha.300" width="70vw">
+    <Box padding={{ xl: 8, lg: 6, base: 4 }} bgColor="blackAlpha.300" w="100%">
       <ReactMarkdown
         components={customMarkDownComponent}
         remarkPlugins={[remarkGfm]}
