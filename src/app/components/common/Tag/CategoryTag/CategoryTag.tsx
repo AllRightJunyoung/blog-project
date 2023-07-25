@@ -1,3 +1,4 @@
+"use client";
 import { Tag, TagLabel } from "@chakra-ui/react";
 import type { CategoryTagProps } from "./CategoryTag.types";
 import { useRecoilState, useSetRecoilState } from "recoil";

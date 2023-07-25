@@ -1,6 +1,8 @@
 "use client";
 
 import ListIcon from "public/icons/toc/list.svg";
+import CloseIcon from "public/icons/toc/close.svg";
+
 import { HorizontalHeading } from "../../common";
 import { Box, Text, Flex, useMediaQuery, useBoolean } from "@chakra-ui/react";
 import { TimeIcon, InfoOutlineIcon } from "@chakra-ui/icons";
@@ -8,6 +10,10 @@ import type { PostDetailSectionProps } from "./PostDetailSection.types";
 import MarkdownViewer from "../../markdown/MarkdownViewer";
 import { PostDetailTags } from "../../post/PostDetailTags";
 import { TableOfContents } from "../../post/Toc";
+import { useSetRecoilState } from "recoil";
+import { TocModalState, TocResoultionState } from "../../post/recoil";
+
+import { useEffect } from "react";
 
 const PostDetailSection = ({
   title,
@@ -20,9 +26,19 @@ const PostDetailSection = ({
     ssr: true,
     fallback: false,
   });
-  const [isActiveMobileUI, setActiveMobileUI] = useBoolean(false);
+  const [isActive, setActive] = useBoolean(false);
 
-  console.log(isActiveMobileUI);
+  const setTocModal = useSetRecoilState(TocModalState);
+  const setTocResoultion = useSetRecoilState(TocResoultionState);
+
+  useEffect(() => {
+    setTocModal(isActive);
+  }, [isActive]);
+
+  useEffect(() => {
+    setTocResoultion(isSmallerThan960);
+  }, [isSmallerThan960]);
+
   return (
     <article>
       {isSmallerThan960 && (
@@ -30,11 +46,15 @@ const PostDetailSection = ({
           position="fixed"
           right="0.75rem"
           bottom="1.25rem"
-          onClick={setActiveMobileUI.toggle}
+          onClick={setActive.toggle}
           cursor="pointer"
           zIndex={30}
         >
-          <ListIcon width="60" height="60" color="white" />
+          {!isActive ? (
+            <ListIcon width="60" height="60" />
+          ) : (
+            <CloseIcon width="80" height="80" />
+          )}
         </Box>
       )}
       <Box>
@@ -61,10 +81,7 @@ const PostDetailSection = ({
         </Box>
         <Flex padding={3} gap={5}>
           <MarkdownViewer>{content}</MarkdownViewer>
-          <TableOfContents
-            isSmallerThan960={isSmallerThan960}
-            isActiveMobileUI={isActiveMobileUI}
-          />
+          <TableOfContents />
         </Flex>
       </Box>
     </article>

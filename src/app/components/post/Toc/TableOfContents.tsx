@@ -1,21 +1,16 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import TableOfItem from "./TableOfItem";
 import TableOfItemMobile from "./TableOfItemMobile";
 import { getIntersectionObserver } from "../utils/observer";
+import { useRecoilValue } from "recoil";
+import { TocResoultionState } from "../recoil";
 
-type TableOfContentsProps = {
-  isSmallerThan960: boolean;
-  isActiveMobileUI: boolean;
-};
-
-const TableOfContents = ({
-  isSmallerThan960,
-  isActiveMobileUI,
-}: TableOfContentsProps) => {
+const TableOfContents = () => {
   const [headingElements, setHeadingElements] = useState<Element[]>([]);
   const [activeId, setActiveId] = useState<string>("");
+  const isSmallerThan960 = useRecoilValue(TocResoultionState);
 
   useEffect(() => {
     const article = document.querySelector("article");
@@ -44,7 +39,6 @@ const TableOfContents = ({
           headingElements={headingElements}
           activeId={activeId}
           setActiveId={setActiveId}
-          isActiveMobileUI={isActiveMobileUI}
         />
       )}
     </section>

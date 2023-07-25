@@ -1,6 +1,6 @@
 import Header from "./components/home/Layout/Header";
 import { ChakraProviders } from "./providers/chakraUI";
-
+import { Recoil } from "./components/common";
 export default function RootLayout({
   children,
 }: {
@@ -15,8 +15,10 @@ export default function RootLayout({
       />
       <body>
         <ChakraProviders>
-          <Header />
-          {children}
+          <Recoil>
+            <Header />
+            {children}
+          </Recoil>
         </ChakraProviders>
       </body>
     </html>
