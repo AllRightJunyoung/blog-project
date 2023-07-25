@@ -31,7 +31,6 @@ const TableOfContents = () => {
         position="sticky"
         height="100vh"
         top={1}
-        display={{ xl: "block", lg: "none", base: "none" }}
       >
         <TableOfItem
           headingElements={headingElements}

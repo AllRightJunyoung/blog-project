@@ -8,7 +8,6 @@ import {
   Text,
   Table,
   Thead,
-  Highlight,
   Td,
   Tr,
   Th,
@@ -42,7 +41,7 @@ const customMarkDownComponent = {
           paddingBottom: 25,
           borderRadius: 0,
           borderWidth: 0,
-          fontSize: "13px",
+          fontSize: "14px",
           height: "auto",
         }}
       >
@@ -58,7 +57,7 @@ const customMarkDownComponent = {
       <>
         <Heading
           as="h1"
-          size={{ lg: "lg", base: "md" }}
+          size="lg"
           id={String(children).replaceAll(" ", "-")}
           color="#FF8945"
           mt={5}
@@ -75,7 +74,7 @@ const customMarkDownComponent = {
       <>
         <Heading
           as="h2"
-          size={{ lg: "md", base: "sm" }}
+          size="md"
           color="#9FD5D5"
           id={String(children).replaceAll(" ", "-")}
           mt={6}
@@ -91,7 +90,7 @@ const customMarkDownComponent = {
       <>
         <Heading
           as="h3"
-          size={{ lg: "sm", base: "xs" }}
+          size="sm"
           color="#9FD5D5"
           id={String(children).replaceAll(" ", "-")}
           mt={6}
@@ -104,21 +103,21 @@ const customMarkDownComponent = {
   },
   p: ({ children, ...props }) => {
     return (
-      <Text mt={2} mb={5} fontSize={{ lg: "16px", base: "14px" }} color="white">
+      <Text mt={2} mb={5} fontSize={{ lg: "18px", base: "16px" }} color="white">
         {children}
       </Text>
     );
   },
   ol: ({ children }) => {
     return (
-      <OrderedList color="white" fontSize={{ lg: "16px", base: "14px" }}>
+      <OrderedList color="white" fontSize={{ lg: "18px", base: "16px" }}>
         {children}
       </OrderedList>
     );
   },
   ul: ({ children }) => {
     return (
-      <UnorderedList color="white" fontSize={{ lg: "16px", base: "14px" }}>
+      <UnorderedList color="white" fontSize={{ lg: "18px", base: "16px" }}>
         {children}
       </UnorderedList>
     );
@@ -160,7 +159,7 @@ const customMarkDownComponent = {
     return (
       <Text
         as="b"
-        fontSize={{ lg: "16px", base: "14px" }}
+        fontSize={{ lg: "20px", base: "18px" }}
         color="#9FD5D5"
         fontWeight="bold"
       >

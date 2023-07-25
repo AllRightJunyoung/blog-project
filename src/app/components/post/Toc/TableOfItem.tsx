@@ -15,10 +15,10 @@ const TableOfItem = ({
         fontWeight="bold"
         textAlign="center"
         color="white"
-        fontSize="16px"
+        fontSize="20px"
         padding={3}
       >
-        ON THIS PAGE
+        목차
       </Heading>
       <List>
         {headingElements.map((el, index) =>
@@ -29,7 +29,7 @@ const TableOfItem = ({
               fontWeight="bold"
               mt={5}
               padding={2}
-              fontSize="14px"
+              fontSize="18px"
               borderLeft={`${el.id === activeId ? `5px solid teal` : "none"}`}
             >
               <Link href={`#${el.id}`} onClick={() => setActiveId(el.id)}>
@@ -42,7 +42,7 @@ const TableOfItem = ({
               color="#9FD5D5"
               fontWeight="bold"
               paddingLeft={8}
-              fontSize="12px"
+              fontSize="16px"
               borderLeft={`${el.id === activeId ? `5px solid teal` : "none"}`}
             >
               <Link href={`#${el.id}`} onClick={() => setActiveId(el.id)}>

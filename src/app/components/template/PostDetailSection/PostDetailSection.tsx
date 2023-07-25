@@ -15,6 +15,11 @@ const PostDetailSection = ({
   tags,
   category,
 }: PostDetailSectionProps) => {
+  const [isSmallerThan960] = useMediaQuery("(max-width: 960px)", {
+    ssr: true,
+    fallback: false,
+  });
+
   return (
     <article>
       <Box>
@@ -41,7 +46,7 @@ const PostDetailSection = ({
         </Box>
         <Flex padding={3} gap={5}>
           <MarkdownViewer>{content}</MarkdownViewer>
-          <TableOfContents />
+          {!isSmallerThan960 && <TableOfContents />}
         </Flex>
       </Box>
     </article>
