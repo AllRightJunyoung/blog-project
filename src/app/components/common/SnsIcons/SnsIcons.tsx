@@ -1,9 +1,9 @@
 "use client";
 
 import { Avatar, AvatarGroup } from "@chakra-ui/react";
-import GithubIcon from "public/icons/github.svg";
-import LinkedIn from "public/icons/linkedIn.svg";
-import Instagram from "public/icons/instagram.svg";
+import GithubIcon from "public/icons/profile/github.svg";
+import LinkedIn from "public/icons/profile/linkedIn.svg";
+import Instagram from "public/icons/profile/instagram.svg";
 import { Link } from "@chakra-ui/next-js";
 import NextLink from "next/link";
 

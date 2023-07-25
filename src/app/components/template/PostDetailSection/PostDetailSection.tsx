@@ -1,5 +1,6 @@
 "use client";
 
+import ListIcon from "public/icons/toc/list.svg";
 import { HorizontalHeading } from "../../common";
 import { Box, Text, Flex, useMediaQuery } from "@chakra-ui/react";
 import { TimeIcon, InfoOutlineIcon } from "@chakra-ui/icons";
@@ -22,6 +23,11 @@ const PostDetailSection = ({
 
   return (
     <article>
+      {isSmallerThan960 && (
+        <Box position="fixed" right="0.75rem" bottom="1.25rem">
+          <ListIcon width="60" height="60" color="white" />
+        </Box>
+      )}
       <Box>
         <Box padding={10}>
           <HorizontalHeading title={title} fontSize="4xl" />

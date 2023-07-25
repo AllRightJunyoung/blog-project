@@ -1,5 +1,5 @@
 import { Input, Flex } from "@chakra-ui/react";
-import SearchIcon from "public/icons/search.svg";
+import SearchIcon from "public/icons/post/search.svg";
 import { useSetRecoilState } from "recoil";
 import { SearchBarInputState } from "../recoil";
 
