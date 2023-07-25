@@ -2,7 +2,7 @@
 
 import ListIcon from "public/icons/toc/list.svg";
 import { HorizontalHeading } from "../../common";
-import { Box, Text, Flex, useMediaQuery } from "@chakra-ui/react";
+import { Box, Text, Flex, useMediaQuery, useBoolean } from "@chakra-ui/react";
 import { TimeIcon, InfoOutlineIcon } from "@chakra-ui/icons";
 import type { PostDetailSectionProps } from "./PostDetailSection.types";
 import MarkdownViewer from "../../markdown/MarkdownViewer";
@@ -20,11 +20,20 @@ const PostDetailSection = ({
     ssr: true,
     fallback: false,
   });
+  const [isActiveMobileUI, setActiveMobileUI] = useBoolean(false);
 
+  console.log(isActiveMobileUI);
   return (
     <article>
       {isSmallerThan960 && (
-        <Box position="fixed" right="0.75rem" bottom="1.25rem">
+        <Box
+          position="fixed"
+          right="0.75rem"
+          bottom="1.25rem"
+          onClick={setActiveMobileUI.toggle}
+          cursor="pointer"
+          zIndex={30}
+        >
           <ListIcon width="60" height="60" color="white" />
         </Box>
       )}
@@ -52,7 +61,10 @@ const PostDetailSection = ({
         </Box>
         <Flex padding={3} gap={5}>
           <MarkdownViewer>{content}</MarkdownViewer>
-          {!isSmallerThan960 && <TableOfContents />}
+          <TableOfContents
+            isSmallerThan960={isSmallerThan960}
+            isActiveMobileUI={isActiveMobileUI}
+          />
         </Flex>
       </Box>
     </article>

@@ -2,10 +2,18 @@
 
 import { useEffect, useState } from "react";
 import TableOfItem from "./TableOfItem";
-import { Box } from "@chakra-ui/react";
+import TableOfItemMobile from "./TableOfItemMobile";
 import { getIntersectionObserver } from "../utils/observer";
 
-const TableOfContents = () => {
+type TableOfContentsProps = {
+  isSmallerThan960: boolean;
+  isActiveMobileUI: boolean;
+};
+
+const TableOfContents = ({
+  isSmallerThan960,
+  isActiveMobileUI,
+}: TableOfContentsProps) => {
   const [headingElements, setHeadingElements] = useState<Element[]>([]);
   const [activeId, setActiveId] = useState<string>("");
 
@@ -25,19 +33,20 @@ const TableOfContents = () => {
 
   return (
     <section>
-      <Box
-        bg="white"
-        overflowY="scroll"
-        position="sticky"
-        height="100vh"
-        top={1}
-      >
+      {!isSmallerThan960 ? (
         <TableOfItem
           headingElements={headingElements}
           activeId={activeId}
           setActiveId={setActiveId}
         />
-      </Box>
+      ) : (
+        <TableOfItemMobile
+          headingElements={headingElements}
+          activeId={activeId}
+          setActiveId={setActiveId}
+          isActiveMobileUI={isActiveMobileUI}
+        />
+      )}
     </section>
   );
 };
