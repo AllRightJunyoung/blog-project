@@ -8,7 +8,7 @@ import {
 } from "@chakra-ui/react";
 import uuid from "react-uuid";
 import type { TableOfItemProps } from "./TableOfItem.types";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useRecoilState } from "recoil";
 import { TocModalState } from "../recoil";
 
@@ -18,15 +18,14 @@ const TableOfItemMobile = ({
   setActiveId,
 }: TableOfItemProps) => {
   const ref = useRef<HTMLDivElement>(null);
-
-  const [isActiveTocModal, setActiveTocModal] = useRecoilState(TocModalState);
+  const [activeTocModal, setActiveTocModal] = useRecoilState(TocModalState);
 
   useOutsideClick({
     ref: ref,
     handler: () => setActiveTocModal(false),
   });
 
-  return isActiveTocModal ? (
+  return activeTocModal ? (
     <Box
       ref={ref}
       zIndex={20}

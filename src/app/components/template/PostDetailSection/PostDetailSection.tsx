@@ -4,13 +4,13 @@ import ListIcon from "public/icons/toc/list.svg";
 import CloseIcon from "public/icons/toc/close.svg";
 
 import { HorizontalHeading } from "../../common";
-import { Box, Text, Flex, useMediaQuery, useBoolean } from "@chakra-ui/react";
+import { Box, Text, Flex, useMediaQuery } from "@chakra-ui/react";
 import { TimeIcon, InfoOutlineIcon } from "@chakra-ui/icons";
 import type { PostDetailSectionProps } from "./PostDetailSection.types";
 import MarkdownViewer from "../../markdown/MarkdownViewer";
 import { PostDetailTags } from "../../post/PostDetailTags";
 import { TableOfContents } from "../../post/Toc";
-import { useSetRecoilState } from "recoil";
+import { useSetRecoilState, useRecoilState } from "recoil";
 import { TocModalState, TocResoultionState } from "../../post/recoil";
 
 import { useEffect } from "react";
@@ -26,14 +26,8 @@ const PostDetailSection = ({
     ssr: true,
     fallback: false,
   });
-  const [isActive, setActive] = useBoolean(false);
-
-  const setTocModal = useSetRecoilState(TocModalState);
+  const [activeTocModal, setActiveTocModal] = useRecoilState(TocModalState);
   const setTocResoultion = useSetRecoilState(TocResoultionState);
-
-  useEffect(() => {
-    setTocModal(isActive);
-  }, [isActive]);
 
   useEffect(() => {
     setTocResoultion(isSmallerThan960);
@@ -46,11 +40,11 @@ const PostDetailSection = ({
           position="fixed"
           right="0.75rem"
           bottom="1.25rem"
-          onClick={setActive.toggle}
           cursor="pointer"
           zIndex={30}
+          onClick={()=>setActiveTocModal(!activeTocModal)}
         >
-          {!isActive ? (
+          {!activeTocModal ? (
             <ListIcon width="60" height="60" />
           ) : (
             <CloseIcon width="80" height="80" />
