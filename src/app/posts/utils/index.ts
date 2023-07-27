@@ -1,11 +1,11 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import type { PostData } from "../types";
+import type { PostsType } from "../types";
 
 const postsDirectory = path.join(process.cwd(), "src/app/content");
 
-export const getPostData = (postId: string): PostData => {
+export const getPostData = (postId: string): PostsType => {
   const postSlug = postId.replace(/\.md$/, "");
   const filePath = path.join(postsDirectory, `${postSlug}.md`);
   const fileContent = fs.readFileSync(filePath, "utf-8");
@@ -16,7 +16,7 @@ export const getPostData = (postId: string): PostData => {
     slug: postSlug,
     ...data,
     content,
-  } as PostData;
+  } as PostsType;
 
   return postData;
 };
