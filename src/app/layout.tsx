@@ -1,6 +1,25 @@
 import Header from "./components/home/Layout/Header";
+import { Title, Description } from "./constant";
+import { Metadata } from "next";
 import { ChakraProviders } from "./providers/chakraUI";
 import { Recoil } from "./components/common";
+
+export const metadata: Metadata = {
+  title: Title,
+  description: Description,
+  openGraph: {
+    type: "website",
+    siteName: Title,
+    title: Title,
+    description: Description,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: Title,
+    description: Description,
+  },
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -8,11 +27,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <title>준영 블로그</title>
-      <meta
-        name="description"
-        content="I post about programming and web development."
-      />
       <body>
         <ChakraProviders>
           <Recoil>
