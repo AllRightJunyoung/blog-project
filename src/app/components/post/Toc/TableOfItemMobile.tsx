@@ -8,7 +8,7 @@ import {
 } from "@chakra-ui/react";
 import uuid from "react-uuid";
 import type { TableOfItemProps } from "./TableOfItem.types";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import { useRecoilState } from "recoil";
 import { TocModalState } from "../recoil";
 

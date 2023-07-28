@@ -42,7 +42,7 @@ const PostDetailSection = ({
           bottom="1.25rem"
           cursor="pointer"
           zIndex={30}
-          onClick={()=>setActiveTocModal(!activeTocModal)}
+          onClick={() => setActiveTocModal(!activeTocModal)}
         >
           {!activeTocModal ? (
             <ListIcon width="60" height="60" />

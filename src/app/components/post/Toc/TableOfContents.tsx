@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import TableOfItem from "./TableOfItem";
 import TableOfItemMobile from "./TableOfItemMobile";
 import { getIntersectionObserver } from "../utils/observer";

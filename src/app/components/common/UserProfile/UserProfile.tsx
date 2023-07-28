@@ -1,8 +1,6 @@
 "use client";
 
-import { Avatar } from "@chakra-ui/react";
-import { Flex } from "@chakra-ui/react";
-import { Text } from "@chakra-ui/react";
+import { Avatar, Flex, Text } from "@chakra-ui/react";
 const UserProfile = () => {
   return (
     <Flex flexDir="column" alignItems="center" justifyContent="center">

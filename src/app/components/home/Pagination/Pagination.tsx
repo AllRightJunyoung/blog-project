@@ -6,7 +6,7 @@ import uuid from "react-uuid";
 
 const Pagination = () => {
   const posts = useRecoilValue(PaginationPostState);
-  const paginationCircles = createPaginationCircle(posts);
+  const paginationCircles = CreatePaginationCircle(posts);
 
   if (posts.length === 0) {
     return <></>;
@@ -21,7 +21,7 @@ const Pagination = () => {
   );
 };
 
-const createPaginationCircle = (posts: any[]) => {
+const CreatePaginationCircle = (posts: unknown[]) => {
   const [currentPage, setCurrentPage] = useRecoilState(currentPageState);
 
   const pageLength = posts.length <= 4 ? 1 : Math.ceil(posts.length / 4);

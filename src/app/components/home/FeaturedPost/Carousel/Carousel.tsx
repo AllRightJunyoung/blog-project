@@ -2,10 +2,9 @@
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-
 import type { CarouselProps } from "./Carousel.types";
 import uuid from "react-uuid";
-import { Text, Image, Flex, Box } from "@chakra-ui/react";
+import { Text, Image, Flex } from "@chakra-ui/react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper";
 import { BellIcon, SunIcon, CalendarIcon, LinkIcon } from "@chakra-ui/icons";
@@ -64,6 +63,7 @@ const FeautredPostCarousel = ({ data }: CarouselProps) => {
                     objectFit="cover"
                     src={post.thumbnail}
                     borderRadius={"xl"}
+                    alt={post.thumbnail}
                   />
                 </Flex>
               </Flex>

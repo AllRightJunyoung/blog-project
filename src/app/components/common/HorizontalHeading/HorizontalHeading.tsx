@@ -1,7 +1,6 @@
 "use client";
-
 import { Flex, Text, Divider } from "@chakra-ui/react";
-import type { HorizontalHeadingProps } from "./HorizontalHeading";
+import type { HorizontalHeadingProps } from "./HorizontalHeading.types";
 
 const HorizontalHeading = ({ title, fontSize }: HorizontalHeadingProps) => {
   return (
