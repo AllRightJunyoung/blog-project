@@ -1,4 +1,4 @@
-import type { PostData } from "@/app/posts/types";
+import type { PostsType } from "@/app/posts/types";
 export type MainProps = {
-  data: PostData[];
+  data: PostsType[];
 };

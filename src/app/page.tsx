@@ -1,7 +1,7 @@
 import { getAllPosts } from "./posts/utils";
 import { Layout } from "./components/home/Layout";
 
-export const HomePage = () => {
+export default function HomePage() {
   const postAllData = getAllPosts();
 
   return (
@@ -9,6 +9,4 @@ export const HomePage = () => {
       <Layout data={postAllData} />
     </section>
   );
-};
-
-export default HomePage;
+}

@@ -1,5 +1,9 @@
-export const getSearchPost = (input: string, posts: any[]) => {
-  const searchPosts = [];
+import type { PostsType } from "@/app/posts/types";
+export const getSearchPost = (
+  input: string,
+  posts: PostsType[],
+): PostsType[] => {
+  let searchPosts: PostsType[] = [];
 
   posts.forEach((post) => {
     const searchInput = input;

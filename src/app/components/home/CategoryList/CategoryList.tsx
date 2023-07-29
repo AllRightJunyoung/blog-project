@@ -9,7 +9,7 @@ const CategoryList = ({ data }: CategoryListProps) => {
   let categories = data.map((postData) => {
     return postData.category;
   });
-  categories = [...new Set(categories)];
+  categories = Array.from(new Set(categories));
 
   return (
     <HStack spacing={3}>
