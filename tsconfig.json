@@ -30,7 +30,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    ".eslintrc.js"
+    ".eslintrc.js",
+    "src/app/server-sitemap.xml/route.js"
   ],
   "exclude": ["node_modules"]
 }

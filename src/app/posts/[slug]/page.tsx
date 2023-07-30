@@ -1,16 +1,17 @@
 import { PostDetailSection } from "@/app/components/template/PostDetailSection";
-import { getPostData } from "../utils";
 import { Metadata } from "next";
+import { getPostData } from "../utils";
 
 type Props = {
   params: {
     slug: string;
   };
 };
+
 export async function generateMetadata({
   params: { slug },
 }: Props): Promise<Metadata> {
-  const { title, description } = await getPostData(slug);
+  const { title, description } = getPostData(slug);
   return {
     title,
     description,

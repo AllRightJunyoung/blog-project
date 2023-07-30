@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild":"next-sitemap",
     "start": "next start",
     "lint": "next lint"
   },
@@ -23,6 +24,7 @@
     "framer-motion": "^10.12.11",
     "gray-matter": "^4.0.3",
     "next": "13.4.2",
+    "next-sitemap": "^4.1.8",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.9.0",
