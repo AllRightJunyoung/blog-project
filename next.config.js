@@ -36,6 +36,10 @@ const nextConfig = {
   },
   // ...other config
   pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
+  env: {
+    NEXT_PUBLIC_GA_ID: process.env.NEXT_PUBLIC_GA_ID,
+    BLOG_URI: process.env.BLOG_URI,
+  },
 };
 
 module.exports = nextConfig;

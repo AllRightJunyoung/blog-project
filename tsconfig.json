@@ -22,7 +22,8 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "baseUrl": "."
+    "baseUrl": ".",
+    "types": ["@types/gtag.js"]
   },
   "typeRoots": ["global.d.ts"],
   "include": [

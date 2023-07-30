@@ -3,6 +3,7 @@ import { Title, Description } from "./constant";
 import { Metadata } from "next";
 import { ChakraProviders } from "./providers/chakraUI";
 import { Recoil } from "./components/common";
+import GoogleAnalytics from "./components/common/GoogleAnalytics";
 
 export const metadata: Metadata = {
   title: Title,
@@ -25,8 +26,11 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+
   return (
     <html lang="en">
+      {GA_ID && <GoogleAnalytics GA_TRACKING_ID={GA_ID} />}
       <body>
         <ChakraProviders>
           <Recoil>
