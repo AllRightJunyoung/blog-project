@@ -12,5 +12,12 @@ export async function GET(request: Request) {
       priority: 1,
     };
   });
+  sitemapFields.push({
+    loc: `${process.env.BLOG_URI}`,
+    lastmod: new Date().toISOString(),
+    changefreq: "daily",
+    priority: 1,
+  });
+
   return getServerSideSitemap([...sitemapFields]);
 }
