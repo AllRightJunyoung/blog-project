@@ -14,6 +14,9 @@ export const metadata: Metadata = {
     title: Title,
     description: Description,
   },
+  verification: {
+    google: process.env.GOOGLE_SITE_VERIFICATION,
+  },
   twitter: {
     card: "summary_large_image",
     title: Title,

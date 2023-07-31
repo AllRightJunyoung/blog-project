@@ -39,6 +39,7 @@ const nextConfig = {
   env: {
     NEXT_PUBLIC_GA_ID: process.env.NEXT_PUBLIC_GA_ID,
     BLOG_URI: process.env.BLOG_URI,
+    GOOGLE_SITE_VERIFICATION: process.env.GOOGLE_SITE_VERIFICATION,
   },
 };
 

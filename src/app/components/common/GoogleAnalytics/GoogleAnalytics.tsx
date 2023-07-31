@@ -10,6 +10,7 @@ function GoogleAnalytics({ GA_TRACKING_ID }: { GA_TRACKING_ID: string }) {
 
   useEffect(() => {
     const url = pathname + searchParams.toString();
+
     pageview(url);
   }, [pathname, searchParams, GA_TRACKING_ID]);
   return (
