@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description: Description,
   },
   verification: {
-    google: process.env.GOOGLE_SITE_VERIFICATION,
+    google: "An5DfMoH89G1p-PsDB3RcVe3QBhVdtuJnBpufYSO8Jk",
   },
   twitter: {
     card: "summary_large_image",
