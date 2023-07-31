@@ -33,12 +33,6 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <Head>
-        <meta
-          name="google-site-verification"
-          content="An5DfMoH89G1p-PsDB3RcVe3QBhVdtuJnBpufYSO8Jk"
-        />
-      </Head>
       {GA_ID && <GoogleAnalytics GA_TRACKING_ID={GA_ID} />}
       <body>
         <ChakraProviders>
