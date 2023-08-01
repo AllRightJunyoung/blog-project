@@ -17,6 +17,10 @@ export const metadata: Metadata = {
   verification: {
     google: "An5DfMoH89G1p-PsDB3RcVe3QBhVdtuJnBpufYSO8Jk",
   },
+  robots: {
+    index: true,
+    follow: true,
+  },
   twitter: {
     card: "summary_large_image",
     title: Title,
