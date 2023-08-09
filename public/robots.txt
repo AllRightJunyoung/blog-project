@@ -3,8 +3,8 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://physicaljunblog.vercel.app
+Host: https://www.physicaljun.blog
 
 # Sitemaps
-Sitemap: https://physicaljunblog.vercel.app/sitemap.xml
-Sitemap: https://physicaljunblog.vercel.app/server-sitemap.xml
+Sitemap: https://www.physicaljun.blog/sitemap.xml
+Sitemap: https://www.physicaljun.blog/server-sitemap.xml
