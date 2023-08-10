@@ -1,5 +1,4 @@
 import Header from "./components/home/Layout/Header";
-import { Title, Description } from "./constant";
 import { Metadata } from "next";
 import { ChakraProviders } from "./providers/chakraUI";
 import { Recoil } from "./components/common";
@@ -8,15 +7,15 @@ import GoogleAnalytics from "./components/common/GoogleAnalytics";
 export const metadata: Metadata = {
   generator: "Next.js 13.4.2",
   title: {
-    default: Title,
-    template: `%s | ${Title}`,
+    default: "준영의 기술블로그 | HOME",
+    template: `%s | 준영의 기술블로그`,
   },
-  description: Description,
+  description: "준영의 기술블로그 입니다.",
   openGraph: {
     type: "website",
-    siteName: Title,
-    title: Title,
-    description: Description,
+    siteName: "준영의 기술블로그",
+    title: "준영의 기술블로그",
+    description: "준영의 기술블로그 입니다.",
   },
   verification: {
     google: "An5DfMoH89G1p-PsDB3RcVe3QBhVdtuJnBpufYSO8Jk",
@@ -30,8 +29,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: Title,
-    description: Description,
+    title: "준영의 기술블로그",
+    description: "준영의 기술블로그 입니다.",
   },
 };
 
