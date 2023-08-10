@@ -4,8 +4,6 @@ import { getAllPosts } from "../posts/utils";
 export async function GET(request: Request) {
   const allposts = getAllPosts();
 
-  console.log(process.env.BLOG_URI);
-
   const sitemapFields: ISitemapField[] = allposts.map((post) => {
     return {
       loc: `${process.env.BLOG_URI}/posts/${post.slug}`,
