@@ -6,7 +6,11 @@ import { Recoil } from "./components/common";
 import GoogleAnalytics from "./components/common/GoogleAnalytics";
 
 export const metadata: Metadata = {
-  title: Title,
+  generator: "Next.js 13.4.2",
+  title: {
+    default: Title,
+    template: `%s | ${Title}`,
+  },
   description: Description,
   openGraph: {
     type: "website",
@@ -16,6 +20,9 @@ export const metadata: Metadata = {
   },
   verification: {
     google: "An5DfMoH89G1p-PsDB3RcVe3QBhVdtuJnBpufYSO8Jk",
+    other: {
+      "naver-site-verification": "8f66a88ebd6bcf6839daa2d911cf8257354491a4",
+    },
   },
   robots: {
     index: true,
@@ -38,10 +45,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       {GA_ID && <GoogleAnalytics GA_TRACKING_ID={GA_ID} />}
-      <meta
-        name="naver-site-verification"
-        content="8f66a88ebd6bcf6839daa2d911cf8257354491a4"
-      />
 
       <body>
         <ChakraProviders>
