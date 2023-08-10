@@ -1,4 +1,6 @@
 import { Metadata } from "next";
+import GoogleAnalytics from "./components/common/GoogleAnalytics";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   generator: "Next.js 13.4.2",
@@ -36,8 +38,14 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+
   return (
     <html lang="en">
+      <Suspense fallback={null}>
+        {GA_ID && <GoogleAnalytics GA_TRACKING_ID={GA_ID} />}
+      </Suspense>
+
       <body>{children}</body>
     </html>
   );
