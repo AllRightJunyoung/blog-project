@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "ANALYZE=true NODE_ENV=production next build",
     "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint"
@@ -16,6 +16,7 @@
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
     "@faker-js/faker": "^8.0.1",
+    "@next/bundle-analyzer": "^13.4.13",
     "@plaiceholder/next": "^3.0.0",
     "@types/node": "20.1.4",
     "@types/react": "18.2.6",
@@ -25,6 +26,7 @@
     "framer-motion": "^10.12.11",
     "gray-matter": "^4.0.3",
     "next": "13.4.2",
+    "next-compose-plugins": "^2.2.1",
     "next-sitemap": "^4.1.8",
     "react": "18.2.0",
     "react-dom": "18.2.0",

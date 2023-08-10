@@ -1,7 +1,13 @@
 /** @type {import('next').NextConfig} */
+const withPlugins = require("next-compose-plugins");
+
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+  enabled: process.env.ANALYZE === "true",
+});
 
 const nextConfig = {
   reactStrictMode: true,
+
   experimental: {
     appDir: true,
   },
@@ -31,10 +37,7 @@ const nextConfig = {
 
     return config;
   },
-  images: {
-    domains: ["picsum.photos", "loremflickr.com"],
-  },
-  // ...other config
+
   pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
   env: {
     NEXT_PUBLIC_GA_ID: process.env.NEXT_PUBLIC_GA_ID,
@@ -43,4 +46,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+module.exports = withPlugins([withBundleAnalyzer(nextConfig)]);
