@@ -1,8 +1,9 @@
 "use client";
 
 import { GridItem, Flex, Text, Box } from "@chakra-ui/react";
+
+import Image from "next/image";
 import { CalendarIcon, TimeIcon, ViewIcon } from "@chakra-ui/icons";
-import { Image } from "@chakra-ui/react";
 import type { PostCardProps } from "./PostCard.types";
 import { useRouter } from "next/navigation";
 
@@ -25,13 +26,24 @@ const PostCard = ({
     >
       <Flex direction="column">
         <Box>
-          <Image
-            objectFit="cover"
-            alt={title}
-            src={thumbnail}
-            border="2px solid rgb(225, 113, 139)"
-            borderRadius="20px"
-          />
+          <Box display="flex" flexDirection="column">
+            <Image
+              alt={title}
+              src={thumbnail}
+              loading="lazy"
+              sizes="100vw"
+              width={300}
+              height={200}
+              style={{
+                width: "100%",
+                height: "auto",
+                border: "2px solid gray",
+                borderRadius: "20px",
+              }}
+              placeholder="blur"
+              blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mO8UA8AAiUBUcc3qzwAAAAASUVORK5CYII"
+            />
+          </Box>
           <Text color="white" fontSize="18px" margin={5}>
             {title}
           </Text>

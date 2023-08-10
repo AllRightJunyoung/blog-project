@@ -29,7 +29,21 @@ import { MarkdownViewerProps } from "./MarkdownViewer.types";
 const customMarkDownComponent: any = {
   img: (image: ImageProps) => {
     return (
-      <Image src={`${image.src}`} alt={image.alt} width={600} height={400} />
+      <Box display="flex" flexDirection="column">
+        <Image
+          src={`${image.src}`}
+          alt={image.alt}
+          width={600}
+          height={400}
+          sizes="100vw"
+          placeholder="blur"
+          blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mO8UA8AAiUBUcc3qzwAAAAASUVORK5CYII"
+          style={{
+            width: "100%",
+            height: "auto",
+          }}
+        />
+      </Box>
     );
   },
   code({ node, inline, className, children, ...props }: CodeProps) {
