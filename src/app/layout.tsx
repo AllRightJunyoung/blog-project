@@ -26,6 +26,7 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    nocache: true,
   },
   twitter: {
     card: "summary_large_image",
