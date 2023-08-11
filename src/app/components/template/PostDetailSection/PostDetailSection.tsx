@@ -7,13 +7,16 @@ import { HorizontalHeading } from "../../common";
 import { Box, Text, Flex, useMediaQuery } from "@chakra-ui/react";
 import { TimeIcon, InfoOutlineIcon } from "@chakra-ui/icons";
 import type { PostDetailSectionProps } from "./PostDetailSection.types";
-import MarkdownViewer from "../../markdown/MarkdownViewer";
 import { PostDetailTags } from "../../post/PostDetailTags";
-import { TableOfContents } from "../../post/Toc";
 import { useSetRecoilState, useRecoilState } from "recoil";
 import { TocModalState, TocResoultionState } from "../../post/recoil";
+import dynamic from "next/dynamic";
 
 import { useEffect } from "react";
+
+import { TableOfContents } from "../../post/Toc";
+
+const MarkdownViewer = dynamic(() => import("../../markdown/MarkdownViewer"));
 
 const PostDetailSection = ({
   title,
@@ -73,6 +76,7 @@ const PostDetailSection = ({
             <PostDetailTags tags={tags} />
           </Box>
         </Box>
+
         <Flex padding={3} gap={5}>
           <MarkdownViewer>{content}</MarkdownViewer>
           <TableOfContents />

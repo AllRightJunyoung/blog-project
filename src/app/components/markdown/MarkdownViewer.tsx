@@ -15,11 +15,11 @@ import {
   UnorderedList,
 } from "@chakra-ui/react";
 
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter/dist/cjs/prism";
 import Image from "next/image";
 
 import remarkGfm from "remark-gfm";
-import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import atomDark from "react-syntax-highlighter/dist/cjs/styles/prism/atom-dark";
 import { CodeProps } from "react-markdown/lib/ast-to-react";
 import { ImageProps } from "next/image";
 import { ReactNode } from "react-markdown/lib/react-markdown";
