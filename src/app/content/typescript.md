@@ -5,7 +5,7 @@ description: "타입스크립트에 대해 알아보자"
 tags: ["typescript"]
 category: "개발"
 date: "2022-04-16"
-thumbnail: "/images/posts/typescript/ts_image.png"
+thumbnail: "/images/posts/typescript/ts_image.webp"
 featured: true
 ---
 

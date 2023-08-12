@@ -5,7 +5,7 @@ description: "http 역사에 대해 알아보자"
 tags: ["computer-science"]
 category: "cs"
 date: "2023-04-29"
-thumbnail: "/images/posts/what-is-http/1.png"
+thumbnail: "/images/posts/what-is-http/1.webp"
 featured: true
 ---
 
@@ -18,7 +18,7 @@ featured: true
 
 이 때, 서버에 의뢰를 하는 웹 브라우저는 클라이언트, 요청을 보내는 곳은 웹 서버라고 합니다.
 
-![브라우저와 서버](/images/posts/what-is-http/1.png)
+![브라우저와 서버](/images/posts/what-is-http/1.webp)
 
 이렇게 클라이언트와 서버까지 일련의 흐름을 결정하고 있는 것은 웹에서 HTTP(Hyper Text Transfer Protocol)이라고 불리는 프로토콜입니다.
 
@@ -58,7 +58,7 @@ HTTP를 이해하기 위해서는 TCP/IP 프로토콜에 대해 어느 정도 �
 
 그리고 케이블 등과 같이 물리적으로 보이는 부분(커텍트 등을 포함한 여러 가지 전송 매체)도 포함합니다. 하드웨어, 물리적인 부분은 전부 링크 계층의 역할입니다.
 
-![TCP/IP 통신의 흐름](/images/posts/what-is-http/2.png)
+![TCP/IP 통신의 흐름](/images/posts/what-is-http/2.webp)
 
 # HTTP와 관계가 깊은 프로토콜은 IP, TCP, DNS
 
@@ -146,7 +146,7 @@ HTTP 초기 버전에는 HTTP 통신을 한 번 할 때마다 TCP에 의해 연�
 
 개별 연결보다는 지속 연결이 요청 완료가 빠르고, 지속 연결보다는 파이프라인화 쪽이 빠릅니다. 이 차이는 요청 수가 늘어날 수록 현저하게 차이가 납니다.
 
-![파이프라인화](/images/posts/what-is-http/3.png)
+![파이프라인화](/images/posts/what-is-http/3.webp)
 
 ## 7. 쿠키를 사용한 상태 관리
 
@@ -173,7 +173,7 @@ HTTP는 스테이트리스(stateless) 프로토콜 이므로, 요청과 응답�
 
 HTTP 상태 코드는 `RFC2616`에 실려있는 것만 해도 40종류가 있고, `RFC6585`등과 같은 확장을 포함하면 60종류 이상이 있습니다. 요기에서는 대표적인 14가지 상태 코드를 알아보겠습니다.
 
-![HTTP는 클라이언트와 서버의 대화](/images/posts/what-is-http/4.png)
+![HTTP는 클라이언트와 서버의 대화](/images/posts/what-is-http/4.webp)
 
 상태 코드에 대한 내용을 클라이언트와 서버의 대화라고 느껴보세요.
 
@@ -362,7 +362,7 @@ HTTP 상태 코드는 `RFC2616`에 실려있는 것만 해도 40종류가 있고
 
 쿠키는 유저 식별과 상태 관리에 사용되고 있는 기능입니다. 웹 사이트가 유저의 상태를 관리하기 위해서 웹 브라우저 경유로 유저의 컴퓨터 상에 일시적으로 데이터를 기록해 두고, 다음에 그 유저가 웹 사이트에 액세스 해 왔을 때 지난번에 발행한 쿠키를 송신받을 수 있습니다.
 
-![Set-Cookie](/images/posts/what-is-http/5.png)
+![Set-Cookie](/images/posts/what-is-http/5.webp)
 
 쿠키를 위한 헤더 필드에는 `Set-Cookie`, `Cookie`가 있습니다.
 
