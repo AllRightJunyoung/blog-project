@@ -15,7 +15,7 @@ import {
   UnorderedList,
 } from "@chakra-ui/react";
 
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter/dist/cjs/prism";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import Image from "next/image";
 
 import remarkGfm from "remark-gfm";
