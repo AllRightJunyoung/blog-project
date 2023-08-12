@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     description: "준영의 기술블로그 입니다.",
   },
 };
-export const revalidate = 600;
+export const revalidate = 3600;
 
 export default function RootLayout({
   children,

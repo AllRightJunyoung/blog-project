@@ -1,5 +1,5 @@
 "use client";
-import ReactMarkdown from "react-markdown";
+// import ReactMarkdown from "react-markdown";
 import {
   Box,
   ListItem,
@@ -22,7 +22,7 @@ import remarkGfm from "remark-gfm";
 import atomDark from "react-syntax-highlighter/dist/cjs/styles/prism/atom-dark";
 import { CodeProps } from "react-markdown/lib/ast-to-react";
 import { ImageProps } from "next/image";
-import { ReactNode } from "react-markdown/lib/react-markdown";
+import { ReactMarkdown, ReactNode } from "react-markdown/lib/react-markdown";
 import { PropsWithChildren } from "react";
 import { MarkdownViewerProps } from "./MarkdownViewer.types";
 
