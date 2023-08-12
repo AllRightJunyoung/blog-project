@@ -1,5 +1,8 @@
 "use client";
 
+import dynamic from "next/dynamic";
+import { useEffect } from "react";
+
 import ListIcon from "public/icons/toc/list.svg";
 import CloseIcon from "public/icons/toc/close.svg";
 
@@ -10,13 +13,20 @@ import type { PostDetailSectionProps } from "./PostDetailSection.types";
 import { PostDetailTags } from "../../post/PostDetailTags";
 import { useSetRecoilState, useRecoilState } from "recoil";
 import { TocModalState, TocResoultionState } from "../../post/recoil";
-import dynamic from "next/dynamic";
+import Spinner from "../../common/Spinner/Spinner";
 
-import { useEffect } from "react";
+const MarkdownViewer = dynamic(() => import("../../markdown/MarkdownViewer"), {
+  ssr: false,
+  loading: () => <Spinner />,
+});
 
-import { TableOfContents } from "../../post/Toc";
-
-const MarkdownViewer = dynamic(() => import("../../markdown/MarkdownViewer"));
+const TableOfContents = dynamic(
+  () => import("../../post/Toc/TableOfContents"),
+  {
+    ssr: false,
+    loading: () => <Spinner />,
+  },
+);
 
 const PostDetailSection = ({
   title,
