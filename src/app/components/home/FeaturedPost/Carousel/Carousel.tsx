@@ -4,7 +4,9 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import type { CarouselProps } from "./Carousel.types";
 import uuid from "react-uuid";
-import { Text, Image, Flex } from "@chakra-ui/react";
+
+import Image from "next/image";
+import { Text, Flex } from "@chakra-ui/react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper";
 import { BellIcon, SunIcon, CalendarIcon, LinkIcon } from "@chakra-ui/icons";
@@ -60,10 +62,18 @@ const FeautredPostCarousel = ({ data }: CarouselProps) => {
 
                 <Flex alignItems="center">
                   <Image
-                    objectFit="cover"
+                    alt={post.title}
                     src={post.thumbnail}
-                    borderRadius={"xl"}
-                    alt={post.thumbnail}
+                    sizes="100vw"
+                    width={300}
+                    height={200}
+                    priority={true}
+                    style={{
+                      width: "100%",
+                      height: "auto",
+                      border: "2px solid gray",
+                      borderRadius: "20px",
+                    }}
                   />
                 </Flex>
               </Flex>

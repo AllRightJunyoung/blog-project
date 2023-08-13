@@ -30,18 +30,16 @@ const PostCard = ({
             <Image
               alt={title}
               src={thumbnail}
-              loading="lazy"
               sizes="100vw"
               width={300}
               height={200}
+              priority={true}
               style={{
                 width: "100%",
                 height: "auto",
                 border: "2px solid gray",
                 borderRadius: "20px",
               }}
-              placeholder="blur"
-              blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mO8UA8AAiUBUcc3qzwAAAAASUVORK5CYII"
             />
           </Box>
           <Text color="white" fontSize="18px" margin={5}>
