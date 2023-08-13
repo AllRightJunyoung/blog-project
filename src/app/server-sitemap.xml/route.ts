@@ -2,7 +2,7 @@ import { ISitemapField, getServerSideSitemap } from "next-sitemap";
 import { getAllPosts } from "../posts/utils";
 
 export async function GET(request: Request) {
-  const allposts = getAllPosts();
+  const allposts = await getAllPosts();
 
   const sitemapFields: ISitemapField[] = allposts.map((post) => {
     return {

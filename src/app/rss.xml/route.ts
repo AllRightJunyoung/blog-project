@@ -2,7 +2,7 @@ import RSS from "rss";
 import { getAllPosts } from "../posts/utils";
 
 export async function GET() {
-  const allposts = getAllPosts();
+  const allposts = await getAllPosts();
   const feed = new RSS({
     title: "준영의 기술블로그",
     description: "준영의 기술블로그 입니다.",

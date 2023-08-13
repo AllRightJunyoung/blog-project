@@ -1,14 +1,17 @@
-import fs from "fs";
 import path from "path";
+import { promises as fs } from "fs";
+import { readFile } from "fs/promises";
+
 import matter from "gray-matter";
 import type { PostsType } from "../types";
+import { cache } from "react";
 
 const postsDirectory = path.join(process.cwd(), "src/app/content");
 
-export const getPostData = (postId: string): PostsType => {
+export const getPostData = async (postId: string): Promise<PostsType> => {
   const postSlug = postId.replace(/\.md$/, "");
   const filePath = path.join(postsDirectory, `${postSlug}.md`);
-  const fileContent = fs.readFileSync(filePath, "utf-8");
+  const fileContent = await readFile(filePath, "utf8");
 
   const { data, content } = matter(fileContent);
 
@@ -17,19 +20,20 @@ export const getPostData = (postId: string): PostsType => {
     ...data,
     content,
   } as PostsType;
-
   return postData;
 };
-export const getAllPosts = () => {
-  const postFiles = fs.readdirSync(postsDirectory);
+export const getAllPosts = cache(async (): Promise<PostsType[]> => {
+  const postFiles = await fs.readdir(postsDirectory);
 
-  const allPosts = postFiles.map((postFile) => {
-    return getPostData(postFile);
-  });
+  const allPosts = await Promise.all(
+    postFiles.map(async (postFile) => {
+      return getPostData(postFile);
+    }),
+  );
 
   const sortedPosts = allPosts.sort((postA, postB) =>
     postA.date > postB.date ? -1 : 1,
   );
 
   return sortedPosts;
-};
+});

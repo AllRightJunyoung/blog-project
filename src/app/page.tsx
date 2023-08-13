@@ -9,8 +9,8 @@ const Layout = dynamic(() => import("./components/home/Layout/Layout"), {
   loading: () => <Spinner />,
 });
 
-export default function HomePage() {
-  const postAllData = getAllPosts();
+export default async function HomePage() {
+  const postAllData = await getAllPosts();
 
   return (
     <Recoil>

@@ -12,7 +12,7 @@ type Props = {
 export async function generateMetadata({
   params: { slug },
 }: Props): Promise<Metadata> {
-  const { title, description } = getPostData(slug);
+  const { title, description } = await getPostData(slug);
   return {
     title,
     description,
@@ -31,7 +31,7 @@ export async function generateMetadata({
 }
 
 export default async function PostDetailPage({ params: { slug } }: Props) {
-  const postData = getPostData(slug);
+  const postData = await getPostData(slug);
 
   return (
     <Recoil>

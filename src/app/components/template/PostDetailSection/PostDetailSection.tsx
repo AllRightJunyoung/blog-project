@@ -89,7 +89,7 @@ const PostDetailSection = ({
 
         <Flex padding={3} gap={5}>
           <MarkdownViewer>{content}</MarkdownViewer>
-          <TableOfContents />
+          {content && <TableOfContents />}
         </Flex>
       </Box>
     </article>
