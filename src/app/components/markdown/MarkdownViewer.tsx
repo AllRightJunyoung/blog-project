@@ -1,5 +1,5 @@
 "use client";
-// import ReactMarkdown from "react-markdown";
+
 import {
   Box,
   ListItem,
@@ -15,10 +15,10 @@ import {
   UnorderedList,
 } from "@chakra-ui/react";
 
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import Image from "next/image";
-
 import remarkGfm from "remark-gfm";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+
 import atomDark from "react-syntax-highlighter/dist/cjs/styles/prism/atom-dark";
 import { CodeProps } from "react-markdown/lib/ast-to-react";
 import { ImageProps } from "next/image";
@@ -36,8 +36,7 @@ const customMarkDownComponent: any = {
           width={600}
           height={400}
           sizes="100vw"
-          placeholder="blur"
-          blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mO8UA8AAiUBUcc3qzwAAAAASUVORK5CYII"
+          priority={true}
           style={{
             width: "100%",
             height: "auto",

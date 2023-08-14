@@ -1,7 +1,6 @@
 "use client";
 
-import dynamic from "next/dynamic";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import ListIcon from "public/icons/toc/list.svg";
 import CloseIcon from "public/icons/toc/close.svg";
@@ -11,20 +10,21 @@ import { Box, Text, Flex, useMediaQuery } from "@chakra-ui/react";
 import { TimeIcon, InfoOutlineIcon } from "@chakra-ui/icons";
 import type { PostDetailSectionProps } from "./PostDetailSection.types";
 import { PostDetailTags } from "../../post/PostDetailTags";
-import { useSetRecoilState, useRecoilState } from "recoil";
-import { TocModalState, TocResoultionState } from "../../post/recoil";
+import { useRecoilState } from "recoil";
+import { TocModalState } from "../../post/recoil";
+
+import dynamic from "next/dynamic";
 import Spinner from "../../common/Spinner/Spinner";
 
 const MarkdownViewer = dynamic(() => import("../../markdown/MarkdownViewer"), {
-  ssr: false,
+  ssr: true,
   loading: () => <Spinner />,
 });
 
 const TableOfContents = dynamic(
   () => import("../../post/Toc/TableOfContents"),
   {
-    ssr: false,
-    loading: () => <Spinner />,
+    ssr: true,
   },
 );
 
@@ -39,12 +39,15 @@ const PostDetailSection = ({
     ssr: true,
     fallback: false,
   });
+  const [headingElements, setHeadingElements] = useState<Element[]>([]);
   const [activeTocModal, setActiveTocModal] = useRecoilState(TocModalState);
-  const setTocResoultion = useSetRecoilState(TocResoultionState);
 
   useEffect(() => {
-    setTocResoultion(isSmallerThan960);
-  }, [isSmallerThan960]);
+    const article = document.querySelector("article");
+    if (!article) return;
+    const headingElements = Array.from(article.querySelectorAll("h1,h2"));
+    setHeadingElements(headingElements);
+  }, []);
 
   return (
     <article>
@@ -89,7 +92,14 @@ const PostDetailSection = ({
 
         <Flex padding={3} gap={5}>
           <MarkdownViewer>{content}</MarkdownViewer>
-          {content && <TableOfContents />}
+          {headingElements.length > 0 ? (
+            <TableOfContents
+              headingElements={headingElements}
+              isSmallerThan960={isSmallerThan960}
+            />
+          ) : (
+            <Spinner />
+          )}
         </Flex>
       </Box>
     </article>
