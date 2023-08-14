@@ -1,7 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
-
 import ListIcon from "public/icons/toc/list.svg";
 import CloseIcon from "public/icons/toc/close.svg";
 
@@ -12,21 +10,8 @@ import type { PostDetailSectionProps } from "./PostDetailSection.types";
 import { PostDetailTags } from "../../post/PostDetailTags";
 import { useRecoilState } from "recoil";
 import { TocModalState } from "../../post/recoil";
-
-import dynamic from "next/dynamic";
-import Spinner from "../../common/Spinner/Spinner";
-
-const MarkdownViewer = dynamic(() => import("../../markdown/MarkdownViewer"), {
-  ssr: true,
-  loading: () => <Spinner />,
-});
-
-const TableOfContents = dynamic(
-  () => import("../../post/Toc/TableOfContents"),
-  {
-    ssr: true,
-  },
-);
+import MarkdownViewer from "../../markdown/MarkdownViewer";
+import { TableOfContents } from "../../post/Toc";
 
 const PostDetailSection = ({
   title,
@@ -39,15 +24,7 @@ const PostDetailSection = ({
     ssr: true,
     fallback: false,
   });
-  const [headingElements, setHeadingElements] = useState<Element[]>([]);
   const [activeTocModal, setActiveTocModal] = useRecoilState(TocModalState);
-
-  useEffect(() => {
-    const article = document.querySelector("article");
-    if (!article) return;
-    const headingElements = Array.from(article.querySelectorAll("h1,h2"));
-    setHeadingElements(headingElements);
-  }, []);
 
   return (
     <article>
@@ -89,17 +66,9 @@ const PostDetailSection = ({
             <PostDetailTags tags={tags} />
           </Box>
         </Box>
-
         <Flex padding={3} gap={5}>
           <MarkdownViewer>{content}</MarkdownViewer>
-          {headingElements.length > 0 ? (
-            <TableOfContents
-              headingElements={headingElements}
-              isSmallerThan960={isSmallerThan960}
-            />
-          ) : (
-            <Spinner />
-          )}
+          <TableOfContents isSmallerThan960={isSmallerThan960} />
         </Flex>
       </Box>
     </article>

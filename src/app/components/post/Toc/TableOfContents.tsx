@@ -6,14 +6,18 @@ import TableOfItemMobile from "./TableOfItemMobile";
 import { getIntersectionObserver } from "../utils/observer";
 
 type Props = {
-  headingElements: Element[];
   isSmallerThan960: boolean;
 };
 
-const TableOfContents = ({ headingElements, isSmallerThan960 }: Props) => {
+const TableOfContents = ({ isSmallerThan960 }: Props) => {
+  const [headingElements, setHeadingElements] = useState<Element[]>([]);
   const [activeId, setActiveId] = useState<string>("");
 
   useEffect(() => {
+    const article = document.querySelector("article");
+    if (!article) return;
+    const headingElements = Array.from(article.querySelectorAll("h1,h2"));
+    setHeadingElements(headingElements);
     setActiveId(headingElements[0].id);
     const observer = getIntersectionObserver(setActiveId);
     headingElements.map((element) => {
