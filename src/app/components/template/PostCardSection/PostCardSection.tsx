@@ -1,5 +1,6 @@
 import uuid from "react-uuid";
 import { Grid, Spinner } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 import PostCard from "../../home/PostCard";
 import { PostCardSectionProps } from "./PostCardSection.types";
 import {
@@ -38,15 +39,20 @@ const PostCardSection = ({ data }: PostCardSectionProps) => {
       {postCardData ? (
         postCardData.map((post) => {
           return (
-            <PostCard
-              slug={post.slug}
-              title={post.title}
-              category={post.category}
-              date={post.date}
-              diffDate={getDiffDate(post.date)}
-              thumbnail={post.thumbnail}
+            <motion.div
               key={uuid()}
-            />
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <PostCard
+                slug={post.slug}
+                title={post.title}
+                category={post.category}
+                date={post.date}
+                diffDate={getDiffDate(post.date)}
+                thumbnail={post.thumbnail}
+              />
+            </motion.div>
           );
         })
       ) : (
