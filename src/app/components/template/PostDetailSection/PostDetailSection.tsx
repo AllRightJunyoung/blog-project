@@ -12,7 +12,9 @@ import { TocModalState } from "../../post/recoil";
 import MarkdownViewer from "../../markdown/MarkdownViewer";
 import { TableOfContents } from "../../post/Toc";
 import { motion } from "framer-motion";
+
 import { fadeIn } from "@/app/styles/framer-motions";
+import Giscus from "@giscus/react";
 
 const PostDetailSection = ({
   title,
@@ -72,6 +74,21 @@ const PostDetailSection = ({
             <MarkdownViewer>{content}</MarkdownViewer>
             <TableOfContents isSmallerThan960={isSmallerThan960} />
           </Flex>
+          <Box padding={3}>
+            <Giscus
+              category="Comments"
+              categoryId="DIC_kwDOKM2rEM4CY8Vl"
+              repo="AllRightJunyoung/junyoungBlog.comments"
+              repoId="MDEwOlJlcG9zaXRvcnkzOTEzMTMwMjA="
+              mapping="pathname"
+              strict="0"
+              reactionsEnabled="1"
+              emitMetadata="0"
+              inputPosition="bottom"
+              theme="dark_dimmed"
+              lang="ko"
+            />
+          </Box>
         </Box>
       </article>
     </motion.div>
