@@ -79,7 +79,7 @@ const PostDetailSection = ({
               category="Comments"
               categoryId="DIC_kwDOKM2rEM4CY8Vl"
               repo="AllRightJunyoung/junyoungBlog.comments"
-              repoId="MDEwOlJlcG9zaXRvcnkzOTEzMTMwMjA="
+              repoId="R_kgDOKM2rEA"
               mapping="pathname"
               strict="0"
               reactionsEnabled="1"
