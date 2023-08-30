@@ -9,7 +9,7 @@ const TableOfItem = ({
 }: TableOfItemProps) => {
   return (
     <Box bg="white" overflowY="scroll" position="sticky" height="100vh" top={1}>
-      <Box bg="#141E25">
+      <Box bg="#141E25" padding="10px">
         <Heading
           as="h3"
           size="md"

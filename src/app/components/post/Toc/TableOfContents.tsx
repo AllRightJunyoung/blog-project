@@ -26,7 +26,7 @@ const TableOfContents = ({ isSmallerThan960 }: Props) => {
   }, []);
 
   return (
-    <section>
+    <aside style={{ marginLeft: "20px" }}>
       {!isSmallerThan960 ? (
         <TableOfItem
           headingElements={headingElements}
@@ -40,7 +40,7 @@ const TableOfContents = ({ isSmallerThan960 }: Props) => {
           setActiveId={setActiveId}
         />
       )}
-    </section>
+    </aside>
   );
 };
 export default TableOfContents;
