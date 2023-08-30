@@ -5,12 +5,11 @@ import { useRecoilValue } from "recoil";
 import { FeaturedPostsState } from "../recoil";
 import FeautredPostCarousel from "./Carousel";
 import { fadeInFromLeft } from "@/app/styles/framer-motions";
-import Spinner from "../../common/Spinner/Spinner";
 
 const FeaturedPost = () => {
   const featuredPost = useRecoilValue(FeaturedPostsState);
 
-  return featuredPost.length ? (
+  return (
     <motion.div variants={fadeInFromLeft} initial="hidden" animate="visible">
       <Flex direction="column" alignItems="center">
         <Box>
@@ -23,8 +22,6 @@ const FeaturedPost = () => {
         </Box>
       </Flex>
     </motion.div>
-  ) : (
-    <Spinner />
   );
 };
 
