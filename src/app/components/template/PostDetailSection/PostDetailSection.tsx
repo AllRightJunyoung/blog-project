@@ -31,7 +31,9 @@ const PostDetailSection = ({
 
   return (
     <motion.div variants={fadeIn} initial="hidden" animate="visible">
-      <article style={{ padding: "40px 80px" }}>
+      <article
+        style={{ padding: !isSmallerThan960 ? "40px 30px 60px 60px" : "0px" }}
+      >
         {isSmallerThan960 && (
           <Box
             position="fixed"

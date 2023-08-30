@@ -26,7 +26,7 @@ const TableOfContents = ({ isSmallerThan960 }: Props) => {
   }, []);
 
   return (
-    <aside style={{ marginLeft: "20px" }}>
+    <aside style={{ marginLeft: "10px" }}>
       {!isSmallerThan960 ? (
         <TableOfItem
           headingElements={headingElements}
