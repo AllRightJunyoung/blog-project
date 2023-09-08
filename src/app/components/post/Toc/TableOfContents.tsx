@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import TableOfItem from "./TableOfItem";
 import TableOfItemMobile from "./TableOfItemMobile";
 import { getIntersectionObserver } from "../utils/observer";
+import { Flex } from "@chakra-ui/react";
+import ToolBox from "./ToolBox";
 
 type Props = {
   isSmallerThan960: boolean;
@@ -28,11 +30,14 @@ const TableOfContents = ({ isSmallerThan960 }: Props) => {
   return (
     <aside style={{ marginLeft: "10px" }}>
       {!isSmallerThan960 ? (
-        <TableOfItem
-          headingElements={headingElements}
-          activeId={activeId}
-          setActiveId={setActiveId}
-        />
+        <Flex direction="column" margin={10} position="sticky" top={1}>
+          <TableOfItem
+            headingElements={headingElements}
+            activeId={activeId}
+            setActiveId={setActiveId}
+          />
+          <ToolBox />
+        </Flex>
       ) : (
         <TableOfItemMobile
           headingElements={headingElements}
