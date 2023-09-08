@@ -11,6 +11,7 @@ import type { TableOfItemProps } from "./TableOfItem.types";
 import { useRef } from "react";
 import { useRecoilState } from "recoil";
 import { TocModalState } from "../recoil";
+import ToolBox from "./ToolBox";
 
 const TableOfItemMobile = ({
   headingElements,
@@ -84,6 +85,7 @@ const TableOfItemMobile = ({
             ),
           )}
         </List>
+        <ToolBox />
       </Box>
     </Box>
   ) : (
