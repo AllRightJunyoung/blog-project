@@ -17,7 +17,7 @@ const ToolBox = () => {
         <ClipButton width={40} height={40} />
       </Box>
       <Box cursor="pointer">
-        <Link href={`#title`}>
+        <Link href={`#nav-bar`}>
           <TopButton width={40} height={40} />
         </Link>
       </Box>

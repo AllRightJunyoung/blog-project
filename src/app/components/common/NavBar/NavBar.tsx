@@ -5,7 +5,13 @@ import NextLink from "next/link";
 
 const NavBar = () => {
   return (
-    <Flex gap="20px" alignSelf="flex-end" padding="10px" marginEnd="5">
+    <Flex
+      gap="20px"
+      alignSelf="flex-end"
+      padding="10px"
+      marginEnd="5"
+      id="nav-bar"
+    >
       <Flex>
         <Link as={NextLink} href="/" color="NavBar.fontColor" fontSize="xl">
           Home
