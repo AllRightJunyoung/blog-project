@@ -4,7 +4,7 @@ import type { HorizontalHeadingProps } from "./HorizontalHeading.types";
 
 const HorizontalHeading = ({ title, fontSize }: HorizontalHeadingProps) => {
   return (
-    <Flex flexDirection="column">
+    <Flex flexDirection="column" id="title">
       <Text fontSize={fontSize} color="white" fontWeight="bold">
         {title}
       </Text>
