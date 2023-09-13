@@ -52,7 +52,7 @@ const PostDetailSection = ({
         )}
         <Box>
           <Box padding={10}>
-            <HorizontalHeading title={title} fontSize="4xl" id="title" />
+            <HorizontalHeading title={title} fontSize="4xl" />
             <Flex gap={5}>
               <Flex alignItems="center" gap={2} marginTop={3} marginBottom={3}>
                 <InfoOutlineIcon color="white" />
