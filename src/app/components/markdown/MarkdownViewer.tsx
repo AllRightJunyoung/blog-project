@@ -22,7 +22,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import atomDark from "react-syntax-highlighter/dist/cjs/styles/prism/atom-dark";
 import { CodeProps } from "react-markdown/lib/ast-to-react";
 import { ImageProps } from "next/image";
-import { ReactMarkdown, ReactNode } from "react-markdown/lib/react-markdown";
+import { ReactNode, ReactMarkdown } from "react-markdown/lib/react-markdown";
 import { PropsWithChildren } from "react";
 import { MarkdownViewerProps } from "./MarkdownViewer.types";
 

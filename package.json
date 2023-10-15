@@ -15,7 +15,6 @@
     "@chakra-ui/react": "^2.6.1",
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
-    "@faker-js/faker": "^8.0.1",
     "@giscus/react": "^2.3.0",
     "@next/bundle-analyzer": "^13.4.13",
     "@plaiceholder/next": "^3.0.0",

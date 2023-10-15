@@ -14,6 +14,7 @@ import { TableOfContents } from "../../post/Toc";
 import { motion } from "framer-motion";
 
 import { fadeIn } from "@/app/styles/framer-motions";
+
 import Giscus from "@giscus/react";
 
 const PostDetailSection = ({

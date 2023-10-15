@@ -24,6 +24,8 @@ export const PostCardSectionState = selector({
   key: "PostCardSectionState",
   get: ({ get }) => {
     const POST_LENGTH = 4;
+
+    // 1. PagiNation 계산
     const currentPage = get(currentPageState);
     const offset = (currentPage - 1) * POST_LENGTH;
     const allPosts = get(AllPostState);

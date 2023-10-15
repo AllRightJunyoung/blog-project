@@ -1975,11 +1975,6 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.40.0.tgz#3ba73359e11f5a7bd3e407f70b3528abfae69cec"
   integrity sha512-ElyB54bJIhXQYVKjDSvCkPO1iU1tSAeVQJbllWJq1XQSmmA4dgFk8CbiBGpiOPxleE48vDogxCtmMYku4HSVLA==
 
-"@faker-js/faker@^8.0.1":
-  version "8.0.1"
-  resolved "https://registry.yarnpkg.com/@faker-js/faker/-/faker-8.0.1.tgz#2157068931aaab555eda5ff87f50330aeeb6153a"
-  integrity sha512-kbh5MenpTN9U0B4QcOI1NoTPlZHniSYQ3BHbhAnPjJGAmmFqxoxTE4sGdpy7ZOO9038DPGCuhXyMkjOr05uVwA==
-
 "@giscus/react@^2.3.0":
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/@giscus/react/-/react-2.3.0.tgz#1c13f2f96bb67684d4f5288dc1ed3155ff307ce4"
