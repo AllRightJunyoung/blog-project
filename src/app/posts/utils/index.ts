@@ -2,10 +2,11 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import type { PostsType } from "../types";
+import { cache } from "react";
 
 const postsDirectory = path.join(process.cwd(), "src/app/content");
 
-export const getPostData = (postId: string): PostsType => {
+export const getPostData = cache((postId: string): PostsType => {
   const postSlug = postId.replace(/\.md$/, "");
   const filePath = path.join(postsDirectory, `${postSlug}.md`);
   const fileContent = fs.readFileSync(filePath, "utf-8");
@@ -17,10 +18,9 @@ export const getPostData = (postId: string): PostsType => {
     ...data,
     content,
   } as PostsType;
-
   return postData;
-};
-export const getAllPosts = () => {
+});
+export const getAllPosts = cache(() => {
   const postFiles = fs.readdirSync(postsDirectory);
 
   const allPosts = postFiles.map((postFile) => {
@@ -32,4 +32,4 @@ export const getAllPosts = () => {
   );
 
   return sortedPosts;
-};
+});
