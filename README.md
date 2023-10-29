@@ -13,11 +13,9 @@
 
 ## Demo
 
-## 주요 기술 스택
+## 기술 스택
+![jy (1)](https://github.com/AllRightJunyoung/blog-project/assets/100929485/b474d08d-eb85-4bf4-af1b-87bbecbe46f5)
 
-- Next.js (13버전)
-- Chakra-UI
-- Recoil
 
 ## 주소
 
