@@ -1,15 +1,14 @@
 "use client";
-
+import { HorizontalHeading } from "@/app/components/common";
 import ListIcon from "public/icons/toc/list.svg";
 import CloseIcon from "public/icons/toc/close.svg";
-import { HorizontalHeading } from "../../common";
 import { Box, Text, Flex, useMediaQuery } from "@chakra-ui/react";
 import { TimeIcon, InfoOutlineIcon } from "@chakra-ui/icons";
 import type { PostDetailSectionProps } from "./PostDetailSection.types";
 import { PostDetailTags } from "../../post/PostDetailTags";
 import { useRecoilState } from "recoil";
 import { TocModalState } from "../../post/recoil";
-import MarkdownViewer from "../../markdown/MarkdownViewer";
+import MarkdownViewer from "../../post/markdown/MarkdownViewer";
 import { TableOfContents } from "../../post/Toc";
 import { motion } from "framer-motion";
 
@@ -52,7 +51,7 @@ const PostDetailSection = ({
           </Box>
         )}
         <Box>
-          <Box padding={10} as="article">
+          <Box padding={10}>
             <HorizontalHeading title={title} fontSize="4xl" />
             <Flex gap={5}>
               <Flex alignItems="center" gap={2} marginTop={3} marginBottom={3}>
