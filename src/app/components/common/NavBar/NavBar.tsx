@@ -11,6 +11,7 @@ const NavBar = () => {
       padding="10px"
       marginEnd="5"
       id="nav-bar"
+      as="nav"
     >
       <Flex>
         <Link as={NextLink} href="/" color="NavBar.fontColor" fontSize="xl">

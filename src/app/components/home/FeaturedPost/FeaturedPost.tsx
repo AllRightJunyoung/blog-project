@@ -11,7 +11,7 @@ const FeaturedPost = () => {
 
   return (
     <motion.div variants={fadeInFromLeft} initial="hidden" animate="visible">
-      <Flex direction="column" alignItems="center">
+      <Flex direction="column" alignItems="center" as="article">
         <Box>
           <Flex direction="column" gap={5}>
             <Heading as="h1" color="white" fontStyle="italic" padding={5}>

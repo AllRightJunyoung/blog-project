@@ -11,6 +11,7 @@ const Header = () => {
       position="sticky"
       height="50px"
       width="100vw"
+      as="header"
     >
       <NavBar />
     </Flex>

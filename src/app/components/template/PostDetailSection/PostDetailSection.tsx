@@ -32,7 +32,7 @@ const PostDetailSection = ({
 
   return (
     <motion.div variants={fadeIn} initial="hidden" animate="visible">
-      <article
+      <main
         style={{ padding: !isSmallerThan960 ? "40px 30px 60px 60px" : "0px" }}
       >
         {isSmallerThan960 && (
@@ -52,7 +52,7 @@ const PostDetailSection = ({
           </Box>
         )}
         <Box>
-          <Box padding={10}>
+          <Box padding={10} as="article">
             <HorizontalHeading title={title} fontSize="4xl" />
             <Flex gap={5}>
               <Flex alignItems="center" gap={2} marginTop={3} marginBottom={3}>
@@ -73,11 +73,11 @@ const PostDetailSection = ({
               <PostDetailTags tags={tags} />
             </Box>
           </Box>
-          <Flex padding={3} gap={5}>
+          <Flex padding={3} gap={5} as="article">
             <MarkdownViewer>{content}</MarkdownViewer>
             <TableOfContents isSmallerThan960={isSmallerThan960} />
           </Flex>
-          <Box padding={3}>
+          <Box padding={3} as="footer">
             <Giscus
               category="Comments"
               categoryId="DIC_kwDOKM2rEM4CY8Vl"
@@ -93,7 +93,7 @@ const PostDetailSection = ({
             />
           </Box>
         </Box>
-      </article>
+      </main>
     </motion.div>
   );
 };

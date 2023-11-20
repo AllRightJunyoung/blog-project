@@ -1,15 +1,16 @@
 "use client";
 
+import FeaturedPost from "../../FeaturedPost";
 import type { LayoutProps } from "./Layout.types";
-import { Nav, Footer, Main } from "@/app/components/home/Layout";
+import { Footer, Main } from "@/app/components/home/Layout";
 
-const Layout = ({ data }: LayoutProps) => {
+const HomeLayout = ({ data }: LayoutProps) => {
   return (
     <>
-      <Nav />
+      <FeaturedPost />
       <Main data={data} />
       <Footer />
     </>
   );
 };
-export default Layout;
+export default HomeLayout;
