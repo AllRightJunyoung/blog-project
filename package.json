@@ -7,7 +7,8 @@
     "build": "ANALYZE=true NODE_ENV=production next build",
     "postbuild": "next-sitemap",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "upload-cloudinary": "ts-node --project tsconfig.json ./script/uploadCloudinary"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.0.19",
@@ -21,6 +22,7 @@
     "@types/node": "20.1.4",
     "@types/react": "18.2.6",
     "@types/react-dom": "18.2.4",
+    "dotenv": "^16.3.1",
     "eslint": "^8.40.0",
     "eslint-config-next": "13.4.2",
     "framer-motion": "^10.16.1",
@@ -36,6 +38,7 @@
     "recoil": "^0.7.7",
     "rss": "^1.2.2",
     "swiper": "^9.4.0",
+    "ts-node": "^10.9.1",
     "typescript": "5.0.4"
   },
   "devDependencies": {
@@ -46,10 +49,12 @@
     "@types/rss": "^0.0.30",
     "@typescript-eslint/eslint-plugin": "^5.59.6",
     "@typescript-eslint/parser": "^5.59.6",
+    "cloudinary": "^1.41.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-unused-imports": "^3.0.0",
+    "glob": "^10.3.10",
     "prettier": "^2.8.8",
     "prism-react-renderer": "^2.0.4",
     "react-syntax-highlighter": "^15.5.0",
