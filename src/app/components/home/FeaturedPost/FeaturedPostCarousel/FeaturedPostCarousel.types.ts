@@ -1,4 +1,5 @@
 import type { PostsType } from "@/app/types/shared";
-export interface MainProps {
+
+export interface FeaturedPostCarouselProps {
   data: PostsType[];
 }

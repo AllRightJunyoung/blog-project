@@ -1,5 +1,5 @@
 import { ISitemapField, getServerSideSitemap } from "next-sitemap";
-import { getAllPosts } from "../posts/utils";
+import { getAllPosts } from "../utils/posts";
 
 export async function GET(request: Request) {
   const allposts = await getAllPosts();

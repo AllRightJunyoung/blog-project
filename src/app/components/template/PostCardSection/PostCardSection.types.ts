@@ -1,4 +1,4 @@
-import { PostsType } from "@/app/posts/types";
+import { PostsType } from "@/app/types/shared";
 export type PostCardSectionProps = {
   data: PostsType[];
 };

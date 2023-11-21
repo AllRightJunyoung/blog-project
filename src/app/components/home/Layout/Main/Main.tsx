@@ -8,7 +8,7 @@ import {
   SearchBar,
 } from "@/app/components/home";
 
-import { HorizontalHeading } from "@/app/components/common";
+import { HorizontalHeading } from "@/app/components/shared";
 import { MainProps } from "./Main.types";
 
 const Main = ({ data }: MainProps) => {

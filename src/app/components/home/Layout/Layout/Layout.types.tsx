@@ -1,4 +1,4 @@
-import type { PostsType } from "@/app/posts/types";
-export type LayoutProps = {
+import type { PostsType } from "@/app/types/shared";
+export interface LayoutProps {
   data: PostsType[];
-};
+}

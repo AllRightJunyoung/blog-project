@@ -1,17 +1,13 @@
-import { motion } from "framer-motion";
 import uuid from "react-uuid";
-import { Grid } from "@chakra-ui/react";
-import PostCard from "../../home/PostCard";
-import { PostCardSectionProps } from "./PostCardSection.types";
-import {
-  AllPostState,
-  PostCardSectionState,
-} from "@/app/components/home/recoil";
-
+import { AllPostState, PostCardSectionState } from "@/app/recoil/home";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { useEffect } from "react";
-import { getDiffDate } from "../../home/utils/date";
+import { motion } from "framer-motion";
+import { Grid } from "@chakra-ui/react";
+import { PostCardSectionProps } from "./PostCardSection.types";
 import { fadeInFromLeft } from "@/app/styles/framer-motions";
+import { getDiffDate } from "@/app/utils/home/date";
+import { PostCard } from "../../home";
 
 const PostCardSection = ({ data }: PostCardSectionProps) => {
   const setAllPosts = useSetRecoilState(AllPostState);

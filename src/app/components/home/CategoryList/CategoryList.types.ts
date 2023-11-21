@@ -1,5 +1,5 @@
-import { PostsType } from "@/app/posts/types";
+import { PostsType } from "@/app/types/shared";
 
-export type CategoryListProps = {
+export interface CategoryListProps {
   data: PostsType[];
-};
+}

@@ -1,9 +1,8 @@
 "use client";
-
-import { HStack } from "@chakra-ui/react";
-import { CategoryTag } from "../../common";
-import type { CategoryListProps } from "./CategoryList.types";
 import uuid from "react-uuid";
+import CategoryTag from "../CategoryTag";
+import { HStack } from "@chakra-ui/react";
+import type { CategoryListProps } from "./CategoryList.types";
 
 const CategoryList = ({ data }: CategoryListProps) => {
   let categories = data.map((postData) => {

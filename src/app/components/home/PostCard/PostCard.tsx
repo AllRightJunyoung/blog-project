@@ -1,12 +1,10 @@
 "use client";
-
-import { GridItem, Flex, Text, Box } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { CalendarIcon, TimeIcon, ViewIcon } from "@chakra-ui/icons";
+import { GridItem, Flex, Text, Box } from "@chakra-ui/react";
 import type { PostCardProps } from "./PostCard.types";
-import { useRouter } from "next/navigation";
 
 const PostCard = ({
   title,

@@ -1,3 +1,3 @@
-export type FeaturedPostTagsProps = {
+export interface FeaturedPostTagsProps {
   tags: string[];
-};
+}

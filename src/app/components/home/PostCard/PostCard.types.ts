@@ -1,2 +1,2 @@
-import type { PostCardType } from "@/app/posts/types";
+import type { PostCardType } from "@/app/types/shared";
 export type PostCardProps = PostCardType;

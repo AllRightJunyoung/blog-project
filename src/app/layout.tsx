@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import GoogleAnalytics from "./components/common/GoogleAnalytics";
+import GoogleAnalytics from "./components/shared/GoogleAnalytics";
 import { Suspense } from "react";
 
 export const metadata: Metadata = {

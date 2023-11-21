@@ -1,8 +1,9 @@
 import { Header, HomeLayout } from "./components/home/Layout";
-import { getAllPosts } from "./posts/utils";
 import { ChakraProviders, Recoil } from "./providers";
+import { getAllPosts } from "./utils/shared/readFile";
+
 export default async function HomePage() {
-  const postAllData = await getAllPosts();
+  const postAllData = getAllPosts();
 
   return (
     <Recoil>

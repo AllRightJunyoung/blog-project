@@ -1,7 +1,7 @@
-import { HStack } from "@chakra-ui/react";
-import { PostTag } from "@/app/components/common";
-import type { FeaturedPostTagsProps } from "./FeaturedPostTags.types";
 import uuid from "react-uuid";
+import type { FeaturedPostTagsProps } from "./FeaturedPostTags.types";
+import PostTag from "@/app/components/shared/PostTag";
+import { HStack } from "@chakra-ui/react";
 
 const FeaturedPostTags = ({ tags }: FeaturedPostTagsProps) => {
   return (

@@ -1,15 +1,15 @@
 "use client";
-import { HorizontalHeading } from "@/app/components/common";
+import { HorizontalHeading } from "@/app/components/shared";
 import ListIcon from "public/icons/toc/list.svg";
 import CloseIcon from "public/icons/toc/close.svg";
 import { Box, Text, Flex, useMediaQuery } from "@chakra-ui/react";
 import { TimeIcon, InfoOutlineIcon } from "@chakra-ui/icons";
 import type { PostDetailSectionProps } from "./PostDetailSection.types";
-import { PostDetailTags } from "../../post/PostDetailTags";
+import { PostDetailTags } from "../../posts/PostDetailTags";
 import { useRecoilState } from "recoil";
-import { TocModalState } from "../../post/recoil";
-import MarkdownViewer from "../../post/markdown/MarkdownViewer";
-import { TableOfContents } from "../../post/Toc";
+import { TocModalState } from "../../../recoil/posts";
+import MarkdownViewer from "../../posts/markdown/MarkdownViewer";
+import { TableOfContents } from "../../posts/Toc";
 import { motion } from "framer-motion";
 
 import { fadeIn } from "@/app/styles/framer-motions";

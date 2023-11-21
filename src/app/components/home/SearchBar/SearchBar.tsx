@@ -1,7 +1,6 @@
-import { Input, Flex } from "@chakra-ui/react";
-import SearchIcon from "public/icons/post/search.svg";
 import { useSetRecoilState } from "recoil";
-import { SearchBarInputState } from "../recoil";
+import { SearchBarInputState } from "@/app/recoil/home";
+import { Input, Flex } from "@chakra-ui/react";
 
 const SearchBar = () => {
   const setSearchBarInput = useSetRecoilState(SearchBarInputState);
@@ -30,7 +29,7 @@ const SearchBar = () => {
         width={500}
         onChange={handleInput}
       />
-      <SearchIcon width="50" height="50" />
+      {/* <SearchIcon width="50" height="50" /> */}
     </Flex>
   );
 };

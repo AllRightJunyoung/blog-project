@@ -1,8 +1,9 @@
-import Header from "../../components/home/Layout/Header";
 import { ChakraProviders, Recoil } from "../../providers";
-import { PostDetailSection } from "@/app/components/template/PostDetailSection";
 import { Metadata } from "next";
-import { getPostData } from "../utils";
+import { getPostData } from "../../utils/posts";
+import { PostDetailSection } from "@/app/components/template/PostDetailSection";
+import Header from "../../components/home/Layout/Header";
+
 type Props = {
   params: {
     slug: string;
@@ -31,7 +32,7 @@ export async function generateMetadata({
 }
 
 export default async function PostDetailPage({ params: { slug } }: Props) {
-  const postData = await getPostData(slug);
+  const postData = getPostData(slug);
 
   return (
     <Recoil>

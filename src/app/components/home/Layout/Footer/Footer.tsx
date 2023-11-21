@@ -1,8 +1,8 @@
 "use client";
 
 import { Flex, Box } from "@chakra-ui/react";
-import { FooterMessage } from "@/app/components/home";
-import { SnsIcons, UserProfile } from "@/app/components/common";
+import { FooterMessage, SnsIcons, UserProfile } from "@/app/components/home";
+
 const Footer = () => {
   return (
     <Flex direction="column" alignItems="center" marginTop={10} as="footer">
