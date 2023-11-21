@@ -1,10 +1,10 @@
 "use client";
-import type { PostDetailSectionProps } from "./PostDetailSection.types";
+import type { PostDetailLayoutProps } from "./PostDetailLayout.types";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/app/styles/framer-motions";
 import { useRecoilState } from "recoil";
 import { TocModalState } from "@/app/recoil/posts";
-import { HorizontalHeading } from "@/app/components/shared";
+import { HorizontalHeading, Footer } from "@/app/components/shared";
 import { Box, Text, Flex, useMediaQuery } from "@chakra-ui/react";
 import {
   MarkdownViewer,
@@ -15,13 +15,13 @@ import { TimeIcon, InfoOutlineIcon } from "@chakra-ui/icons";
 import Image from "next/image";
 import Giscus from "@giscus/react";
 
-const PostDetailSection = ({
+const PostDetailLayout = ({
   title,
   content,
   date,
   tags,
   category,
-}: PostDetailSectionProps) => {
+}: PostDetailLayoutProps) => {
   const [isSmallerThan960] = useMediaQuery("(max-width: 960px)", {
     ssr: true,
     fallback: false,
@@ -100,10 +100,11 @@ const PostDetailSection = ({
               lang="ko"
             />
           </Box>
+          <Footer />
         </Box>
       </main>
     </motion.div>
   );
 };
 
-export default PostDetailSection;
+export default PostDetailLayout;

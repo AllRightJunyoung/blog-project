@@ -1,8 +1,17 @@
+import dynamic from "next/dynamic";
 import { Metadata } from "next";
 import { getPostData } from "@/app/utils/shared/readFile";
 import { ChakraProviders, Recoil } from "../../providers";
-import { PostDetailSection } from "@/app/components/template/PostDetailSection";
-import { Header, Footer } from "@/app/components/shared";
+import { Header } from "@/app/components/shared";
+import Spinner from "@/app/components/shared/Spinner";
+
+const PostDetailPageLayout = dynamic(
+  () => import("@/app/components/posts/Layout/PostDetailLayout"),
+  {
+    loading: () => <Spinner />,
+    ssr: false,
+  },
+);
 
 type Props = {
   params: {
@@ -38,14 +47,13 @@ export default async function PostDetailPage({ params: { slug } }: Props) {
     <Recoil>
       <ChakraProviders>
         <Header />
-        <PostDetailSection
+        <PostDetailPageLayout
           title={postData.title}
           content={postData.content}
           date={postData.date}
           tags={postData.tags}
           category={postData.category}
         />
-        <Footer />
       </ChakraProviders>
     </Recoil>
   );

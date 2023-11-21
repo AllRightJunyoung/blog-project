@@ -11,8 +11,14 @@ const breakpoints = {
 export const CustomTheme = extendTheme({
   styles: {
     global: {
+      "*": {
+        padding: 0,
+        margin: 0,
+      },
       "html, body": {
         backgroundColor: "#17242c",
+        width: "100%",
+        height: "100%",
       },
       ".swiper .swiper-pagination": {
         position: "absolute",

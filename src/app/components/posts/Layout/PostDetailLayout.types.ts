@@ -1,4 +1,4 @@
-export interface PostDetailSectionProps {
+export interface PostDetailLayoutProps {
   title: string;
   tags: string[];
   date: string;
