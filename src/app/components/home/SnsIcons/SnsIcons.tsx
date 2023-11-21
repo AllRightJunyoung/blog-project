@@ -4,7 +4,6 @@ import { Avatar, AvatarGroup } from "@chakra-ui/react";
 import { Link } from "@chakra-ui/next-js";
 import NextLink from "next/link";
 import Image from "next/image";
-import cloudinaryLoader from "@/app/lib/cloudinaryLoader";
 
 const SnsIcons = () => {
   return (
@@ -16,7 +15,6 @@ const SnsIcons = () => {
               src="icons/profile/instagram"
               width={50}
               height={50}
-              loader={cloudinaryLoader}
               alt="instagram-Icon"
             />
           }
@@ -32,7 +30,6 @@ const SnsIcons = () => {
               src="icons/profile/linkedIn"
               width={50}
               height={50}
-              loader={cloudinaryLoader}
               alt="linkedIn-Icon"
             />
           }
@@ -52,7 +49,6 @@ const SnsIcons = () => {
               src="icons/profile/github"
               width={50}
               height={50}
-              loader={cloudinaryLoader}
               alt="github-icon"
             />
           }

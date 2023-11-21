@@ -13,7 +13,6 @@ import {
 } from "@/app/components/posts";
 import { TimeIcon, InfoOutlineIcon } from "@chakra-ui/icons";
 import Image from "next/image";
-import cloudinaryLoader from "@/app/lib/cloudinaryLoader";
 import Giscus from "@giscus/react";
 
 const PostDetailSection = ({
@@ -48,7 +47,6 @@ const PostDetailSection = ({
                 src="/icons/toc/list"
                 width={60}
                 height={60}
-                loader={cloudinaryLoader}
                 alt="toc-list-Icon"
               />
             ) : (
@@ -56,7 +54,6 @@ const PostDetailSection = ({
                 src="/icons/toc/close"
                 width={80}
                 height={80}
-                loader={cloudinaryLoader}
                 alt="toc-close-Icon"
               />
             )}

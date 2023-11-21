@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+
 const withPlugins = require("next-compose-plugins");
 
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
@@ -9,6 +10,10 @@ const nextConfig = {
   reactStrictMode: true,
   experimental: {
     appDir: true,
+  },
+  images: {
+    loader: "custom",
+    loaderFile: "./src/app/lib/cloudinaryLoader.ts",
   },
   webpack(config) {
     // Grab the existing rule that handles SVG imports

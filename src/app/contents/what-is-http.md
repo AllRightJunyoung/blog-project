@@ -58,7 +58,7 @@ HTTP를 이해하기 위해서는 TCP/IP 프로토콜에 대해 어느 정도 �
 
 그리고 케이블 등과 같이 물리적으로 보이는 부분(커텍트 등을 포함한 여러 가지 전송 매체)도 포함합니다. 하드웨어, 물리적인 부분은 전부 링크 계층의 역할입니다.
 
-![TCP/IP 통신의 흐름](/images/posts/what-is-http/2.webp)
+![TCP/IP 통신의 흐름](/images/posts/what-is-http/2)
 
 # HTTP와 관계가 깊은 프로토콜은 IP, TCP, DNS
 
