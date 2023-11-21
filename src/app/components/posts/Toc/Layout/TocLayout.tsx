@@ -1,17 +1,13 @@
 "use client";
-
+import type { TocLayoutProps } from "./TocLayout.types";
 import { useEffect, useState } from "react";
-import TableOfItem from "./TableOfItem";
-import TableOfItemMobile from "./TableOfItemMobile";
-import { getIntersectionObserver } from "../../../utils/posts/observer";
+import TableOfItem from "../TocDesktopItem/TocDesktopItem";
+import TableOfItemMobile from "../TocMobileItem/TocMobileItem";
+import { getIntersectionObserver } from "../../../../utils/posts/observer";
 import { Flex } from "@chakra-ui/react";
-import ToolBox from "./ToolBox";
+import ToolBox from "../ToolBox/ToolBox";
 
-type Props = {
-  isSmallerThan960: boolean;
-};
-
-const TableOfContents = ({ isSmallerThan960 }: Props) => {
+const TocLayout = ({ isSmallerThan960 }: TocLayoutProps) => {
   const [headingElements, setHeadingElements] = useState<Element[]>([]);
   const [activeId, setActiveId] = useState<string>("");
 
@@ -48,4 +44,4 @@ const TableOfContents = ({ isSmallerThan960 }: Props) => {
     </aside>
   );
 };
-export default TableOfContents;
+export default TocLayout;

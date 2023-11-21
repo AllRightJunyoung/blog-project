@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction } from "react";
 
-export type TableOfItemProps = {
+export interface TocDesktopItemProps {
   headingElements: Element[];
   activeId: string;
   setActiveId: Dispatch<SetStateAction<string>>;
-};
+}

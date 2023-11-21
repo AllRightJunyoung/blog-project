@@ -1,12 +1,12 @@
+import type { TocDesktopItemProps } from "./TocDesktopItem.types";
 import { Heading, Box, ListItem, Link, List } from "@chakra-ui/react";
 import uuid from "react-uuid";
-import type { TableOfItemProps } from "./TableOfItem.types";
 
-const TableOfItem = ({
+const TocDesktopItem = ({
   headingElements,
   activeId,
   setActiveId,
-}: TableOfItemProps) => {
+}: TocDesktopItemProps) => {
   return (
     <Box bg="#141E25" padding="10px" overflowY="scroll" height="100vh">
       <Heading
@@ -56,4 +56,4 @@ const TableOfItem = ({
   );
 };
 
-export default TableOfItem;
+export default TocDesktopItem;

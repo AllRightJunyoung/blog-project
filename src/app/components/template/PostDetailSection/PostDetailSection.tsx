@@ -1,19 +1,19 @@
 "use client";
-import { HorizontalHeading } from "@/app/components/shared";
-import ListIcon from "public/icons/toc/list.svg";
-import CloseIcon from "public/icons/toc/close.svg";
-import { Box, Text, Flex, useMediaQuery } from "@chakra-ui/react";
-import { TimeIcon, InfoOutlineIcon } from "@chakra-ui/icons";
 import type { PostDetailSectionProps } from "./PostDetailSection.types";
-import { PostDetailTags } from "../../posts/PostDetailTags";
-import { useRecoilState } from "recoil";
-import { TocModalState } from "../../../recoil/posts";
-import MarkdownViewer from "../../posts/markdown/MarkdownViewer";
-import { TableOfContents } from "../../posts/Toc";
 import { motion } from "framer-motion";
-
 import { fadeIn } from "@/app/styles/framer-motions";
-
+import { useRecoilState } from "recoil";
+import { TocModalState } from "@/app/recoil/posts";
+import { HorizontalHeading } from "@/app/components/shared";
+import { Box, Text, Flex, useMediaQuery } from "@chakra-ui/react";
+import {
+  MarkdownViewer,
+  PostDetailTags,
+  TocLayout,
+} from "@/app/components/posts";
+import { TimeIcon, InfoOutlineIcon } from "@chakra-ui/icons";
+import Image from "next/image";
+import cloudinaryLoader from "@/app/lib/cloudinaryLoader";
 import Giscus from "@giscus/react";
 
 const PostDetailSection = ({
@@ -44,9 +44,21 @@ const PostDetailSection = ({
             onClick={() => setActiveTocModal(!activeTocModal)}
           >
             {!activeTocModal ? (
-              <ListIcon width="60" height="60" />
+              <Image
+                src="/icons/toc/list"
+                width={60}
+                height={60}
+                loader={cloudinaryLoader}
+                alt="toc-list-Icon"
+              />
             ) : (
-              <CloseIcon width="80" height="80" />
+              <Image
+                src="/icons/toc/close"
+                width={80}
+                height={80}
+                loader={cloudinaryLoader}
+                alt="toc-close-Icon"
+              />
             )}
           </Box>
         )}
@@ -74,7 +86,7 @@ const PostDetailSection = ({
           </Box>
           <Flex padding={3} gap={5} as="article">
             <MarkdownViewer>{content}</MarkdownViewer>
-            <TableOfContents isSmallerThan960={isSmallerThan960} />
+            <TocLayout isSmallerThan960={isSmallerThan960} />
           </Flex>
           <Box padding={3} as="footer">
             <Giscus

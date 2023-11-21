@@ -1,3 +1,4 @@
+import type { TocMobileItemProps } from "./TocMobileItem.types";
 import {
   Heading,
   Box,
@@ -7,17 +8,16 @@ import {
   useOutsideClick,
 } from "@chakra-ui/react";
 import uuid from "react-uuid";
-import type { TableOfItemProps } from "./TableOfItem.types";
 import { useRef } from "react";
 import { useRecoilState } from "recoil";
-import { TocModalState } from "../../../recoil/posts";
-import ToolBox from "./ToolBox";
+import { TocModalState } from "@/app/recoil/posts";
+import ToolBox from "../ToolBox";
 
-const TableOfItemMobile = ({
+const TocMobileItem = ({
   headingElements,
   activeId,
   setActiveId,
-}: TableOfItemProps) => {
+}: TocMobileItemProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const [activeTocModal, setActiveTocModal] = useRecoilState(TocModalState);
 
@@ -93,4 +93,4 @@ const TableOfItemMobile = ({
   );
 };
 
-export default TableOfItemMobile;
+export default TocMobileItem;

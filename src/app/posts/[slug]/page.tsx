@@ -1,8 +1,8 @@
-import { ChakraProviders, Recoil } from "../../providers";
 import { Metadata } from "next";
-import { getPostData } from "../../utils/posts";
+import { getPostData } from "@/app/utils/shared/readFile";
+import { ChakraProviders, Recoil } from "../../providers";
 import { PostDetailSection } from "@/app/components/template/PostDetailSection";
-import Header from "../../components/home/Layout/Header";
+import { Header, Footer } from "@/app/components/shared";
 
 type Props = {
   params: {
@@ -45,6 +45,7 @@ export default async function PostDetailPage({ params: { slug } }: Props) {
           tags={postData.tags}
           category={postData.category}
         />
+        <Footer />
       </ChakraProviders>
     </Recoil>
   );

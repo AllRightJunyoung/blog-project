@@ -1,7 +1,7 @@
 "use client";
 
-import { Flex, Box } from "@chakra-ui/react";
-import { FooterMessage, SnsIcons, UserProfile } from "@/app/components/home";
+import { Flex, Box, Text } from "@chakra-ui/react";
+import { SnsIcons, UserProfile } from "@/app/components/home";
 
 const Footer = () => {
   return (
@@ -12,7 +12,11 @@ const Footer = () => {
           <SnsIcons />
         </Box>
       </Box>
-      <FooterMessage />
+      <Box>
+        <Text fontSize="xs" color="white" margin={3}>
+          2023 copyright 문준영 all rights reserved
+        </Text>
+      </Box>
     </Flex>
   );
 };
