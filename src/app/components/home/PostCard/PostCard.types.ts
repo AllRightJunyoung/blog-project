@@ -1,2 +1,5 @@
 import type { PostCardType } from "@/app/types/shared";
-export type PostCardProps = PostCardType;
+import type { MotionStyle } from "framer-motion";
+export interface PostCardProps extends PostCardType {
+  style?: MotionStyle;
+}

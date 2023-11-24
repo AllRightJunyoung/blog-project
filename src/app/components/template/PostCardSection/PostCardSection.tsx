@@ -34,19 +34,32 @@ const PostCardSection = ({ data }: PostCardSectionProps) => {
         }}
         gap={10}
       >
-        {postCardData.map((post) => {
-          return (
-            <PostCard
-              key={uuid()}
-              slug={post.slug}
-              title={post.title}
-              category={post.category}
-              date={post.date}
-              diffDate={getDiffDate(post.date)}
-              thumbnail={post.thumbnail}
-            />
-          );
-        })}
+        {postCardData.length > 0 ? (
+          postCardData.map((post) => {
+            return (
+              <PostCard
+                key={uuid()}
+                slug={post.slug}
+                title={post.title}
+                category={post.category}
+                date={post.date}
+                diffDate={getDiffDate(post.date)}
+                thumbnail={post.thumbnail}
+              />
+            );
+          })
+        ) : (
+          <PostCard
+            key={uuid()}
+            style={{ opacity: 0 }}
+            slug="empty"
+            title="empty"
+            category="empty"
+            date="empty"
+            diffDate="empty"
+            thumbnail={"http://via.placeholder.com/300x200"}
+          />
+        )}
       </Grid>
     </motion.div>
   );

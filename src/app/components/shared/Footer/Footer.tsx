@@ -5,7 +5,13 @@ import { SnsIcons, UserProfile } from "@/app/components/home";
 
 const Footer = () => {
   return (
-    <Flex direction="column" alignItems="center" marginTop={10} as="footer">
+    <Flex
+      direction="column"
+      alignItems="center"
+      marginTop={20}
+      padding={10}
+      as="footer"
+    >
       <Box margin={10}>
         <UserProfile />
         <Box marginTop={5}>

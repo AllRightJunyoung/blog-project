@@ -13,11 +13,16 @@ const PostCard = ({
   category,
   thumbnail,
   slug,
+  style,
 }: PostCardProps) => {
   const router = useRouter();
 
   return (
-    <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+    <motion.div
+      style={style}
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.9 }}
+    >
       <GridItem
         bg="card.background"
         borderRadius={10}

@@ -7,15 +7,22 @@ const Pagination = () => {
   const posts = useRecoilValue(PaginationPostState);
   const paginationCircles = CreatePaginationCircle(posts);
 
-  if (posts.length === 0) {
-    return <></>;
-  }
-
   return (
     <HStack spacing={5} marginBottom={10}>
-      {paginationCircles.map((paginationCircle) => {
-        return paginationCircle;
-      })}
+      {posts.length > 0 ? (
+        paginationCircles.map((paginationCircle) => {
+          return paginationCircle;
+        })
+      ) : (
+        <Circle
+          size="10"
+          border="1px solid #73CECF"
+          color={"pagination.fontColor"}
+          opacity={0}
+          key={uuid()}
+          cursor="pointer"
+        ></Circle>
+      )}
     </HStack>
   );
 };
