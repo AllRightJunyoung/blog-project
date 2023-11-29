@@ -2,13 +2,12 @@
 
 import FeaturedPost from "../../FeaturedPost";
 import type { LayoutProps } from "./Layout.types";
-import { Header, Footer } from "@/app/components/shared";
 import { Main } from "@/app/components/home/Layout";
+import { Footer } from "@/app/components/shared";
 
 const HomeLayout = ({ data }: LayoutProps) => {
   return (
     <>
-      <Header />
       <FeaturedPost />
       <Main data={data} />
       <Footer />

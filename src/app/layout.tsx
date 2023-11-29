@@ -1,6 +1,8 @@
 import { Metadata } from "next";
 import GoogleAnalytics from "./components/shared/GoogleAnalytics";
 import { Suspense } from "react";
+import { ChakraProviders, Recoil } from "./providers";
+import { Header } from "./components/shared";
 
 export const metadata: Metadata = {
   generator: "Next.js 13.4.2",
@@ -45,7 +47,14 @@ export default function RootLayout({
         {GA_ID && <GoogleAnalytics GA_TRACKING_ID={GA_ID} />}
       </Suspense>
 
-      <body>{children}</body>
+      <body>
+        <Recoil>
+          <ChakraProviders>
+            <Header />
+            {children}
+          </ChakraProviders>
+        </Recoil>
+      </body>
     </html>
   );
 }
