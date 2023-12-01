@@ -37,6 +37,8 @@ const customMarkDownComponent: any = {
           height={400}
           sizes="100vw"
           priority={true}
+          placeholder="blur"
+          blurDataURL="https://res.cloudinary.com/junyoung/image/upload/v1701422172/mainblur_bvv7xw.webp"
           style={{
             width: "100%",
             height: "auto",
