@@ -7,7 +7,7 @@ import { Grid } from "@chakra-ui/react";
 import { PostCardSectionProps } from "./PostCardSection.types";
 import { fadeInFromLeft } from "@/app/styles/framer-motions";
 import { getDiffDate } from "@/app/utils/home/date";
-import { PostCard } from "..";
+import { PostCard } from "../../home";
 
 const PostCardSection = ({ data }: PostCardSectionProps) => {
   const setAllPosts = useSetRecoilState(AllPostState);
@@ -34,7 +34,7 @@ const PostCardSection = ({ data }: PostCardSectionProps) => {
         }}
         gap={10}
       >
-        {postCardData &&
+        {postCardData.length > 0 ? (
           postCardData.map((post) => {
             return (
               <PostCard
@@ -48,7 +48,20 @@ const PostCardSection = ({ data }: PostCardSectionProps) => {
                 blurURL={post.blurURL}
               />
             );
-          })}
+          })
+        ) : (
+          <PostCard
+            key={uuid()}
+            style={{ opacity: 0 }}
+            slug="empty"
+            title="empty"
+            category="empty"
+            date="empty"
+            diffDate="empty"
+            thumbnail="postcardempty"
+            blurURL="postcardempty"
+          />
+        )}
       </Grid>
     </motion.div>
   );
