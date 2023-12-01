@@ -7,7 +7,7 @@ import { Grid } from "@chakra-ui/react";
 import { PostCardSectionProps } from "./PostCardSection.types";
 import { fadeInFromLeft } from "@/app/styles/framer-motions";
 import { getDiffDate } from "@/app/utils/home/date";
-import { PostCard } from "../../home";
+import { PostCard } from "..";
 
 const PostCardSection = ({ data }: PostCardSectionProps) => {
   const setAllPosts = useSetRecoilState(AllPostState);
