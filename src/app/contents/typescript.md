@@ -6,6 +6,7 @@ tags: ["typescript"]
 category: "개발"
 date: "2022-04-16"
 thumbnail: "/images/posts/typescript/ts_image.webp"
+blurURL: "https://res.cloudinary.com/junyoung/image/upload/v1701416505/images/posts/typescript/ts_imageblur.webp"
 featured: true
 ---
 

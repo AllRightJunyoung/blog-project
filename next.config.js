@@ -14,6 +14,7 @@ const nextConfig = {
   images: {
     loader: "custom",
     loaderFile: "./src/app/lib/cloudinaryLoader.ts",
+    domains: ["res.cloudinary.com"],
   },
   webpack(config) {
     // Grab the existing rule that handles SVG imports

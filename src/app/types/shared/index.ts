@@ -8,6 +8,7 @@ export type PostsType = {
   content: string;
   thumbnail: string;
   featured: boolean;
+  blurURL: string;
 };
 
 export interface PostCardType

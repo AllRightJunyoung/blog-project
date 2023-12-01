@@ -6,6 +6,7 @@ tags: ["computer-science"]
 category: "cs"
 date: "2023-04-29"
 thumbnail: "/images/posts/what-is-http/1.webp"
+blurURL: "https://res.cloudinary.com/junyoung/image/upload/v1701416131/images/posts/what-is-http/1blur.webp"
 featured: true
 ---
 

@@ -14,9 +14,9 @@ const PostCard = ({
   thumbnail,
   slug,
   style,
+  blurURL,
 }: PostCardProps) => {
   const router = useRouter();
-
   return (
     <motion.div
       style={style}
@@ -39,6 +39,8 @@ const PostCard = ({
                 width={300}
                 height={200}
                 priority={true}
+                placeholder="blur"
+                blurDataURL={blurURL}
                 style={{
                   width: "100%",
                   height: "auto",
