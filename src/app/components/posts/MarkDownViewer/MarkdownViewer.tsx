@@ -1,5 +1,5 @@
 "use client";
-
+import { PropsWithChildren } from "react";
 import {
   Box,
   ListItem,
@@ -14,16 +14,14 @@ import {
   OrderedList,
   UnorderedList,
 } from "@chakra-ui/react";
-
 import Image from "next/image";
 import remarkGfm from "remark-gfm";
+import { SyntaxHighlighterProps } from "react-syntax-highlighter";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-
 import atomDark from "react-syntax-highlighter/dist/cjs/styles/prism/atom-dark";
-import { CodeProps } from "react-markdown/lib/ast-to-react";
 import { ImageProps } from "next/image";
-import { ReactNode, ReactMarkdown } from "react-markdown/lib/react-markdown";
-import { PropsWithChildren } from "react";
+import Markdown from "react-markdown";
+import type { Element } from "hast";
 import { MarkdownViewerProps } from "./MarkdownViewer.types";
 
 const customMarkDownComponent: any = {
@@ -47,13 +45,14 @@ const customMarkDownComponent: any = {
       </Box>
     );
   },
-  code({ node, inline, className, children, ...props }: CodeProps) {
+  code(props: SyntaxHighlighterProps) {
+    const { children, className, node, ...rest } = props;
     const match = /language-(\w+)/.exec(className || "");
-    return !inline && match ? (
+    return match ? (
       <SyntaxHighlighter
+        {...rest}
         language={match[1]}
         PreTag="div"
-        {...props}
         style={atomDark}
         customStyle={{
           margin: 0,
@@ -72,7 +71,7 @@ const customMarkDownComponent: any = {
     );
   },
 
-  h1: ({ children }: PropsWithChildren<ReactNode>) => {
+  h1: ({ children }: PropsWithChildren<Element>) => {
     return (
       <>
         <Heading
@@ -89,7 +88,7 @@ const customMarkDownComponent: any = {
     );
   },
 
-  h2: ({ children }: PropsWithChildren<ReactNode>) => {
+  h2: ({ children }: PropsWithChildren<Element>) => {
     return (
       <>
         <Heading
@@ -105,7 +104,7 @@ const customMarkDownComponent: any = {
       </>
     );
   },
-  h3: ({ children }: PropsWithChildren<ReactNode>) => {
+  h3: ({ children }: PropsWithChildren<Element>) => {
     return (
       <>
         <Heading
@@ -121,35 +120,35 @@ const customMarkDownComponent: any = {
       </>
     );
   },
-  p: ({ children }: PropsWithChildren<ReactNode>) => {
+  p: ({ children }: PropsWithChildren<Element>) => {
     return (
       <Text mt={2} mb={5} fontSize={{ lg: "18px", base: "16px" }} color="white">
         {children}
       </Text>
     );
   },
-  ol: ({ children }: PropsWithChildren<ReactNode>) => {
+  ol: ({ children }: PropsWithChildren<Element>) => {
     return (
       <OrderedList color="white" fontSize={{ lg: "18px", base: "16px" }}>
         {children}
       </OrderedList>
     );
   },
-  ul: ({ children }: PropsWithChildren<ReactNode>) => {
+  ul: ({ children }: PropsWithChildren<Element>) => {
     return (
       <UnorderedList color="white" fontSize={{ lg: "18px", base: "16px" }}>
         {children}
       </UnorderedList>
     );
   },
-  li: ({ children }: PropsWithChildren<ReactNode>) => {
+  li: ({ children }: PropsWithChildren<Element>) => {
     return (
       <ListItem mt={2} mb={2}>
         {children}
       </ListItem>
     );
   },
-  table: ({ children }: PropsWithChildren<ReactNode>) => {
+  table: ({ children }: PropsWithChildren<Element>) => {
     return (
       <Table
         mb={3}
@@ -163,19 +162,19 @@ const customMarkDownComponent: any = {
       </Table>
     );
   },
-  thead: ({ children }: PropsWithChildren<ReactNode>) => {
+  thead: ({ children }: PropsWithChildren<Element>) => {
     return <Thead color="white">{children}</Thead>;
   },
-  td: ({ children }: PropsWithChildren<ReactNode>) => {
+  td: ({ children }: PropsWithChildren<Element>) => {
     return <Td color="white">{children}</Td>;
   },
-  tr: ({ children }: PropsWithChildren<ReactNode>) => {
+  tr: ({ children }: PropsWithChildren<Element>) => {
     return <Tr color="white">{children}</Tr>;
   },
-  th: ({ children }: PropsWithChildren<ReactNode>) => {
+  th: ({ children }: PropsWithChildren<Element>) => {
     return <Th color="white">{children}</Th>;
   },
-  strong: ({ children }: PropsWithChildren<ReactNode>) => {
+  strong: ({ children }: PropsWithChildren<Element>) => {
     return (
       <Text
         as="b"
@@ -188,7 +187,7 @@ const customMarkDownComponent: any = {
     );
   },
 
-  blockquote: ({ children }: PropsWithChildren<ReactNode>) => {
+  blockquote: ({ children }: PropsWithChildren<Element>) => {
     return (
       <blockquote
         style={{
@@ -208,13 +207,18 @@ const customMarkDownComponent: any = {
 
 const MarkdownViewer = ({ children }: MarkdownViewerProps) => {
   return (
-    <Box padding={{ xl: 8, lg: 6, base: 4 }} bgColor="blackAlpha.300" w="100%">
-      <ReactMarkdown
+    <Box
+      padding={{ xl: 8, lg: 6, base: 4 }}
+      bgColor="blackAlpha.300"
+      w="100%"
+      className="markdown-viewer"
+    >
+      <Markdown
         components={customMarkDownComponent}
         remarkPlugins={[remarkGfm]}
       >
         {children}
-      </ReactMarkdown>
+      </Markdown>
     </Box>
   );
 };

@@ -7,7 +7,8 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Text, Flex } from "@chakra-ui/react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay } from "swiper";
+import { Autoplay, Pagination } from "swiper/modules";
+
 import { BellIcon, SunIcon, CalendarIcon, LinkIcon } from "@chakra-ui/icons";
 import { FeaturedPostTags } from "../FeaturedPostTags";
 import type { FeaturedPostCarouselProps } from "./FeaturedPostCarousel.types";
