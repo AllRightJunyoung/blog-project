@@ -5,4 +5,3 @@ export { default as PostCard } from "./PostCard";
 export { default as FeaturedPost } from "./FeaturedPost";
 export { default as UserProfile } from "./UserProfile";
 export { default as SnsIcons } from "./SnsIcons";
-export { default as PostCardSection } from "./PostCardSection";

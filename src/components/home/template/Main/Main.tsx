@@ -1,13 +1,9 @@
 "use client";
 import { MainProps } from "./Main.types";
 import { Box, Flex } from "@chakra-ui/react";
-import {
-  CategoryList,
-  Pagination,
-  PostCardSection,
-  SearchBar,
-} from "@/components/home";
+import { CategoryList, Pagination, SearchBar } from "@/components/home";
 import { HorizontalHeading } from "@/components/shared";
+import PostCardSection from "../PostCardSection";
 
 const Main = ({ data }: MainProps) => {
   return (

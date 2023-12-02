@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { fadeIn } from "@/styles/framer-motions";
 import { useRecoilState } from "recoil";
 import { TocModalState } from "@/recoil/posts";
-
 import { Box, Text, Flex, useMediaQuery } from "@chakra-ui/react";
 import { MarkdownViewer, PostDetailTags, TocLayout } from "@/components/posts";
 import { TimeIcon, InfoOutlineIcon } from "@chakra-ui/icons";
