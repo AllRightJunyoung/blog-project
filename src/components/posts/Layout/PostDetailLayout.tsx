@@ -4,12 +4,13 @@ import { motion } from "framer-motion";
 import { fadeIn } from "@/styles/framer-motions";
 import { useRecoilState } from "recoil";
 import { TocModalState } from "@/recoil/posts";
-import { HorizontalHeading, Footer } from "@/components/shared";
+
 import { Box, Text, Flex, useMediaQuery } from "@chakra-ui/react";
 import { MarkdownViewer, PostDetailTags, TocLayout } from "@/components/posts";
 import { TimeIcon, InfoOutlineIcon } from "@chakra-ui/icons";
 import Image from "next/image";
 import Giscus from "@giscus/react";
+import { HorizontalHeading, Footer } from "@/components/shared";
 
 const PostDetailLayout = ({
   title,

@@ -1,8 +1,8 @@
 import { Metadata } from "next";
-import GoogleAnalytics from "../components/shared/GoogleAnalytics";
 import { Suspense } from "react";
 import { ChakraProviders, Recoil } from "../providers";
-import { Header } from "../components/shared";
+import GoogleAnalytics from "@/components/shared/GoogleAnalytics";
+import { Header } from "@/components/shared";
 
 export const metadata: Metadata = {
   generator: "Next.js 13.4.2",

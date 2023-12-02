@@ -1,5 +1,5 @@
 "use client";
-
+import { MainProps } from "./Main.types";
 import { Box, Flex } from "@chakra-ui/react";
 import {
   CategoryList,
@@ -7,9 +7,7 @@ import {
   PostCardSection,
   SearchBar,
 } from "@/components/home";
-
 import { HorizontalHeading } from "@/components/shared";
-import { MainProps } from "./Main.types";
 
 const Main = ({ data }: MainProps) => {
   return (

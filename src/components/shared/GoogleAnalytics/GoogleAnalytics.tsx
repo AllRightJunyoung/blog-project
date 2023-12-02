@@ -1,6 +1,5 @@
 "use client";
-
-import { pageview } from "@/app/lib/gtag";
+import { pageview } from "@/lib/gtag";
 import { usePathname, useSearchParams } from "next/navigation";
 import Script from "next/script";
 import { useEffect } from "react";

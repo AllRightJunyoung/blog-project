@@ -1,7 +1,8 @@
+import { getAllPosts } from "@/utils/shared/readFile";
 import { ISitemapField, getServerSideSitemap } from "next-sitemap";
-import { getAllPosts } from "../../utils/shared/readFile";
+
 export async function GET(request: Request) {
-  const allposts = await getAllPosts();
+  const allposts = getAllPosts();
 
   const sitemapFields: ISitemapField[] = allposts.map((post) => {
     return {

@@ -9,7 +9,7 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 const nextConfig = {
   images: {
     loader: "custom",
-    loaderFile: "./src/app/lib/cloudinaryLoader.ts",
+    loaderFile: "./src/lib/cloudinaryLoader.ts",
     domains: ["res.cloudinary.com"],
   },
   webpack(config) {

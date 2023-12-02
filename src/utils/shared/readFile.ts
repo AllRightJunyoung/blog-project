@@ -4,7 +4,7 @@ import matter from "gray-matter";
 import type { PostsType } from "../../types/shared";
 import { cache } from "react";
 
-const postsDirectory = path.join(process.cwd(), "src/app/contents");
+const postsDirectory = path.join(process.cwd(), "posts");
 
 export const getPostData = cache((postId: string): PostsType => {
   const postSlug = postId.replace(/\.md$/, "");

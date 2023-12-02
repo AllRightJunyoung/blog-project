@@ -1,8 +1,7 @@
 import dynamic from "next/dynamic";
 import { Metadata } from "next";
 import { getPostData } from "@/utils/shared/readFile";
-import Spinner from "@/components/shared/Spinner";
-
+import { Spinner } from "@/components/shared";
 const PostDetailPageLayout = dynamic(
   () => import("@/components/posts/Layout/PostDetailLayout"),
   {
