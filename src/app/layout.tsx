@@ -28,8 +28,8 @@ export const metadata: Metadata = {
     follow: true,
   },
   twitter: {
-    card: "summary_large_image",
-    title: "준영의 기술블로그",
+    card: "summary",
+    title: "준영의 기술블로그 | HOME",
     description: "준영의 기술블로그 입니다.",
   },
 };

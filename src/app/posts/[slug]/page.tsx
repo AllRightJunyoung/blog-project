@@ -20,7 +20,7 @@ type Props = {
 export async function generateMetadata({
   params: { slug },
 }: Props): Promise<Metadata> {
-  const { title, description } = await getPostData(slug);
+  const { title, description, thumbnail, tags } = getPostData(slug);
   return {
     title,
     description,
@@ -29,9 +29,11 @@ export async function generateMetadata({
       siteName: title,
       title,
       description,
+      locale: "ko_KR",
     },
+    keywords: tags,
     twitter: {
-      card: "summary_large_image",
+      card: "summary",
       title,
       description,
     },
