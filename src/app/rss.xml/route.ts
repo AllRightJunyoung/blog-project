@@ -1,5 +1,5 @@
 import RSS from "rss";
-import { getAllPosts } from "../utils/shared/readFile";
+import { getAllPosts } from "../../utils/shared/readFile";
 
 export async function GET() {
   const allposts = await getAllPosts();
