@@ -21,7 +21,7 @@ const PostCardSection = ({ data }: PostCardSectionProps) => {
 
   useEffect(() => {
     setAllPosts(AllPostData);
-  }, [setAllPosts, AllPostData]);
+  }, []);
 
   return (
     <motion.div variants={fadeInFromLeft} initial="hidden" animate="visible">
