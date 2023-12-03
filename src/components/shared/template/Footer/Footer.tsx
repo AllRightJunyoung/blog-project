@@ -1,7 +1,8 @@
 "use client";
 
 import { Flex, Box, Text } from "@chakra-ui/react";
-import { SnsIcons, UserProfile } from "@/components/home";
+import SnsIcons from "../../SnsIcons";
+import UserProfile from "../../UserProfile";
 
 const Footer = () => {
   return (
@@ -13,7 +14,7 @@ const Footer = () => {
       as="footer"
     >
       <Box margin={10}>
-        <UserProfile />
+        <UserProfile size="2xl" />
         <Box marginTop={5}>
           <SnsIcons />
         </Box>
