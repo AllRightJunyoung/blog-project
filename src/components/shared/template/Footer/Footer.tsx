@@ -13,14 +13,14 @@ const Footer = () => {
       padding={10}
       as="footer"
     >
-      <Box margin={10}>
+      <Box margin={1}>
         <UserProfile size="2xl" />
         <Box marginTop={5}>
           <SnsIcons />
         </Box>
       </Box>
       <Box>
-        <Text fontSize="xs" color="white" margin={3}>
+        <Text fontSize="xs" color="white" margin={2}>
           2023 copyright 문준영 all rights reserved
         </Text>
       </Box>
