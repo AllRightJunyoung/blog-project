@@ -1,12 +1,5 @@
 import type { TocMobileItemProps } from "./TocMobileItem.types";
-import {
-  Heading,
-  Box,
-  ListItem,
-  Link,
-  List,
-  useOutsideClick,
-} from "@chakra-ui/react";
+import { Heading, Box, ListItem, Link, List } from "@chakra-ui/react";
 import uuid from "react-uuid";
 import { useRef } from "react";
 import { useRecoilState } from "recoil";
@@ -20,11 +13,6 @@ const TocMobileItem = ({
 }: TocMobileItemProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const [activeTocModal, setActiveTocModal] = useRecoilState(TocModalState);
-
-  useOutsideClick({
-    ref: ref,
-    handler: () => setActiveTocModal(false),
-  });
 
   return activeTocModal ? (
     <Box
