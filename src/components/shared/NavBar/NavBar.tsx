@@ -1,34 +1,49 @@
 "use client";
 
-import { Link, Flex } from "@chakra-ui/react";
+import { MoonIcon, SunIcon } from "@chakra-ui/icons";
+import { Link, Flex, useColorMode, Button } from "@chakra-ui/react";
+
 import NextLink from "next/link";
 
 const NavBar = () => {
+  const { colorMode, toggleColorMode } = useColorMode();
+
   return (
-    <Flex
-      gap="20px"
-      alignSelf="flex-end"
-      padding="10px"
-      marginEnd="5"
-      id="nav-bar"
-      as="nav"
-    >
-      <Flex>
+    <Flex direction="column" id="nav-bar" as="nav" alignSelf="flex-end">
+      <Flex
+        gap={3}
+        justifyContent="center"
+        alignItems="center"
+        marginRight={3}
+        marginTop={1}
+      >
         <Link as={NextLink} href="/" color="NavBar.fontColor" fontSize="xl">
           Home
         </Link>
+        <Link
+          as={NextLink}
+          href="/about"
+          color="NavBar.fontColor"
+          fontSize="xl"
+        >
+          About
+        </Link>
+        <Link
+          as={NextLink}
+          href="/project"
+          color="NavBar.fontColor"
+          fontSize="xl"
+        >
+          Project
+        </Link>
+        <Button onClick={toggleColorMode} background="none" padding="none">
+          {colorMode === "light" ? (
+            <SunIcon color="orange" />
+          ) : (
+            <MoonIcon color="yellow" />
+          )}
+        </Button>
       </Flex>
-      <Link as={NextLink} href="/about" color="NavBar.fontColor" fontSize="xl">
-        About
-      </Link>
-      <Link
-        as={NextLink}
-        href="/project"
-        color="NavBar.fontColor"
-        fontSize="xl"
-      >
-        Project
-      </Link>
     </Flex>
   );
 };

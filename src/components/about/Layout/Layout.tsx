@@ -14,7 +14,7 @@ const AboutLayout = () => {
         <Flex padding={6}>
           <UserProfile size="3xl" />
         </Flex>
-        <Flex direction="column" gap={2}>
+        <Flex direction="column" gap={2} marginLeft={5}>
           <Box marginBottom={10} textAlign="center">
             <Heading color="white">Introduction</Heading>
           </Box>

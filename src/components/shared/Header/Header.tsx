@@ -10,7 +10,6 @@ const Header = () => {
       backgroundColor="NavBar.background"
       position="sticky"
       height="50px"
-      width="100vw"
       as="header"
     >
       <NavBar />

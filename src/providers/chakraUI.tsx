@@ -1,7 +1,7 @@
 "use client";
 
 import { CacheProvider } from "@chakra-ui/next-js";
-import { CustomTheme } from "../styles/theme";
+import { theme } from "../styles/theme";
 import dynamic from "next/dynamic";
 
 const ChakraProvider = dynamic(() =>
@@ -11,7 +11,7 @@ const ChakraProvider = dynamic(() =>
 function ChakraProviders({ children }: { children: React.ReactNode }) {
   return (
     <CacheProvider>
-      <ChakraProvider theme={CustomTheme}>{children}</ChakraProvider>
+      <ChakraProvider theme={theme}>{children}</ChakraProvider>
     </CacheProvider>
   );
 }

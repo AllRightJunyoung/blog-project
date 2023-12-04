@@ -46,7 +46,6 @@ export default function RootLayout({
       <Suspense fallback={null}>
         {GA_ID && <GoogleAnalytics GA_TRACKING_ID={GA_ID} />}
       </Suspense>
-
       <body>
         <Recoil>
           <ChakraProviders>
