@@ -2,7 +2,7 @@
 
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import { Link, Flex, useColorMode, Button } from "@chakra-ui/react";
-
+import Image from "next/image";
 import NextLink from "next/link";
 
 const NavBar = () => {
@@ -18,7 +18,7 @@ const NavBar = () => {
         marginTop={1}
       >
         <Link as={NextLink} href="/" color="NavBar.fontColor" fontSize="xl">
-          Home
+          <Image src="/house" width={32} height={32} alt="house-icon" />
         </Link>
         <Link
           as={NextLink}
@@ -26,7 +26,7 @@ const NavBar = () => {
           color="NavBar.fontColor"
           fontSize="xl"
         >
-          About
+          <Image src="/about" width={32} height={32} alt="house-icon" />
         </Link>
         <Link
           as={NextLink}
@@ -34,9 +34,9 @@ const NavBar = () => {
           color="NavBar.fontColor"
           fontSize="xl"
         >
-          Project
+          <Image src="/project" width={32} height={32} alt="house-icon" />
         </Link>
-        <Button onClick={toggleColorMode} background="none" padding="none">
+        <Button onClick={toggleColorMode} background="none" padding={1}>
           {colorMode === "light" ? (
             <SunIcon color="orange" />
           ) : (

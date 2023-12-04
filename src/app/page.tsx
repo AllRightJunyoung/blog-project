@@ -1,5 +1,4 @@
 import dynamic from "next/dynamic";
-
 import { Spinner } from "@/components/shared";
 import { getAllPosts } from "@/utils/shared/readFile";
 
