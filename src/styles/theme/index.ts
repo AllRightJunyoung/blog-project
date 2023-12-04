@@ -41,6 +41,26 @@ export const theme: ThemeConfig = extendTheme({
   },
   breakpoints,
   colors: {
+    dark: {
+      header: {
+        background: "#293c4a",
+      },
+      tag: {
+        active: {
+          fontColor: "#00393C",
+          background: "#2D7B7F",
+        },
+        inactive: {
+          fontColor: "#627387",
+          background: "#293C4A",
+        },
+      },
+    },
+    light: {
+      header: {
+        background: "#f1f5f9",
+      },
+    },
     tag: {
       active: {
         fontColor: "#00393C",
@@ -55,10 +75,7 @@ export const theme: ThemeConfig = extendTheme({
       fontColor: "#627387",
       background: "#293C4A",
     },
-    NavBar: {
-      fontColor: "white",
-      background: "#293c4a",
-    },
+
     card: {
       fontColor: "white",
       background: "#10181B",
