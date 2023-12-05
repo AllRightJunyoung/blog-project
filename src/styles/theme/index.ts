@@ -12,13 +12,16 @@ export const theme: ThemeConfig = extendTheme({
   initialColorMode: "light",
   useSystemColorMode: false,
   styles: {
-    global: {
+    global: () => ({
       "*": {
         padding: 0,
         margin: 0,
       },
-      "html, body": {
-        backgroundColor: "#17242c",
+      "html,body": {
+        _dark: {
+          bg: "#202125",
+        },
+        bg: "#17242c",
         width: "100%",
         height: "100%",
       },
@@ -37,17 +40,50 @@ export const theme: ThemeConfig = extendTheme({
       ".swiper .swiper-button-prev::after": {
         content: `""`,
       },
-    },
+    }),
   },
   breakpoints,
   colors: {
     dark: {
       header: {
+        background: "black",
+      },
+      tag: {
+        active: {
+          fontColor: "black",
+          background: "white",
+        },
+        inactive: {
+          fontColor: "white",
+          background: "black",
+        },
+      },
+      searchBar: {
+        fontColor: "black",
+        background: "white",
+      },
+      card: {
+        fontColor: "white",
+        background: "black",
+      },
+      pagination: {
+        border: "white",
+      },
+      userProfile: {
+        border: "white",
+      },
+      snsIcons: {
+        bg: "white",
+        border: "white",
+      },
+    },
+    light: {
+      header: {
         background: "#293c4a",
       },
       tag: {
         active: {
-          fontColor: "#00393C",
+          fontColor: "black",
           background: "#2D7B7F",
         },
         inactive: {
@@ -55,34 +91,24 @@ export const theme: ThemeConfig = extendTheme({
           background: "#293C4A",
         },
       },
-    },
-    light: {
-      header: {
-        background: "#f1f5f9",
-      },
-    },
-    tag: {
-      active: {
-        fontColor: "#00393C",
-        background: "#2D7B7F",
-      },
-      inactive: {
+      searchBar: {
         fontColor: "#627387",
         background: "#293C4A",
       },
-    },
-    SearchBar: {
-      fontColor: "#627387",
-      background: "#293C4A",
-    },
-
-    card: {
-      fontColor: "white",
-      background: "#10181B",
-    },
-    pagination: {
-      fontColor: "white",
-      border: "#73CECF",
+      card: {
+        fontColor: "rgb(100, 116, 139)",
+        background: "#10181B",
+      },
+      pagination: {
+        border: "#73CECF",
+      },
+      userProfile: {
+        border: "#357276",
+      },
+      snsIcons: {
+        background: "#357276",
+        border: "#357276",
+      },
     },
     divider: {
       color: "white",

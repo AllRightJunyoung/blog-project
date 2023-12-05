@@ -1,11 +1,18 @@
 "use client";
 import type { UserProfileProps } from "./UserProfile.types";
-import { Avatar, Flex, Text } from "@chakra-ui/react";
+import { Avatar, Flex, Text, useColorModeValue } from "@chakra-ui/react";
+
 const UserProfile = ({ size }: UserProfileProps) => {
+  const border = useColorModeValue(
+    "light.userProfile.border",
+    "dark.userProfile.border",
+  );
+
   return (
     <Flex flexDir="column" alignItems="center" justifyContent="center">
       <Avatar
-        border="4px solid #357276"
+        color={border}
+        border="2px solid"
         size={size}
         src="https://res.cloudinary.com/junyoung/image/upload/v1701588171/profile_1_vqchbm.jpg"
       />

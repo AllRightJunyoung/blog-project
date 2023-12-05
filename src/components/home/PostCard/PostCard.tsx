@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { CalendarIcon, TimeIcon, ViewIcon } from "@chakra-ui/icons";
-import { GridItem, Flex, Text, Box } from "@chakra-ui/react";
+import { GridItem, Flex, Text, Box, useColorModeValue } from "@chakra-ui/react";
 import type { PostCardProps } from "./PostCard.types";
 
 const PostCard = ({
@@ -17,6 +17,12 @@ const PostCard = ({
   blurURL,
 }: PostCardProps) => {
   const router = useRouter();
+  const bg = useColorModeValue("light.card.background", "dark.card.background");
+  const color = useColorModeValue(
+    "light.card.fontColor",
+    "dark.card.fontColor",
+  );
+
   return (
     <motion.div
       style={style}
@@ -24,12 +30,12 @@ const PostCard = ({
       whileTap={{ scale: 0.9 }}
     >
       <GridItem
-        bg="card.background"
+        bg={bg}
         borderRadius={10}
         cursor="pointer"
         onClick={() => router.push(`/posts/${slug}`)}
       >
-        <Flex direction="column">
+        <Flex direction="column" fontWeight="bold">
           <Box>
             <Box display="flex" flexDirection="column">
               <Image
@@ -69,7 +75,6 @@ const PostCard = ({
               borderRight="1px solid #242E35"
               color="rgb(199, 99, 88)"
               fontSize="16px"
-              fontWeight={"bold"}
             >
               <ViewIcon />
               <Text>{category}</Text>
@@ -81,7 +86,7 @@ const PostCard = ({
               alignItems="center"
               justify-content="center"
               borderRight="1px solid #242E35"
-              color="rgb(100, 116, 139)"
+              color={color}
               fontSize="14px"
               textAlign="center"
               gap="5px"
@@ -95,7 +100,7 @@ const PostCard = ({
               }}
               alignItems="center"
               justify-content="center"
-              color="rgb(100, 116, 139)"
+              color={color}
               fontSize="14px"
               gap="5px"
             >

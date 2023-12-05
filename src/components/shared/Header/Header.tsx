@@ -12,6 +12,7 @@ const Header = () => {
     <Flex
       flexDirection="column"
       backgroundColor={bg}
+      color="white"
       position="sticky"
       height="50px"
       as="header"
