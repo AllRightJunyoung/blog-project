@@ -22,11 +22,12 @@ const SearchBar = () => {
     >
       <Input
         placeholder="검색"
-        _placeholder={
-          colorMode === "light"
-            ? "light.searchBar.background"
-            : "dark.searchBar.background"
-        }
+        _placeholder={{
+          color:
+            colorMode === "light"
+              ? "light.searchBar.background"
+              : "dark.searchBar.background",
+        }}
         color={
           colorMode === "light"
             ? "light.searchBar.fontColor"

@@ -17,7 +17,7 @@ const FeautredPostCarousel = ({ data }: FeaturedPostCarouselProps) => {
   const router = useRouter();
 
   return (
-    <Flex width={{ lg: "720px", md: "640px", base: "375px" }} margin={3}>
+    <Flex width={{ lg: "640px", md: "540px", base: "360px" }} margin={3}>
       <Swiper
         modules={[Pagination, Autoplay]}
         speed={600}

@@ -11,10 +11,15 @@ const FeaturedPostLayout = () => {
 
   return (
     <motion.div variants={fadeInFromLeft} initial="hidden" animate="visible">
-      <Flex direction="column" alignItems="center" as="article" margin={5}>
+      <Flex direction="column" alignItems="center" as="article" margin={10}>
         <Box>
           <Flex direction="column" gap={5}>
-            <Heading as="h1" color="white" fontStyle="italic">
+            <Heading
+              as="h1"
+              color="white"
+              fontStyle="italic"
+              textAlign="center"
+            >
               Featured Post
             </Heading>
             <FeautredPostCarousel data={featuredPost} />
