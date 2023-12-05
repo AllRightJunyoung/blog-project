@@ -1,21 +1,31 @@
 "use client";
 
-import { Tag, TagLabel, useColorModeValue } from "@chakra-ui/react";
+import { Tag, TagLabel, useColorMode } from "@chakra-ui/react";
 import type { PostTagProps } from "./PostTag.types";
 
 const PostTag = ({ name }: PostTagProps) => {
-  const bg = useColorModeValue(
-    "light.tag.active.background",
-    "dark.tag.active.background",
-  );
-  const color = useColorModeValue(
-    "light.tag.active.fontColor",
-    "dark.tag.active.fontColor",
-  );
+  const { colorMode } = useColorMode();
 
   return (
-    <Tag size="lg" key="lg" variant="solid" background={bg} borderRadius={10}>
-      <TagLabel color={color} fontSize="md">
+    <Tag
+      size="lg"
+      key="lg"
+      variant="solid"
+      background={
+        colorMode === "light"
+          ? "light.tag.active.background"
+          : "dark.tag.active.background"
+      }
+      borderRadius={10}
+    >
+      <TagLabel
+        color={
+          colorMode === "light"
+            ? "light.tag.active.fontColor"
+            : "dark.tag.active.fontColor"
+        }
+        fontSize="md"
+      >
         {name}
       </TagLabel>
     </Tag>

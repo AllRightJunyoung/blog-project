@@ -21,7 +21,7 @@ const AboutLayout = () => {
           <Text fontSize="20px" color="white" fontWeight="bold">
             <Highlight
               query={["문준영"]}
-              styles={{ px: "2", py: "1", rounded: "full", bg: "teal.100" }}
+              styles={{ px: "2", py: "1", rounded: "full", bg: "teal.400" }}
             >
               안녕하세요 프론트엔드 개발자 문준영 입니다.
             </Highlight>
@@ -33,23 +33,25 @@ const AboutLayout = () => {
           <Text fontSize="20px" color="white" fontWeight="bold">
             <Highlight
               query={["MBTI", "ENFP"]}
-              styles={{ px: "2", py: "1", rounded: "full", bg: "teal.100" }}
+              styles={{ px: "2", py: "1", rounded: "full", bg: "teal.400" }}
             >
               MBTI는 ENFP 입니다.
             </Highlight>
           </Text>
           <Text fontSize="20px" color="white" fontWeight="bold">
             <Highlight
-              query={["웨이트", "등산"]}
-              styles={{ px: "2", py: "1", rounded: "full", bg: "teal.100" }}
+              query={["웨이트", "등산", "보디빌딩쇼", "8년"]}
+              styles={{ px: "2", py: "1", rounded: "full", bg: "teal.400" }}
             >
-              취미는 웨이트 등산을 좋아합니다.
+              취미는 웨이트를 8년째 하고 있고 보디빌딩쇼를 보는것을 좋아합니다.
+              그리고 주말에 종종 등산가는것을 좋아합니다.
             </Highlight>
           </Text>
+
           <Text fontSize="20px" color="white" fontWeight="bold">
             <Highlight
               query={["Next.js", "React", "TypeScript"]}
-              styles={{ px: "2", py: "1", rounded: "full", bg: "teal.100" }}
+              styles={{ px: "2", py: "1", rounded: "full", bg: "teal.400" }}
             >
               사용가능한 기술스택은 Next.js React TypeScript 입니다.
             </Highlight>
@@ -57,7 +59,7 @@ const AboutLayout = () => {
           <Text fontSize="20px" color="white" fontWeight="bold">
             <Highlight
               query={["운영체제", "네트워크", "알고리즘"]}
-              styles={{ px: "2", py: "1", rounded: "full", bg: "teal.100" }}
+              styles={{ px: "2", py: "1", rounded: "full", bg: "teal.400" }}
             >
               개발지식을 폭 넓게 이해하기 위해 현재는 운영체제 네트워크
               알고리즘을 학습하며 부족한 CS지식을 기르고 있습니다.
@@ -66,7 +68,7 @@ const AboutLayout = () => {
           <Text fontSize="20px" color="white" fontWeight="bold">
             <Highlight
               query={["애자일"]}
-              styles={{ px: "2", py: "1", rounded: "full", bg: "teal.100" }}
+              styles={{ px: "2", py: "1", rounded: "full", bg: "teal.400" }}
             >
               업무방식은 워터풀 방식보다 애자일 한것을 선호합니다.
             </Highlight>

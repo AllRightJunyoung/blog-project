@@ -1,25 +1,12 @@
 "use client";
 
-import {
-  Avatar,
-  AvatarGroup,
-  useColorMode,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import { Avatar, AvatarGroup, useColorMode } from "@chakra-ui/react";
 import { Link } from "@chakra-ui/next-js";
 import NextLink from "next/link";
 import Image from "next/image";
 
 const SnsIcons = () => {
   const { colorMode } = useColorMode();
-  const bg = useColorModeValue(
-    "light.snsIcons.background",
-    "dark.snsIcons.background",
-  );
-  const color = useColorModeValue(
-    "light.snsIcons.border",
-    "dark.snsIcons.border",
-  );
 
   return (
     <AvatarGroup spacing="1rem">
@@ -37,8 +24,16 @@ const SnsIcons = () => {
               alt="instagram-Icon"
             />
           }
-          bg={bg}
-          color={color}
+          bg={
+            colorMode === "light"
+              ? "light.snsIcons.background"
+              : "dark.snsIcons.background"
+          }
+          color={
+            colorMode === "light"
+              ? "light.snsIcons.border"
+              : "dark.snsIcons.border"
+          }
           border="1px solid"
           cursor="pointer"
         />
@@ -57,9 +52,17 @@ const SnsIcons = () => {
               alt="linkedIn-Icon"
             />
           }
-          bg={bg}
+          bg={
+            colorMode === "light"
+              ? "light.snsIcons.background"
+              : "dark.snsIcons.background"
+          }
           border="1px solid"
-          color={color}
+          color={
+            colorMode === "light"
+              ? "light.snsIcons.border"
+              : "dark.snsIcons.border"
+          }
           cursor="pointer"
         />
       </Link>
@@ -81,9 +84,17 @@ const SnsIcons = () => {
               alt="github-icon"
             />
           }
-          bg={bg}
+          bg={
+            colorMode === "light"
+              ? "light.snsIcons.background"
+              : "dark.snsIcons.background"
+          }
           border="1px solid"
-          color={color}
+          color={
+            colorMode === "light"
+              ? "light.snsIcons.border"
+              : "dark.snsIcons.border"
+          }
           cursor="pointer"
         />
       </Link>

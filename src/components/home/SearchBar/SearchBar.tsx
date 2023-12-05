@@ -1,18 +1,10 @@
 import { useSetRecoilState } from "recoil";
 import { SearchBarInputState } from "@/recoil/home";
-import { Input, Flex, useColorModeValue, useColorMode } from "@chakra-ui/react";
+import { Input, Flex, useColorMode } from "@chakra-ui/react";
 import Image from "next/image";
 
 const SearchBar = () => {
   const { colorMode } = useColorMode();
-  const bg = useColorModeValue(
-    "light.searchBar.background",
-    "dark.searchBar.background",
-  );
-  const color = useColorModeValue(
-    "light.searchBar.fontColor",
-    "dark.searchBar.fontColor",
-  );
 
   const setSearchBarInput = useSetRecoilState(SearchBarInputState);
 
@@ -30,13 +22,29 @@ const SearchBar = () => {
     >
       <Input
         placeholder="검색"
-        _placeholder={{ color }}
-        color={color}
+        _placeholder={
+          colorMode === "light"
+            ? "light.searchBar.background"
+            : "dark.searchBar.background"
+        }
+        color={
+          colorMode === "light"
+            ? "light.searchBar.fontColor"
+            : "dark.searchBar.fontColor"
+        }
         size="lg"
-        background={bg}
+        background={
+          colorMode === "light"
+            ? "light.searchBar.background"
+            : "dark.searchBar.background"
+        }
         borderRadius="xl"
         border="none"
-        focusBorderColor={bg}
+        focusBorderColor={
+          colorMode === "light"
+            ? "light.searchBar.background"
+            : "dark.searchBar.background"
+        }
         width={500}
         onChange={handleInput}
       />

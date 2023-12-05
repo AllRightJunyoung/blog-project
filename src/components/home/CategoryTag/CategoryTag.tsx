@@ -2,30 +2,12 @@
 import type { CategoryTagProps } from "./CategoryTag.types";
 import { useRecoilState, useSetRecoilState } from "recoil";
 import { CategoryTagState, currentPageState } from "@/recoil/home";
-import { Tag, TagLabel, useColorModeValue } from "@chakra-ui/react";
+import { Tag, TagLabel, useColorMode } from "@chakra-ui/react";
 
 const CategoryTag = ({ name }: CategoryTagProps) => {
   const [categoryTag, setCategoryTag] = useRecoilState(CategoryTagState);
   const setCurrentPage = useSetRecoilState(currentPageState);
-
-  const bgActive = useColorModeValue(
-    "light.tag.active.background",
-    "dark.tag.active.background",
-  );
-
-  const bgInActive = useColorModeValue(
-    "light.tag.inactive.background",
-    "dark.tag.inactive.background",
-  );
-
-  const activeColor = useColorModeValue(
-    "light.tag.active.fontColor",
-    "dark.tag.active.fontColor",
-  );
-  const inactiveColor = useColorModeValue(
-    "light.tag.inactive.fontColor",
-    "dark.tag.inactive.fontColor",
-  );
+  const { colorMode } = useColorMode();
 
   const handleTag = () => {
     setCategoryTag(name);
@@ -37,13 +19,29 @@ const CategoryTag = ({ name }: CategoryTagProps) => {
       size="lg"
       key="lg"
       variant="solid"
-      background={categoryTag === name ? bgActive : bgInActive}
+      background={
+        categoryTag === name
+          ? colorMode === "light"
+            ? "light.tag.active.background"
+            : "dark.tag.active.background"
+          : colorMode === "light"
+            ? "light.tag.inactive.background"
+            : "dark.tag.inactive.background"
+      }
       borderRadius={10}
       cursor="pointer"
       onClick={handleTag}
     >
       <TagLabel
-        color={categoryTag === name ? activeColor : inactiveColor}
+        color={
+          categoryTag === name
+            ? colorMode === "light"
+              ? "light.tag.active.fontColor"
+              : "dark.tag.active.fontColor"
+            : colorMode === "light"
+              ? "light.tag.inactive.fontColor"
+              : "dark.tag.inactive.fontColor"
+        }
         fontSize="md"
       >
         {name}

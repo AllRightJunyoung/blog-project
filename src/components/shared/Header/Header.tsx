@@ -1,17 +1,19 @@
 "use client";
 
-import { Flex, useColorModeValue } from "@chakra-ui/react";
+import { Flex, useColorMode } from "@chakra-ui/react";
 import { NavBar } from "@/components/shared";
 
 const Header = () => {
-  const bg = useColorModeValue(
-    "light.header.background",
-    "dark.header.background",
-  );
+  const { colorMode } = useColorMode();
+
   return (
     <Flex
       flexDirection="column"
-      backgroundColor={bg}
+      backgroundColor={
+        colorMode === "dark"
+          ? "dark.header.background"
+          : "light.header.background"
+      }
       color="white"
       position="sticky"
       height="50px"

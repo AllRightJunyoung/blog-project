@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { CalendarIcon, TimeIcon, ViewIcon } from "@chakra-ui/icons";
-import { GridItem, Flex, Text, Box, useColorModeValue } from "@chakra-ui/react";
+import { GridItem, Flex, Text, Box, useColorMode } from "@chakra-ui/react";
 import type { PostCardProps } from "./PostCard.types";
 
 const PostCard = ({
@@ -17,11 +17,7 @@ const PostCard = ({
   blurURL,
 }: PostCardProps) => {
   const router = useRouter();
-  const bg = useColorModeValue("light.card.background", "dark.card.background");
-  const color = useColorModeValue(
-    "light.card.fontColor",
-    "dark.card.fontColor",
-  );
+  const { colorMode } = useColorMode();
 
   return (
     <motion.div
@@ -30,7 +26,11 @@ const PostCard = ({
       whileTap={{ scale: 0.9 }}
     >
       <GridItem
-        bg={bg}
+        bg={
+          colorMode === "light"
+            ? "light.card.background"
+            : "dark.card.background"
+        }
         borderRadius={10}
         cursor="pointer"
         onClick={() => router.push(`/posts/${slug}`)}
@@ -86,7 +86,11 @@ const PostCard = ({
               alignItems="center"
               justify-content="center"
               borderRight="1px solid #242E35"
-              color={color}
+              color={
+                colorMode === "light"
+                  ? "light.card.fontColor"
+                  : "dark.card.fontColor"
+              }
               fontSize="14px"
               textAlign="center"
               gap="5px"
@@ -100,7 +104,11 @@ const PostCard = ({
               }}
               alignItems="center"
               justify-content="center"
-              color={color}
+              color={
+                colorMode === "light"
+                  ? "light.card.fontColor"
+                  : "dark.card.fontColor"
+              }
               fontSize="14px"
               gap="5px"
             >

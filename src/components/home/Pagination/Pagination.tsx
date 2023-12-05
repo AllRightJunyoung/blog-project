@@ -1,16 +1,19 @@
 import uuid from "react-uuid";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { currentPageState, PaginationPostState } from "@/recoil/home";
-import { Circle, HStack, useColorModeValue } from "@chakra-ui/react";
+import type { ColorMode } from "@chakra-ui/react";
+import {
+  Circle,
+  HStack,
+  useColorMode,
+  useColorModeValue,
+} from "@chakra-ui/react";
 
 const Pagination = () => {
-  const color = useColorModeValue(
-    "light.pagination.border",
-    "dark.pagination.border",
-  );
+  const { colorMode } = useColorMode();
 
   const posts = useRecoilValue(PaginationPostState);
-  const paginationCircles = CreatePaginationCircle(posts);
+  const paginationCircles = CreatePaginationCircle(posts, colorMode);
 
   return (
     <HStack spacing={5} marginBottom={10}>
@@ -22,7 +25,11 @@ const Pagination = () => {
         <Circle
           size="10"
           border="1px solid"
-          color={color}
+          color={
+            colorMode === "light"
+              ? "light.pagination.border"
+              : "dark.pagination.border"
+          }
           opacity={0}
           key={uuid()}
           cursor="pointer"
@@ -32,7 +39,7 @@ const Pagination = () => {
   );
 };
 
-const CreatePaginationCircle = (posts: unknown[]) => {
+const CreatePaginationCircle = (posts: unknown[], colorMode: ColorMode) => {
   const [currentPage, setCurrentPage] = useRecoilState(currentPageState);
   const color = useColorModeValue(
     "light.pagination.border",
@@ -46,7 +53,11 @@ const CreatePaginationCircle = (posts: unknown[]) => {
     paginationCircles.push(
       <Circle
         size="10"
-        color={color}
+        color={
+          colorMode === "light"
+            ? "light.pagination.border"
+            : "dark.pagination.border"
+        }
         border="1px solid"
         opacity={currentPage === i + 1 ? 1 : 0.5}
         key={uuid()}
