@@ -5,7 +5,6 @@ import { getIntersectionObserver } from "@/utils/posts/observer";
 import TableOfItem from "../TocDesktopItem/TocDesktopItem";
 import TableOfItemMobile from "../TocMobileItem/TocMobileItem";
 import { Flex } from "@chakra-ui/react";
-import ToolBox from "../ToolBox/ToolBox";
 
 const TocLayout = ({ isSmallerThan960 }: TocLayoutProps) => {
   const [headingElements, setHeadingElements] = useState<Element[]>([]);
@@ -32,7 +31,6 @@ const TocLayout = ({ isSmallerThan960 }: TocLayoutProps) => {
             activeId={activeId}
             setActiveId={setActiveId}
           />
-          <ToolBox />
         </Flex>
       ) : (
         <TableOfItemMobile

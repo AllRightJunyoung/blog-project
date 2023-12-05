@@ -78,7 +78,7 @@ const customMarkDownComponent: any = {
           as="h1"
           size="lg"
           id={String(children).replaceAll(" ", "-")}
-          color="#FF8945"
+          color="white"
           mt={5}
           mb={5}
         >

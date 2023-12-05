@@ -76,6 +76,12 @@ export const theme: ThemeConfig = extendTheme({
         bg: "white",
         border: "white",
       },
+      toc: {
+        bg: "#1b1c1f",
+        quoteColor: "teal",
+        h1Color: "gray",
+        h2Color: "white",
+      },
     },
     light: {
       header: {
@@ -108,6 +114,12 @@ export const theme: ThemeConfig = extendTheme({
       snsIcons: {
         background: "#357276",
         border: "#357276",
+      },
+      toc: {
+        bg: "#141E25",
+        quoteColor: "teal",
+        h1Color: "#FF8945",
+        h2Color: "#9FD5D5",
       },
     },
     divider: {

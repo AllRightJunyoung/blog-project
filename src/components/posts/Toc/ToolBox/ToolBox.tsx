@@ -1,14 +1,16 @@
 "use clients";
 
-import { Flex, Box, Link } from "@chakra-ui/react";
+import { Flex, Box, Link, useColorMode } from "@chakra-ui/react";
 import Image from "next/image";
 
 const ToolBox = () => {
+  const { colorMode } = useColorMode();
+
   return (
     <Flex
       borderRadius="15px"
       justifyContent="flex-end"
-      bg="#17242c"
+      bg={colorMode === "light" ? "light.toc.bg" : "dark.toc.bg"}
       marginTop={1}
       padding={3}
     >

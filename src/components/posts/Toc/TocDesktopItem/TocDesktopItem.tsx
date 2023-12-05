@@ -1,14 +1,29 @@
 import type { TocDesktopItemProps } from "./TocDesktopItem.types";
-import { Heading, Box, ListItem, Link, List } from "@chakra-ui/react";
 import uuid from "react-uuid";
+import {
+  Heading,
+  Box,
+  ListItem,
+  Link,
+  List,
+  useColorMode,
+} from "@chakra-ui/react";
+import ToolBox from "../ToolBox";
 
 const TocDesktopItem = ({
   headingElements,
   activeId,
   setActiveId,
 }: TocDesktopItemProps) => {
+  const { colorMode } = useColorMode();
+
   return (
-    <Box bg="#141E25" padding="10px" overflowY="scroll" height="100vh">
+    <Box
+      bg={colorMode === "light" ? "light.toc.bg" : "dark.toc.bg"}
+      padding="10px"
+      overflowY="scroll"
+      height="100vh"
+    >
       <Heading
         as="h3"
         size="md"
@@ -25,12 +40,19 @@ const TocDesktopItem = ({
           el.nodeName === "H1" ? (
             <ListItem
               key={uuid()}
-              color="#FF8945"
+              color={
+                colorMode === "light" ? "light.toc.h1Color" : "dark.toc.h1Color"
+              }
               fontWeight="bold"
               mt={5}
               padding={2}
               fontSize="18px"
-              borderLeft={`${el.id === activeId ? `5px solid teal` : "none"}`}
+              borderLeft={`${el.id === activeId ? `5px solid` : "none"}`}
+              borderColor={
+                colorMode === "light"
+                  ? "light.toc.quoteColor"
+                  : "dark.toc.quoteColor"
+              }
             >
               <Link href={`#${el.id}`} onClick={() => setActiveId(el.id)}>
                 {el.innerHTML}
@@ -39,11 +61,18 @@ const TocDesktopItem = ({
           ) : (
             <ListItem
               key={uuid()}
-              color="#9FD5D5"
+              color={
+                colorMode === "light" ? "light.toc.h2Color" : "dark.toc.h2Color"
+              }
               fontWeight="bold"
               paddingLeft={8}
               fontSize="16px"
-              borderLeft={`${el.id === activeId ? `5px solid teal` : "none"}`}
+              borderLeft={`${el.id === activeId ? `5px solid` : "none"}`}
+              borderColor={
+                colorMode === "light"
+                  ? "light.toc.quoteColor"
+                  : "dark.toc.quoteColor"
+              }
             >
               <Link href={`#${el.id}`} onClick={() => setActiveId(el.id)}>
                 {el.innerHTML}
@@ -52,6 +81,7 @@ const TocDesktopItem = ({
           ),
         )}
       </List>
+      <ToolBox />
     </Box>
   );
 };

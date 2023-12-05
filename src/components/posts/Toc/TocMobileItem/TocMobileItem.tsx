@@ -1,8 +1,15 @@
 import type { TocMobileItemProps } from "./TocMobileItem.types";
-import { Heading, Box, ListItem, Link, List } from "@chakra-ui/react";
+import {
+  Heading,
+  Box,
+  ListItem,
+  Link,
+  List,
+  useColorMode,
+} from "@chakra-ui/react";
 import uuid from "react-uuid";
 import { useRef } from "react";
-import { useRecoilState } from "recoil";
+import { useRecoilValue } from "recoil";
 import { TocModalState } from "@/recoil/posts";
 import ToolBox from "../ToolBox";
 
@@ -12,7 +19,10 @@ const TocMobileItem = ({
   setActiveId,
 }: TocMobileItemProps) => {
   const ref = useRef<HTMLDivElement>(null);
-  const [activeTocModal, setActiveTocModal] = useRecoilState(TocModalState);
+
+  const activeTocModal = useRecoilValue(TocModalState);
+
+  const { colorMode } = useColorMode();
 
   return activeTocModal ? (
     <Box
@@ -29,7 +39,11 @@ const TocMobileItem = ({
       paddingLeft={2}
       overflowY="scroll"
     >
-      <Box bg="#141E25" border="1px solid white" borderRadius="md">
+      <Box
+        bg={colorMode === "light" ? "light.toc.bg" : "dark.toc.bg"}
+        border="1px solid white"
+        borderRadius="md"
+      >
         <Heading
           as="h3"
           size="md"
@@ -46,12 +60,21 @@ const TocMobileItem = ({
             el.nodeName === "H1" ? (
               <ListItem
                 key={uuid()}
-                color="#FF8945"
+                color={
+                  colorMode === "light"
+                    ? "light.toc.h1Color"
+                    : "dark.toc.h1Color"
+                }
                 fontWeight="bold"
                 mt={5}
                 padding={3}
                 fontSize="18px"
-                borderLeft={`${el.id === activeId ? `5px solid teal` : "none"}`}
+                borderLeft={`${el.id === activeId ? `5px solid` : "none"}`}
+                borderColor={
+                  colorMode === "light"
+                    ? "light.toc.quoteColor"
+                    : "dark.toc.quoteColor"
+                }
               >
                 <Link href={`#${el.id}`} onClick={() => setActiveId(el.id)}>
                   {el.innerHTML}
@@ -60,11 +83,20 @@ const TocMobileItem = ({
             ) : (
               <ListItem
                 key={uuid()}
-                color="#9FD5D5"
+                color={
+                  colorMode === "light"
+                    ? "light.toc.h2Color"
+                    : "dark.toc.h2Color"
+                }
                 fontWeight="bold"
                 paddingLeft={10}
                 fontSize="16px"
-                borderLeft={`${el.id === activeId ? `5px solid teal` : "none"}`}
+                borderLeft={`${el.id === activeId ? `5px solid` : "none"}`}
+                borderColor={
+                  colorMode === "light"
+                    ? "light.toc.quoteColor"
+                    : "dark.toc.quoteColor"
+                }
               >
                 <Link href={`#${el.id}`} onClick={() => setActiveId(el.id)}>
                   {el.innerHTML}
