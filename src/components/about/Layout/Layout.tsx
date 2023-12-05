@@ -1,8 +1,20 @@
 "use client";
 import { SnsIcons, UserProfile } from "@/components/shared";
-import { Flex, Heading, Text, Box, Highlight } from "@chakra-ui/react";
+import {
+  Flex,
+  Heading,
+  Text,
+  Box,
+  Highlight,
+  useMediaQuery,
+} from "@chakra-ui/react";
 
 const AboutLayout = () => {
+  const [isSmallerThan960] = useMediaQuery("(max-width: 960px)", {
+    ssr: true,
+    fallback: false,
+  });
+
   return (
     <>
       <Flex
@@ -11,14 +23,18 @@ const AboutLayout = () => {
         marginTop={7}
         justifyContent="space-between"
       >
-        <Flex padding={6}>
-          <UserProfile size="3xl" />
-        </Flex>
+        {!isSmallerThan960 ? (
+          <Flex padding={6}>
+            <UserProfile size="3xl" />
+          </Flex>
+        ) : (
+          <></>
+        )}
         <Flex direction="column" gap={2} marginLeft={5}>
           <Box marginBottom={10} textAlign="center">
             <Heading color="white">Introduction</Heading>
           </Box>
-          <Text fontSize="20px" color="white" fontWeight="bold">
+          <Text fontSize="18px" color="white" fontWeight="bold">
             <Highlight
               query={["문준영"]}
               styles={{ px: "2", py: "1", rounded: "full", bg: "teal.400" }}
@@ -26,11 +42,12 @@ const AboutLayout = () => {
               안녕하세요 프론트엔드 개발자 문준영 입니다.
             </Highlight>
           </Text>
-          <Text fontSize="20px" color="white" fontWeight="bold">
+          <Text fontSize="18px" color="white" fontWeight="bold">
             상상한것을 코드로 구현했을때 즐거움을 느끼고 다른사람들에게 도움이
             되는 서비스를 만드는것을 지향합니다.
           </Text>
-          <Text fontSize="20px" color="white" fontWeight="bold">
+
+          <Text fontSize="18px" color="white" fontWeight="bold">
             <Highlight
               query={["MBTI", "ENFP"]}
               styles={{ px: "2", py: "1", rounded: "full", bg: "teal.400" }}
@@ -38,9 +55,9 @@ const AboutLayout = () => {
               MBTI는 ENFP 입니다.
             </Highlight>
           </Text>
-          <Text fontSize="20px" color="white" fontWeight="bold">
+          <Text fontSize="18px" color="white" fontWeight="bold">
             <Highlight
-              query={["웨이트", "등산", "보디빌딩쇼", "8년"]}
+              query={["웨이트", "등산", "8년"]}
               styles={{ px: "2", py: "1", rounded: "full", bg: "teal.400" }}
             >
               취미는 웨이트를 8년째 하고 있고 보디빌딩쇼를 보는것을 좋아합니다.
@@ -48,7 +65,7 @@ const AboutLayout = () => {
             </Highlight>
           </Text>
 
-          <Text fontSize="20px" color="white" fontWeight="bold">
+          <Text fontSize="18px" color="white" fontWeight="bold">
             <Highlight
               query={["Next.js", "React", "TypeScript"]}
               styles={{ px: "2", py: "1", rounded: "full", bg: "teal.400" }}
@@ -56,16 +73,7 @@ const AboutLayout = () => {
               사용가능한 기술스택은 Next.js React TypeScript 입니다.
             </Highlight>
           </Text>
-          <Text fontSize="20px" color="white" fontWeight="bold">
-            <Highlight
-              query={["운영체제", "네트워크", "알고리즘"]}
-              styles={{ px: "2", py: "1", rounded: "full", bg: "teal.400" }}
-            >
-              개발지식을 폭 넓게 이해하기 위해 현재는 운영체제 네트워크
-              알고리즘을 학습하며 부족한 CS지식을 기르고 있습니다.
-            </Highlight>
-          </Text>
-          <Text fontSize="20px" color="white" fontWeight="bold">
+          <Text fontSize="18px" color="white" fontWeight="bold">
             <Highlight
               query={["애자일"]}
               styles={{ px: "2", py: "1", rounded: "full", bg: "teal.400" }}
@@ -81,9 +89,16 @@ const AboutLayout = () => {
         alignItems="center"
         justifyContent="center"
       >
-        <Flex marginTop={10} direction="column" gap={3} alignItems="center">
+        <Flex
+          marginTop={10}
+          direction="column"
+          gap={3}
+          alignItems="center"
+          justifyContent="center"
+        >
+          {isSmallerThan960 && <UserProfile size="2xl" />}
           <SnsIcons />
-          <Text padding={1} color="white">
+          <Text padding={1} color="white" textAlign="center">
             2023 copyright 문준영 all rights reserved
           </Text>
         </Flex>
