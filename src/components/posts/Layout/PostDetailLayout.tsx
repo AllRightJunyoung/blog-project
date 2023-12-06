@@ -5,7 +5,12 @@ import { fadeIn } from "@/styles/framer-motions";
 import { useRecoilState } from "recoil";
 import { TocModalState } from "@/recoil/posts";
 import { Box, Text, Flex, useMediaQuery } from "@chakra-ui/react";
-import { MarkdownViewer, PostDetailTags, TocLayout } from "@/components/posts";
+import {
+  MarkdownViewer,
+  PostDetailTags,
+  ProgressBar,
+  TocLayout,
+} from "@/components/posts";
 import { TimeIcon, InfoOutlineIcon } from "@chakra-ui/icons";
 import Image from "next/image";
 import Giscus from "@giscus/react";
@@ -26,6 +31,7 @@ const PostDetailLayout = ({
 
   return (
     <motion.div variants={fadeIn} initial="hidden" animate="visible">
+      <ProgressBar />
       <main
         style={{ padding: !isSmallerThan960 ? "40px 30px 60px 60px" : "0px" }}
       >
