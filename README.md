@@ -4,6 +4,9 @@
 - 프로젝트하면서 생긴 트러블 슈팅 과정 정리
 - 스터디 활동 회고 및 후기
 
+## 배포주소
+https://www.physicaljun.blog/
+
 ## Features
 | 기능               | 설명                                                             |
 | ------------------ | ---------------------------------------------------------------- |
@@ -29,8 +32,7 @@
 |![프로그래스바](https://github.com/AllRightJunyoung/blog-project/assets/100929485/1848c8e2-2669-497e-9cf3-e820060cdd73)| 
 
 
-## 배포주소
-https://www.physicaljun.blog/
+
 
 
 
