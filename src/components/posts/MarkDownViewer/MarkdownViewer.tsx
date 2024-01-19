@@ -22,9 +22,11 @@ import atomDark from "react-syntax-highlighter/dist/cjs/styles/prism/atom-dark";
 import { ImageProps } from "next/image";
 import Markdown from "react-markdown";
 import type { Element } from "hast";
-import { MarkdownViewerProps } from "./MarkdownViewer.types";
 
-const customMarkDownComponent: any = {
+import { MarkdownViewerProps } from "./MarkdownViewer.types";
+import ChakraUIRenderer from "chakra-ui-markdown-renderer";
+
+const markDowntheme: any = {
   img: (image: ImageProps) => {
     return (
       <Box display="flex" flexDirection="column">
@@ -214,7 +216,7 @@ const MarkdownViewer = ({ children }: MarkdownViewerProps) => {
       className="markdown-viewer"
     >
       <Markdown
-        components={customMarkDownComponent}
+        components={ChakraUIRenderer(markDowntheme)}
         remarkPlugins={[remarkGfm]}
       >
         {children}
