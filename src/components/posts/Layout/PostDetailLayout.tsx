@@ -61,7 +61,7 @@ const PostDetailLayout = ({
             )}
           </Box>
         )}
-        <Box>
+        <Box padding={10}>
           <Box padding={10}>
             <HorizontalHeading title={title} fontSize="4xl" />
             <Flex gap={5}>
@@ -83,7 +83,7 @@ const PostDetailLayout = ({
               <PostDetailTags tags={tags} />
             </Box>
           </Box>
-          <Flex padding={3} gap={5} as="article">
+          <Flex as="article">
             <MarkdownViewer>{content}</MarkdownViewer>
             <TocLayout isSmallerThan960={isSmallerThan960} />
           </Flex>

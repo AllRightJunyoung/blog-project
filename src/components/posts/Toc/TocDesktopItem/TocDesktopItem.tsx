@@ -20,7 +20,7 @@ const TocDesktopItem = ({
   return (
     <Box
       bg={colorMode === "light" ? "light.toc.bg" : "dark.toc.bg"}
-      padding="10px"
+      padding={3}
       overflowY="scroll"
       height="100vh"
     >
@@ -30,8 +30,7 @@ const TocDesktopItem = ({
         fontWeight="bold"
         textAlign="center"
         color="white"
-        fontSize="20px"
-        padding={3}
+        fontSize="18px"
       >
         목차
       </Heading>
@@ -46,7 +45,7 @@ const TocDesktopItem = ({
               fontWeight="bold"
               mt={5}
               padding={2}
-              fontSize="18px"
+              fontSize="16px"
               borderLeft={`${el.id === activeId ? `5px solid` : "none"}`}
               borderColor={
                 colorMode === "light"
@@ -65,8 +64,8 @@ const TocDesktopItem = ({
                 colorMode === "light" ? "light.toc.h2Color" : "dark.toc.h2Color"
               }
               fontWeight="bold"
-              paddingLeft={8}
-              fontSize="16px"
+              paddingLeft={5}
+              fontSize="14px"
               borderLeft={`${el.id === activeId ? `5px solid` : "none"}`}
               borderColor={
                 colorMode === "light"
