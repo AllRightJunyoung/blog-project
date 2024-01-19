@@ -86,7 +86,7 @@ const PostDetailLayout = ({
               <PostDetailTags tags={tags} />
             </Box>
           </Box>
-          <Flex as="article" padding={2}>
+          <Flex as="article" padding={{ "2xl": 20, base: 2 }}>
             <MarkdownViewer>{content}</MarkdownViewer>
             <TocLayout isSmallerThan960={isSmallerThan960} />
           </Flex>
