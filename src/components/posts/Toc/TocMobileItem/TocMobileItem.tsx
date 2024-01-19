@@ -52,9 +52,7 @@ const TocMobileItem = ({
           color="white"
           fontSize={{
             "2xl": "2xl",
-            md: "md",
-            lg: "lg",
-            base: "lg",
+            xl: "xl",
           }}
           padding="1.5rem"
         >
@@ -73,12 +71,7 @@ const TocMobileItem = ({
                 fontWeight="bold"
                 mt={5}
                 padding={3}
-                fontSize={{
-                  "2xl": "2xl",
-                  md: "md",
-                  lg: "lg",
-                  base: "lg",
-                }}
+                fontSize={{ xl: "xl", md: "md", lg: "lg" }}
                 borderLeft={`${el.id === activeId ? `5px solid` : "none"}`}
                 borderColor={
                   colorMode === "light"
@@ -100,7 +93,7 @@ const TocMobileItem = ({
                 }
                 fontWeight="bold"
                 paddingLeft={10}
-                fontSize="16px"
+                fontSize={{ xl: "xl", md: "md", lg: "lg" }}
                 borderLeft={`${el.id === activeId ? `5px solid` : "none"}`}
                 borderColor={
                   colorMode === "light"
