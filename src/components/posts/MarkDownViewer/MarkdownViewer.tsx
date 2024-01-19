@@ -78,7 +78,7 @@ const markDowntheme: any = {
       <>
         <Heading
           as="h1"
-          size="lg"
+          size="md"
           id={String(children).replaceAll(" ", "-")}
           color="white"
           mt={5}
@@ -95,7 +95,7 @@ const markDowntheme: any = {
       <>
         <Heading
           as="h2"
-          size="md"
+          size="sm"
           color="#9FD5D5"
           id={String(children).replaceAll(" ", "-")}
           mt={6}
@@ -111,7 +111,7 @@ const markDowntheme: any = {
       <>
         <Heading
           as="h3"
-          size="sm"
+          size="md"
           color="#9FD5D5"
           id={String(children).replaceAll(" ", "-")}
           mt={6}
@@ -124,21 +124,21 @@ const markDowntheme: any = {
   },
   p: ({ children }: PropsWithChildren<Element>) => {
     return (
-      <Text mt={2} mb={5} fontSize={{ lg: "18px", base: "16px" }} color="white">
+      <Text mt={2} mb={5} fontSize="md" color="white">
         {children}
       </Text>
     );
   },
   ol: ({ children }: PropsWithChildren<Element>) => {
     return (
-      <OrderedList color="white" fontSize={{ lg: "18px", base: "16px" }}>
+      <OrderedList color="white" fontSize="md">
         {children}
       </OrderedList>
     );
   },
   ul: ({ children }: PropsWithChildren<Element>) => {
     return (
-      <UnorderedList color="white" fontSize={{ lg: "18px", base: "16px" }}>
+      <UnorderedList color="white" fontSize="md">
         {children}
       </UnorderedList>
     );
@@ -178,12 +178,7 @@ const markDowntheme: any = {
   },
   strong: ({ children }: PropsWithChildren<Element>) => {
     return (
-      <Text
-        as="b"
-        fontSize={{ lg: "20px", base: "18px" }}
-        color="#9FD5D5"
-        fontWeight="bold"
-      >
+      <Text as="b" fontSize="md" color="#9FD5D5" fontWeight="bold">
         {children}
       </Text>
     );

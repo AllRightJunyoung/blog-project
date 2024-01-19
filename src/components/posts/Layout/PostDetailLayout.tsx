@@ -32,8 +32,11 @@ const PostDetailLayout = ({
   return (
     <motion.div variants={fadeIn} initial="hidden" animate="visible">
       <ProgressBar />
-      <main
-        style={{ padding: !isSmallerThan960 ? "40px 30px 60px 60px" : "0px" }}
+      <Box
+        as="main"
+        padding={{ xl: 32, base: 0 }}
+        paddingTop={{ xl: 0, base: 0 }}
+        paddingBottom={{ xl: 0, base: 0 }}
       >
         {isSmallerThan960 && (
           <Box
@@ -61,7 +64,7 @@ const PostDetailLayout = ({
             )}
           </Box>
         )}
-        <Box padding={10}>
+        <Box>
           <Box padding={10}>
             <HorizontalHeading title={title} fontSize="4xl" />
             <Flex gap={5}>
@@ -83,7 +86,7 @@ const PostDetailLayout = ({
               <PostDetailTags tags={tags} />
             </Box>
           </Box>
-          <Flex as="article">
+          <Flex as="article" padding={2}>
             <MarkdownViewer>{content}</MarkdownViewer>
             <TocLayout isSmallerThan960={isSmallerThan960} />
           </Flex>
@@ -104,7 +107,7 @@ const PostDetailLayout = ({
           </Box>
           <Footer />
         </Box>
-      </main>
+      </Box>
     </motion.div>
   );
 };

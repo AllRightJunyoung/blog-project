@@ -23,9 +23,9 @@ const TocLayout = ({ isSmallerThan960 }: TocLayoutProps) => {
   }, []);
 
   return (
-    <aside style={{ marginLeft: "10px" }}>
+    <aside>
       {!isSmallerThan960 ? (
-        <Flex direction="column" margin={10} position="sticky" top={1}>
+        <Flex direction="column" position="sticky" top={1} marginLeft={3}>
           <TableOfItem
             headingElements={headingElements}
             activeId={activeId}
