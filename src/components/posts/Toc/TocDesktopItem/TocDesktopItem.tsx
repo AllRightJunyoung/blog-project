@@ -30,7 +30,7 @@ const TocDesktopItem = ({
         fontWeight="bold"
         textAlign="center"
         color="white"
-        fontSize={{ "2xl": "2xl", xl: "xl" }}
+        fontSize={{ base: "lg" }}
       >
         목차
       </Heading>
@@ -46,8 +46,7 @@ const TocDesktopItem = ({
               mt={5}
               padding={2}
               fontSize={{
-                "2xl": "2xl",
-                xl: "xl",
+                base: "md",
               }}
               borderLeft={`${el.id === activeId ? `5px solid` : "none"}`}
               borderColor={
@@ -69,8 +68,7 @@ const TocDesktopItem = ({
               fontWeight="bold"
               paddingLeft={5}
               fontSize={{
-                "2xl": "2xl",
-                xl: "xl",
+                base: "md",
               }}
               borderLeft={`${el.id === activeId ? `5px solid` : "none"}`}
               borderColor={

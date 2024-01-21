@@ -31,7 +31,13 @@ const ProgressBar = () => {
 
   return (
     <Box position="sticky" top={0} left={0} zIndex={9999}>
-      <Line strokeColor="teal" strokeLinecap="butt" percent={width}></Line>
+      <Line
+        strokeColor="teal"
+        trailWidth={1}
+        strokeWidth={0.5}
+        strokeLinecap="butt"
+        percent={width}
+      ></Line>
     </Box>
   );
 };

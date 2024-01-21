@@ -50,10 +50,7 @@ const TocMobileItem = ({
           fontWeight="bold"
           textAlign="center"
           color="white"
-          fontSize={{
-            "2xl": "2xl",
-            xl: "xl",
-          }}
+          fontSize="lg"
           padding="1.5rem"
         >
           목차
@@ -71,7 +68,7 @@ const TocMobileItem = ({
                 fontWeight="bold"
                 mt={5}
                 padding={3}
-                fontSize={{ xl: "xl", md: "md", lg: "lg" }}
+                fontSize="md"
                 borderLeft={`${el.id === activeId ? `5px solid` : "none"}`}
                 borderColor={
                   colorMode === "light"
@@ -93,7 +90,7 @@ const TocMobileItem = ({
                 }
                 fontWeight="bold"
                 paddingLeft={10}
-                fontSize={{ xl: "xl", md: "md", lg: "lg" }}
+                fontSize="md"
                 borderLeft={`${el.id === activeId ? `5px solid` : "none"}`}
                 borderColor={
                   colorMode === "light"

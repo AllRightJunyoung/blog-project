@@ -69,7 +69,7 @@ const markDowntheme: any = {
         {String(children).replace(/\n$/, "")}
       </SyntaxHighlighter>
     ) : (
-      <Code colorScheme="teal" fontSize={{ "2xl": "xl", md: "md", lg: "lg" }}>
+      <Code colorScheme="teal" fontSize={{ sm: "sm", base: "md" }}>
         {children}
       </Code>
     );
@@ -80,7 +80,7 @@ const markDowntheme: any = {
       <>
         <Heading
           as="h1"
-          size={{ "2xl": "xl", xl: "lg", md: "md" }}
+          size={{ sm: "md", base: "lg" }}
           id={String(children).replaceAll(" ", "-")}
           color="white"
           mt={5}
@@ -97,7 +97,7 @@ const markDowntheme: any = {
       <>
         <Heading
           as="h2"
-          size={{ "2xl": "xl", xl: "lg", md: "md" }}
+          size={{ sm: "md", base: "lg" }}
           color="#9FD5D5"
           id={String(children).replaceAll(" ", "-")}
           mt={6}
@@ -113,7 +113,7 @@ const markDowntheme: any = {
       <>
         <Heading
           as="h3"
-          size={{ "2xl": "xl", xl: "lg", md: "md" }}
+          size={{ sm: "sm", base: "md" }}
           color="#9FD5D5"
           id={String(children).replaceAll(" ", "-")}
           mt={6}
@@ -124,34 +124,24 @@ const markDowntheme: any = {
       </>
     );
   },
+
   p: ({ children }: PropsWithChildren<Element>) => {
     return (
-      <Text
-        mt={2}
-        mb={5}
-        fontSize={{ "2xl": "2xl", xl: "xl", lg: "lg" }}
-        color="white"
-      >
+      <Text mt={2} mb={5} fontSize={{ sm: "md", base: "lg" }} color="white">
         {children}
       </Text>
     );
   },
   ol: ({ children }: PropsWithChildren<Element>) => {
     return (
-      <OrderedList
-        color="white"
-        fontSize={{ "2xl": "2xl", xl: "xl", lg: "lg" }}
-      >
+      <OrderedList color="white" fontSize={{ sm: "md", base: "lg" }}>
         {children}
       </OrderedList>
     );
   },
   ul: ({ children }: PropsWithChildren<Element>) => {
     return (
-      <UnorderedList
-        color="white"
-        fontSize={{ "2xl": "2xl", xl: "xl", lg: "lg" }}
-      >
+      <UnorderedList color="white" fontSize={{ sm: "md", base: "lg" }}>
         {children}
       </UnorderedList>
     );
@@ -170,7 +160,7 @@ const markDowntheme: any = {
         mt={3}
         variant="simple"
         color="white"
-        size={{ "2xl": "2xl", xl: "xl", lg: "lg" }}
+        size="lg"
         layout="auto"
       >
         {children}
@@ -191,12 +181,7 @@ const markDowntheme: any = {
   },
   strong: ({ children }: PropsWithChildren<Element>) => {
     return (
-      <Text
-        as="b"
-        fontSize={{ "2xl": "2xl", xl: "xl", lg: "lg" }}
-        color="#9FD5D5"
-        fontWeight="bold"
-      >
+      <Text as="b" fontSize="md" color="#9FD5D5" fontWeight="bold">
         {children}
       </Text>
     );
@@ -223,7 +208,7 @@ const markDowntheme: any = {
 const MarkdownViewer = ({ children }: MarkdownViewerProps) => {
   return (
     <Box
-      padding={{ xl: 8, lg: 6, base: 4 }}
+      padding={6}
       bgColor="blackAlpha.300"
       w="100%"
       className="markdown-viewer"

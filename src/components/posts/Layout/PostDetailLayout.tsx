@@ -34,9 +34,9 @@ const PostDetailLayout = ({
       <ProgressBar />
       <Box
         as="main"
-        padding={{ xl: 16, base: 0 }}
-        paddingTop={{ xl: 0, base: 0 }}
-        paddingBottom={{ xl: 0, base: 0 }}
+        padding={{ xl: 32, lg: 6 }}
+        paddingTop={{ xl: 0, lg: 0 }}
+        paddingBottom={{ xl: 0, lg: 0 }}
       >
         {isSmallerThan960 && (
           <Box
@@ -66,27 +66,27 @@ const PostDetailLayout = ({
         )}
         <Box>
           <Box padding={10}>
-            <HorizontalHeading title={title} fontSize="4xl" />
+            <HorizontalHeading title={title} fontSize="3xl" />
             <Flex gap={5}>
               <Flex alignItems="center" gap={2} marginTop={3} marginBottom={3}>
                 <InfoOutlineIcon color="white" />
-                <Text color="white" fontSize="md">
+                <Text color="white" fontSize="lg">
                   {category}
                 </Text>
               </Flex>
 
               <Flex alignItems="center" gap={1} marginTop={3} marginBottom={3}>
                 <TimeIcon color="white" />
-                <Text color="white" fontSize="md">
+                <Text color="white" fontSize="lg">
                   {date}
                 </Text>
               </Flex>
             </Flex>
-            <Box marginTop={5}>
+            <Box marginTop={2}>
               <PostDetailTags tags={tags} />
             </Box>
           </Box>
-          <Flex as="article" padding={{ "2xl": 10, xl: 8, lg: 6, base: 4 }}>
+          <Flex as="article" padding={{ base: 4, sm: 2 }} gap={3}>
             <MarkdownViewer>{content}</MarkdownViewer>
             <TocLayout isSmallerThan960={isSmallerThan960} />
           </Flex>
