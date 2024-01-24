@@ -22,6 +22,10 @@ const NavBar = () => {
         <Link as={NextLink} href="/about" fontSize="xl" fontWeight="bold">
           Introduction
         </Link>
+        <Link as={NextLink} href="/diary" fontSize="xl" fontWeight="bold">
+          Diary
+        </Link>
+
         <Button onClick={toggleColorMode} background="none" padding={1}>
           {colorMode === "light" ? (
             <SunIcon color="orange" />
