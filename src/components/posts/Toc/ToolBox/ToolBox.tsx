@@ -15,11 +15,16 @@ const ToolBox = () => {
       padding={3}
     >
       <Box cursor="pointer">
-        <Image src="/icons/toc/clip" width={40} height={40} alt="clip-icon" />
+        <Image
+          src={`${process.env.IMAGE_URI}/icons/clip.svg`}
+          width={40}
+          height={40}
+          alt="clip-icon"
+        />
       </Box>
       <Box cursor="pointer">
         <Link href={`#nav-bar`}>
-          <Image src="/icons/toc/top" width={40} height={40} alt="top-icon" />
+          <Image  src={`${process.env.IMAGE_URI}/icons/top.svg`} width={40} height={40} alt="top-icon" />
         </Link>
       </Box>
     </Flex>

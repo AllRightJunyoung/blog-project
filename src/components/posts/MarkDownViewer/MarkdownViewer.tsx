@@ -31,14 +31,14 @@ const markDowntheme: any = {
     return (
       <Box display="flex" flexDirection="column">
         <Image
-          src={`${image.src}`}
+          src={`${process.env.IMAGE_URI}${image.src}`}
           alt={image.alt}
           width={600}
           height={400}
           sizes="100vw"
           priority={true}
           placeholder="blur"
-          blurDataURL="https://res.cloudinary.com/junyoung/image/upload/v1701422172/mainblur_bvv7xw.webp"
+          blurDataURL={`${process.env.IMAGE_URI}${image.src}`}
           style={{
             width: "100%",
             height: "auto",

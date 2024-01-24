@@ -51,14 +51,14 @@ const SearchBar = () => {
       />
       {colorMode === "dark" ? (
         <Image
-          src="/icons/post/darksearch"
+          src={`${process.env.IMAGE_URI}/icons/darkSearch.svg`}
           width="50"
           height="50"
           alt="search-icon"
         />
       ) : (
         <Image
-          src="/icons/post/search"
+          src={`${process.env.IMAGE_URI}/icons/search.svg`}
           width="50"
           height="50"
           alt="search-icon"

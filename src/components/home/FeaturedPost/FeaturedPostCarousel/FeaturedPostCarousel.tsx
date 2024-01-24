@@ -16,6 +16,7 @@ import type { FeaturedPostCarouselProps } from "./FeaturedPostCarousel.types";
 const FeautredPostCarousel = ({ data }: FeaturedPostCarouselProps) => {
   const router = useRouter();
 
+  console.log(data);
   return (
     <Flex width={{ lg: "640px", md: "540px", base: "360px" }} margin={3}>
       <Swiper
@@ -58,7 +59,7 @@ const FeautredPostCarousel = ({ data }: FeaturedPostCarouselProps) => {
                 <Flex alignItems="center">
                   <Image
                     alt={post.title}
-                    src={post.thumbnail}
+                    src={`${process.env.IMAGE_URI}${post.thumbnail}`}
                     sizes="100vw"
                     width={300}
                     height={200}

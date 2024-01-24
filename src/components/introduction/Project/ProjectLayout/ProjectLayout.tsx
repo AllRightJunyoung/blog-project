@@ -1,8 +1,15 @@
 import { Grid, Flex, Box } from "@chakra-ui/react";
+import uuid from "react-uuid";
+
 import ProjectCard from "../ProjectCard/ProjectCard";
 import { HorizontalHeading } from "@/components/shared";
+import type { ProjectDataType } from "@/types/shared";
 
-const ProjectLayout = () => {
+interface Props {
+  data: ProjectDataType[];
+}
+
+const ProjectLayout = ({ data }: Props) => {
   return (
     <Flex direction="column" margin={10}>
       <Box marginTop={0} marginBottom={10}>
@@ -16,10 +23,19 @@ const ProjectLayout = () => {
         }}
         gap={10}
       >
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
+        {data.map((info) => {
+          return (
+            <ProjectCard
+              key={uuid()}
+              name={info.name}
+              description={info.description}
+              github={info.github}
+              skills={info.skills}
+              image={info.image}
+              portfolio={info.portfolio}
+            />
+          );
+        })}
       </Grid>
     </Flex>
   );

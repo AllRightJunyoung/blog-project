@@ -7,8 +7,7 @@
     "build": "ANALYZE=true NODE_ENV=production next build",
     "postbuild": "next-sitemap",
     "start": "next start",
-    "lint": "next lint",
-    "upload-cloudinary": "ts-node --project tsconfig.json ./script/uploadCloudinary"
+    "lint": "next lint"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.1.1",
@@ -52,7 +51,6 @@
     "@typescript-eslint/eslint-plugin": "^6.13.1",
     "@typescript-eslint/parser": "^6.13.1",
     "autoprefixer": "^10.4.17",
-    "cloudinary": "^1.41.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.1",
     "eslint-plugin-simple-import-sort": "^10.0.0",

@@ -40,13 +40,13 @@ const PostCard = ({
             <Box display="flex" flexDirection="column">
               <Image
                 alt={title}
-                src={thumbnail}
+                src={`${process.env.IMAGE_URI}${thumbnail}`}
                 sizes="100vw"
                 width={300}
                 height={200}
                 priority={true}
                 placeholder="blur"
-                blurDataURL={blurURL}
+                blurDataURL={`${process.env.IMAGE_URI}${blurURL}`}
                 style={{
                   width: "100%",
                   height: "auto",

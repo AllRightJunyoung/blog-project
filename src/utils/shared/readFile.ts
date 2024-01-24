@@ -5,6 +5,14 @@ import type { PostsType } from "../../types/shared";
 import { cache } from "react";
 
 const postsDirectory = path.join(process.cwd(), "posts");
+const dataDirectory = path.join(process.cwd(), "data");
+
+export const getJsonData = cache((name: string): unknown => {
+  const filePath = path.join(dataDirectory, `${name}.json`);
+  const fileContent = fs.readFileSync(filePath, "utf-8");
+
+  return JSON.parse(fileContent);
+});
 
 export const getPostData = cache((postId: string): PostsType => {
   const postSlug = postId.replace(/\.md$/, "");

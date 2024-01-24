@@ -15,7 +15,7 @@ const UserProfile = ({ size }: UserProfileProps) => {
         }
         border="2px solid"
         size={size}
-        src="https://res.cloudinary.com/junyoung/image/upload/v1701588171/profile_1_vqchbm.jpg"
+        src={`${process.env.IMAGE_URI}/profile/profile.jpg`}
       />
       <Text size="2xl" color="white" mt={1} fontWeight="bold">
         문준영

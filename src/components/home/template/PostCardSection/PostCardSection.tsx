@@ -34,7 +34,7 @@ const PostCardSection = ({ data }: PostCardSectionProps) => {
         }}
         gap={10}
       >
-        {postCardData.length > 0 ? (
+        {postCardData &&
           postCardData.map((post) => {
             return (
               <PostCard
@@ -48,20 +48,7 @@ const PostCardSection = ({ data }: PostCardSectionProps) => {
                 blurURL={post.blurURL}
               />
             );
-          })
-        ) : (
-          <PostCard
-            key={uuid()}
-            style={{ opacity: 0 }}
-            slug="empty"
-            title="empty"
-            category="empty"
-            date="empty"
-            diffDate="empty"
-            thumbnail="postcardempty"
-            blurURL="postcardempty"
-          />
-        )}
+          })}
       </Grid>
     </motion.div>
   );

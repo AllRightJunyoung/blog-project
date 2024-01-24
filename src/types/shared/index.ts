@@ -11,6 +11,15 @@ export type PostsType = {
   blurURL: string;
 };
 
+export type ProjectDataType = {
+  name: string;
+  description: string;
+  skills: string[];
+  image: string;
+  github: string;
+  portfolio: string;
+};
+
 export interface PostCardType
   extends Pick<
     PostsType,

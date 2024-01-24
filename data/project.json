@@ -1,0 +1,18 @@
+[
+{
+    "name" : "개인 블로그",
+    "description":"검색엔진 최적화를 공부하기 위해 진행한 프로젝트 입니다.",
+    "skills":["Next.js","React-Markdown","Recoil","Chakra-UI"],
+    "image":"/project/blog.png",
+    "github":"https://github.com/AllRightJunyoung/blog-project",
+    "portfolio":"https://github.com/AllRightJunyoung/SideProject_MoonPlayer"
+},
+{
+    "name" : "Moon Player",
+    "description":"전역 상태 관리를 이해하고 소셜로그인 기반의 인증 인가 서버를 구축해보고 Rest API를 학습하기 위해 진행한 프로젝트 입니다 ",
+    "skills":["React","Redux-Toolkit","Express","Styled-Component"],
+    "image":"/project/moonplayer.png",
+    "github":"https://github.com/AllRightJunyoung/SideProject_MoonPlayer",
+    "portfolio":"https://github.com/AllRightJunyoung/SideProject_MoonPlayer"
+}
+]

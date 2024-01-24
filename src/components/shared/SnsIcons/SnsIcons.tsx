@@ -16,8 +16,8 @@ const SnsIcons = () => {
             <Image
               src={
                 colorMode === "light"
-                  ? "icons/profile/instagram"
-                  : "icons/profile/instagramdark"
+                  ? `${process.env.IMAGE_URI}/icons/instagram.svg`
+                  : `${process.env.IMAGE_URI}/icons/instagramdark.svg`
               }
               width={50}
               height={50}
@@ -44,8 +44,8 @@ const SnsIcons = () => {
             <Image
               src={
                 colorMode === "light"
-                  ? "icons/profile/linkedIn"
-                  : "icons/profile/linkedindark"
+                  ? `${process.env.IMAGE_URI}/icons/linkedIn.svg`
+                  : `${process.env.IMAGE_URI}/icons/linkedindark.svg`
               }
               width={50}
               height={50}
@@ -76,8 +76,8 @@ const SnsIcons = () => {
             <Image
               src={
                 colorMode === "light"
-                  ? "icons/profile/github"
-                  : "icons/profile/githubdark"
+                  ? `${process.env.IMAGE_URI}/icons/github.svg`
+                  : `${process.env.IMAGE_URI}/icons/githubdark.svg`
               }
               width={50}
               height={50}

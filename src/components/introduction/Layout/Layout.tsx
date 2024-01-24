@@ -1,12 +1,19 @@
 "use client";
 import MyInfo from "../MyInfo";
 import Footer from "../Footer";
+
 import ProjectLayout from "../Project/ProjectLayout";
-const IntroductionLayout = () => {
+import type { ProjectDataType } from "@/types/shared";
+
+interface Props {
+  project: ProjectDataType[];
+}
+
+const IntroductionLayout = ({ project }: Props) => {
   return (
     <>
       <MyInfo />
-      <ProjectLayout />
+      <ProjectLayout data={project}></ProjectLayout>
       <Footer />
     </>
   );

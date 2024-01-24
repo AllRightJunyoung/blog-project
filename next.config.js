@@ -8,9 +8,7 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 
 const nextConfig = {
   images: {
-    loader: "custom",
-    loaderFile: "./src/lib/cloudinaryLoader.ts",
-    domains: ["res.cloudinary.com"],
+    domains: [`${process.env.NEXT_PUBLIC_IMAGE_DOMAIN}`],
   },
   webpack(config) {
     // Grab the existing rule that handles SVG imports
@@ -44,9 +42,7 @@ const nextConfig = {
     NEXT_PUBLIC_GA_ID: process.env.NEXT_PUBLIC_GA_ID,
     BLOG_URI: process.env.BLOG_URI,
     GOOGLE_SITE_VERIFICATION: process.env.GOOGLE_SITE_VERIFICATION,
-    CLOUDINARY_API_KEY: process.env.CLOUDINARY_API_KEY,
-    CLOUDINARY_NAME: process.env.CLOUDINARY_NAME,
-    CLOUDINARY_SECRET_KEY: process.env.CLOUDINARY_SECRET_KEY,
+    IMAGE_URI: process.env.NEXT_PUBLIC_IMAGE_URI,
   },
 };
 
