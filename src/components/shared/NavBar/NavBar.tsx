@@ -19,7 +19,12 @@ const NavBar = () => {
         <Link as={NextLink} href="/" fontSize="xl" fontWeight="bold">
           Home
         </Link>
-        <Link as={NextLink} href="/about" fontSize="xl" fontWeight="bold">
+        <Link
+          as={NextLink}
+          href="/introduction"
+          fontSize="xl"
+          fontWeight="bold"
+        >
           Introduction
         </Link>
         <Link as={NextLink} href="/diary" fontSize="xl" fontWeight="bold">

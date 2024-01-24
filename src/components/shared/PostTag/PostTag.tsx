@@ -1,9 +1,11 @@
 "use client";
 
 import { Tag, TagLabel, useColorMode } from "@chakra-ui/react";
-import type { PostTagProps } from "./PostTag.types";
+interface Props {
+  name: string;
+}
 
-const PostTag = ({ name }: PostTagProps) => {
+const PostTag = ({ name }: Props) => {
   const { colorMode } = useColorMode();
 
   return (
