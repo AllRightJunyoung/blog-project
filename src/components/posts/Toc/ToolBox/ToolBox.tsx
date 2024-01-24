@@ -24,7 +24,12 @@ const ToolBox = () => {
       </Box>
       <Box cursor="pointer">
         <Link href={`#nav-bar`}>
-          <Image  src={`${process.env.IMAGE_URI}/icons/top.svg`} width={40} height={40} alt="top-icon" />
+          <Image
+            src={`${process.env.IMAGE_URI}/icons/top.svg`}
+            width={40}
+            height={40}
+            alt="top-icon"
+          ></Image>
         </Link>
       </Box>
     </Flex>
