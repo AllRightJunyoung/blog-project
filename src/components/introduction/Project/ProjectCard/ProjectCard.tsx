@@ -66,12 +66,11 @@ const ProjectCard = ({
           </Flex>
         </Box>
 
-        <Flex gap={2} padding={2} marginBottom={0}>
+        <Flex gap={1} padding={2} marginBottom={0}>
           {skills.map((name) => {
             return <ProjectTag key={uuid()} name={name} />;
           })}
         </Flex>
-
         <Flex
           fontSize="md"
           padding={2}
