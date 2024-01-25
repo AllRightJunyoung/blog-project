@@ -15,6 +15,7 @@ import { TimeIcon, InfoOutlineIcon } from "@chakra-ui/icons";
 import Image from "next/image";
 import Giscus from "@giscus/react";
 import { HorizontalHeading, Footer } from "@/components/shared";
+import imageLoader from "@/lib/imageloader";
 
 const PostDetailLayout = ({
   title,
@@ -49,14 +50,16 @@ const PostDetailLayout = ({
           >
             {!activeTocModal ? (
               <Image
-                src="/icons/toc/list"
+                loader={imageLoader}
+                src="/icons/list.svg"
                 width={60}
                 height={60}
                 alt="toc-list-Icon"
               />
             ) : (
               <Image
-                src="/icons/toc/close"
+                loader={imageLoader}
+                src="/icons/close.svg"
                 width={80}
                 height={80}
                 alt="toc-close-Icon"
