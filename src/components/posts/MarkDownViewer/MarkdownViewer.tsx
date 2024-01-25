@@ -25,20 +25,20 @@ import type { Element } from "hast";
 
 import { MarkdownViewerProps } from "./MarkdownViewer.types";
 import ChakraUIRenderer from "chakra-ui-markdown-renderer";
+import imageLoader from "@/lib/imageloader";
 
 const markDowntheme: any = {
   img: (image: ImageProps) => {
     return (
       <Box display="flex" flexDirection="column">
         <Image
-          src={`${process.env.IMAGE_URI}${image.src}`}
+          loader={imageLoader}
+          src={image.src}
           alt={image.alt}
           width={600}
           height={400}
           sizes="100vw"
           priority={true}
-          placeholder="blur"
-          blurDataURL={`${process.env.IMAGE_URI}${image.src}`}
           style={{
             width: "100%",
             height: "auto",

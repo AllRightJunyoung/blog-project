@@ -14,6 +14,7 @@ import {
 } from "@chakra-ui/react";
 import Image from "next/image";
 import ProjectTag from "../ProjectTag";
+import imageLoader from "@/lib/imageloader";
 
 interface Props extends ProjectDataType {}
 
@@ -38,7 +39,8 @@ const ProjectCard = ({
         <Box display="flex" flexDirection="column">
           <Image
             alt={description}
-            src={`${process.env.IMAGE_URI}${image}`}
+            loader={imageLoader}
+            src={image}
             sizes="100vw"
             width={150}
             height={100}
@@ -97,12 +99,13 @@ const ProjectCard = ({
               <Image
                 src={
                   colorMode === "light"
-                    ? `${process.env.IMAGE_URI}/icons/github.svg`
-                    : `${process.env.IMAGE_URI}/icons/githubdark.svg`
+                    ? "/icons/github.svg"
+                    : "/icons/githubdark.svg"
                 }
                 width={30}
                 height={30}
                 alt="github-icon"
+                loader={imageLoader}
               />
               <Text>Github</Text>
             </Flex>

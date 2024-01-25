@@ -5,7 +5,7 @@ import Image from "next/image";
 import { CalendarIcon, TimeIcon, ViewIcon } from "@chakra-ui/icons";
 import { GridItem, Flex, Text, Box, useColorMode } from "@chakra-ui/react";
 import type { PostCardProps } from "./PostCard.types";
-
+import imageLoader from "@/lib/imageloader";
 const PostCard = ({
   title,
   date,
@@ -40,13 +40,14 @@ const PostCard = ({
             <Box display="flex" flexDirection="column">
               <Image
                 alt={title}
-                src={`${process.env.IMAGE_URI}${thumbnail}`}
+                src={thumbnail}
                 sizes="100vw"
                 width={300}
                 height={200}
                 priority={true}
                 placeholder="blur"
-                blurDataURL={`${process.env.IMAGE_URI}${blurURL}`}
+                loader={imageLoader}
+                blurDataURL={blurURL}
                 style={{
                   width: "100%",
                   height: "auto",

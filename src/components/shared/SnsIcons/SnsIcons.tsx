@@ -4,6 +4,7 @@ import { Avatar, AvatarGroup, useColorMode } from "@chakra-ui/react";
 import { Link } from "@chakra-ui/next-js";
 import NextLink from "next/link";
 import Image from "next/image";
+import imageLoader from "@/lib/imageloader";
 
 const SnsIcons = () => {
   const { colorMode } = useColorMode();
@@ -14,10 +15,11 @@ const SnsIcons = () => {
         <Avatar
           icon={
             <Image
+              loader={imageLoader}
               src={
                 colorMode === "light"
-                  ? `${process.env.IMAGE_URI}/icons/instagram.svg`
-                  : `${process.env.IMAGE_URI}/icons/instagramdark.svg`
+                  ? "/icons/instagram.svg"
+                  : "/icons/instagramdark.svg"
               }
               width={50}
               height={50}
@@ -42,10 +44,11 @@ const SnsIcons = () => {
         <Avatar
           icon={
             <Image
+              loader={imageLoader}
               src={
                 colorMode === "light"
-                  ? `${process.env.IMAGE_URI}/icons/linkedIn.svg`
-                  : `${process.env.IMAGE_URI}/icons/linkedindark.svg`
+                  ? "/icons/linkedIn.svg"
+                  : "/icons/linkedindark.svg"
               }
               width={50}
               height={50}
@@ -74,10 +77,11 @@ const SnsIcons = () => {
         <Avatar
           icon={
             <Image
+              loader={imageLoader}
               src={
                 colorMode === "light"
-                  ? `${process.env.IMAGE_URI}/icons/github.svg`
-                  : `${process.env.IMAGE_URI}/icons/githubdark.svg`
+                  ? "/icons/github.svg"
+                  : "/icons/githubdark.svg"
               }
               width={50}
               height={50}

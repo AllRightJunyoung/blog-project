@@ -2,6 +2,7 @@ import { useSetRecoilState } from "recoil";
 import { SearchBarInputState } from "@/recoil/home";
 import { Input, Flex, useColorMode } from "@chakra-ui/react";
 import Image from "next/image";
+import imageLoader from "@/lib/imageloader";
 
 const SearchBar = () => {
   const { colorMode } = useColorMode();
@@ -51,14 +52,16 @@ const SearchBar = () => {
       />
       {colorMode === "dark" ? (
         <Image
-          src={`${process.env.IMAGE_URI}/icons/darkSearch.svg`}
+          loader={imageLoader}
+          src="/icons/darkSearch.svg"
           width="50"
           height="50"
           alt="search-icon"
         />
       ) : (
         <Image
-          src={`${process.env.IMAGE_URI}/icons/search.svg`}
+          loader={imageLoader}
+          src="/icons/search.svg"
           width="50"
           height="50"
           alt="search-icon"
