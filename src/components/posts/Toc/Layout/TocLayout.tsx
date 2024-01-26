@@ -1,12 +1,14 @@
 "use client";
-import type { TocLayoutProps } from "./TocLayout.types";
 import { useEffect, useState } from "react";
 import { getIntersectionObserver } from "@/utils/posts/observer";
 import TableOfItem from "../TocDesktopItem/TocDesktopItem";
 import TableOfItemMobile from "../TocMobileItem/TocMobileItem";
 import { Flex } from "@chakra-ui/react";
+interface Props {
+  isSmallerThan960: boolean;
+}
 
-const TocLayout = ({ isSmallerThan960 }: TocLayoutProps) => {
+const TocLayout = ({ isSmallerThan960 }: Props) => {
   const [headingElements, setHeadingElements] = useState<Element[]>([]);
   const [activeId, setActiveId] = useState<string>("");
 

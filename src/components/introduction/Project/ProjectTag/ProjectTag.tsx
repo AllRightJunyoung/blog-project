@@ -1,3 +1,5 @@
+"use client";
+
 import { Tag, TagLabel, Tooltip } from "@chakra-ui/react";
 import uuid from "react-uuid";
 interface Props {

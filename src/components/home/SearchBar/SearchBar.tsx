@@ -1,3 +1,5 @@
+"use client";
+
 import { useSetRecoilState } from "recoil";
 import { SearchBarInputState } from "@/recoil/home";
 import { Input, Flex, useColorMode } from "@chakra-ui/react";

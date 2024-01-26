@@ -1,10 +1,10 @@
-import { Grid, Flex, Box } from "@chakra-ui/react";
+"use client";
+
 import uuid from "react-uuid";
-
-import ProjectCard from "../ProjectCard/ProjectCard";
+import { Grid, Flex, Box } from "@chakra-ui/react";
+import ProjectCard from "../ProjectCard";
 import { HorizontalHeading } from "@/components/shared";
-import type { ProjectDataType } from "@/types/shared";
-
+import { ProjectDataType } from "@/types/introduction";
 interface Props {
   data: ProjectDataType[];
 }

@@ -1,3 +1,5 @@
+"use client";
+
 import uuid from "react-uuid";
 import { Tag, TagLabel } from "@chakra-ui/react";
 

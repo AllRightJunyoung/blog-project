@@ -1,10 +1,14 @@
 "use client";
-import type { CategoryTagProps } from "./CategoryTag.types";
+
 import { useRecoilState, useSetRecoilState } from "recoil";
 import { CategoryTagState, currentPageState } from "@/recoil/home";
 import { Tag, TagLabel, useColorMode } from "@chakra-ui/react";
 
-const CategoryTag = ({ name }: CategoryTagProps) => {
+interface Props {
+  name: string;
+}
+
+const CategoryTag = ({ name }: Props) => {
   const [categoryTag, setCategoryTag] = useRecoilState(CategoryTagState);
   const setCurrentPage = useSetRecoilState(currentPageState);
   const { colorMode } = useColorMode();

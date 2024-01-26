@@ -1,11 +1,16 @@
 "use client";
-import { MainProps } from "./Main.types";
+
+import type { PostsType } from "@/types/shared";
 import { Box, Flex } from "@chakra-ui/react";
 import { CategoryList, Pagination, SearchBar } from "@/components/home";
 import { HorizontalHeading } from "@/components/shared";
 import PostCardSection from "../PostCardSection";
 
-const Main = ({ data }: MainProps) => {
+interface Props {
+  data: PostsType[];
+}
+
+const Main = ({ data }: Props) => {
   return (
     <Box margin={10} as="main">
       <HorizontalHeading title="Posts" fontSize="4xl" />

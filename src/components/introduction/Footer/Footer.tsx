@@ -1,3 +1,5 @@
+"use client";
+
 import { UserProfile, SnsIcons } from "@/components/shared";
 import { Flex, Text } from "@chakra-ui/react";
 

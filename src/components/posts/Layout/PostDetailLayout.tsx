@@ -1,5 +1,4 @@
 "use client";
-import type { PostDetailLayoutProps } from "./PostDetailLayout.types";
 import imageLoader from "@/lib/imageloader";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/styles/framer-motions";
@@ -11,14 +10,13 @@ import Image from "next/image";
 import Giscus from "@giscus/react";
 import { Footer, MarkdownViewer, ProgressBar } from "@/components/shared";
 import PostInfoLayout from "@/components/shared/PostInfo/Layout/PostInfoLayout";
+import { PostsType } from "@/types/shared";
 
-const PostDetailLayout = ({
-  title,
-  content,
-  date,
-  tags,
-  category,
-}: PostDetailLayoutProps) => {
+interface Props extends PostsType {
+  content: string;
+}
+
+const PostDetailLayout = ({ title, content, date, tags, category }: Props) => {
   const [isSmallerThan960] = useMediaQuery("(max-width: 960px)", {
     ssr: true,
     fallback: false,

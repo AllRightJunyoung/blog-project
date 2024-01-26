@@ -1,11 +1,20 @@
 "use client";
+
+import type { MotionStyle } from "framer-motion";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { CalendarIcon, TimeIcon, ViewIcon } from "@chakra-ui/icons";
 import { GridItem, Flex, Text, Box, useColorMode } from "@chakra-ui/react";
-import type { PostCardProps } from "./PostCard.types";
 import imageLoader from "@/lib/imageloader";
+import { PostCardType } from "../../../types/home/index";
+
+interface Props extends PostCardType {
+  style?: MotionStyle;
+  blurURL: string;
+  diffDate: string;
+}
+
 const PostCard = ({
   title,
   date,
@@ -15,7 +24,7 @@ const PostCard = ({
   slug,
   style,
   blurURL,
-}: PostCardProps) => {
+}: Props) => {
   const router = useRouter();
   const { colorMode } = useColorMode();
 

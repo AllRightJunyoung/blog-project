@@ -1,4 +1,7 @@
-import type { ProjectDataType } from "@/types/shared";
+"use client";
+
+import { ProjectDataType } from "@/types/introduction";
+
 import uuid from "react-uuid";
 import { LinkIcon, InfoOutlineIcon, ViewIcon } from "@chakra-ui/icons";
 import { Link } from "@chakra-ui/next-js";
@@ -16,8 +19,6 @@ import Image from "next/image";
 import ProjectTag from "../ProjectTag";
 import imageLoader from "@/lib/imageloader";
 
-interface Props extends ProjectDataType {}
-
 const ProjectCard = ({
   name,
   description,
@@ -25,7 +26,7 @@ const ProjectCard = ({
   image,
   github,
   portfolio,
-}: Props) => {
+}: ProjectDataType) => {
   const { colorMode } = useColorMode();
 
   return (

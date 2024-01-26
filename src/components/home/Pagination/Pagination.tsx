@@ -1,3 +1,5 @@
+"use client";
+
 import uuid from "react-uuid";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { currentPageState, PaginationPostState } from "@/recoil/home";

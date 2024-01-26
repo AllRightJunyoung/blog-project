@@ -1,8 +1,9 @@
 "use client";
+
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-
+import type { PostsType } from "@/types/shared";
 import uuid from "react-uuid";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
@@ -11,10 +12,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import { BellIcon, SunIcon, CalendarIcon } from "@chakra-ui/icons";
 import { FeaturedPostTags } from "../FeaturedPostTags";
-import type { FeaturedPostCarouselProps } from "./FeaturedPostCarousel.types";
 import imageLoader from "@/lib/imageloader";
 
-const FeautredPostCarousel = ({ data }: FeaturedPostCarouselProps) => {
+interface Props {
+  data: PostsType[];
+}
+
+const FeautredPostCarousel = ({ data }: Props) => {
   const router = useRouter();
 
   return (

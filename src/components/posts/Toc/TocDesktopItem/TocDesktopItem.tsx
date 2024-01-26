@@ -1,4 +1,6 @@
-import type { TocDesktopItemProps } from "./TocDesktopItem.types";
+"use client";
+
+import { Dispatch, SetStateAction } from "react";
 import uuid from "react-uuid";
 import {
   Heading,
@@ -10,11 +12,13 @@ import {
 } from "@chakra-ui/react";
 import ToolBox from "../ToolBox";
 
-const TocDesktopItem = ({
-  headingElements,
-  activeId,
-  setActiveId,
-}: TocDesktopItemProps) => {
+interface Props {
+  headingElements: Element[];
+  activeId: string;
+  setActiveId: Dispatch<SetStateAction<string>>;
+}
+
+const TocDesktopItem = ({ headingElements, activeId, setActiveId }: Props) => {
   const { colorMode } = useColorMode();
 
   return (

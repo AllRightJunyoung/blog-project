@@ -1,8 +1,8 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import type { PostsType } from "../../types/shared";
 import { cache } from "react";
+import { PostsType } from "@/types/shared";
 
 const postsDirectory = path.join(process.cwd(), "posts");
 const dataDirectory = path.join(process.cwd(), "data");

@@ -1,5 +1,4 @@
 "use client";
-
 import { throttle } from "@/utils/shared/throttle";
 import { Box } from "@chakra-ui/react";
 import { Line } from "rc-progress";

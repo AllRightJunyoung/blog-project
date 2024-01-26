@@ -1,4 +1,5 @@
 "use client";
+
 import { PropsWithChildren } from "react";
 import {
   Box,
@@ -22,8 +23,6 @@ import atomDark from "react-syntax-highlighter/dist/cjs/styles/prism/atom-dark";
 import { ImageProps } from "next/image";
 import Markdown from "react-markdown";
 import type { Element } from "hast";
-
-import { MarkdownViewerProps } from "./MarkdownViewer.types";
 import ChakraUIRenderer from "chakra-ui-markdown-renderer";
 import imageLoader from "@/lib/imageloader";
 
@@ -205,7 +204,11 @@ const markDowntheme: any = {
   },
 };
 
-const MarkdownViewer = ({ children }: MarkdownViewerProps) => {
+interface Props {
+  children: string;
+}
+
+const MarkdownViewer = ({ children }: Props) => {
   return (
     <Box
       padding={6}

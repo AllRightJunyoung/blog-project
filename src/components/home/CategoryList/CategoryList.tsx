@@ -1,10 +1,15 @@
 "use client";
+
+import type { PostsType } from "@/types/shared";
 import uuid from "react-uuid";
 import CategoryTag from "../CategoryTag";
 import { HStack } from "@chakra-ui/react";
-import type { CategoryListProps } from "./CategoryList.types";
 
-const CategoryList = ({ data }: CategoryListProps) => {
+interface Props {
+  data: PostsType[];
+}
+
+const CategoryList = ({ data }: Props) => {
   let categories = data.map((postData) => {
     return postData.category;
   });

@@ -1,5 +1,6 @@
+"use client";
+
 import uuid from "react-uuid";
-import { PostCardSectionProps } from "./PostCardSection.types";
 import { AllPostState, PostCardSectionState } from "@/recoil/home";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { useEffect } from "react";
@@ -8,8 +9,13 @@ import { Grid } from "@chakra-ui/react";
 import { fadeInFromLeft } from "@/styles/framer-motions";
 import { getDiffDate } from "@/utils/home/date";
 import PostCard from "../../PostCard";
+import { PostsType } from "@/types/shared";
 
-const PostCardSection = ({ data }: PostCardSectionProps) => {
+interface Props {
+  data: PostsType[];
+}
+
+const PostCardSection = ({ data }: Props) => {
   const setAllPosts = useSetRecoilState(AllPostState);
   const postCardData = useRecoilValue(PostCardSectionState);
 

@@ -1,17 +1,16 @@
 "use client";
 
+import { DiaryPageType } from "@/types/diary";
 import { Flex, Grid, Box } from "@chakra-ui/react";
 import DiaryCard from "../DiaryCard/DiaryCard";
 import { HorizontalHeading } from "@/components/shared";
 import DiaryTag from "../DiaryTag";
 
-// interface Props {
-//   date:string[],
-//   list:unk
+interface Props extends DiaryPageType {
+  date: string[];
+}
 
-// }
-
-const DiaryMainLayout = () => {
+const DiaryMainLayout = ({ date, list }: Props) => {
   return (
     <Flex direction="column">
       <Box padding={5} textAlign="center">

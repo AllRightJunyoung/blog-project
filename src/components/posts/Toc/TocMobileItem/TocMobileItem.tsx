@@ -1,4 +1,6 @@
-import type { TocMobileItemProps } from "./TocMobileItem.types";
+"use client";
+
+import { Dispatch, SetStateAction } from "react";
 import {
   Heading,
   Box,
@@ -13,11 +15,13 @@ import { useRecoilValue } from "recoil";
 import { TocModalState } from "@/recoil/posts";
 import ToolBox from "../ToolBox";
 
-const TocMobileItem = ({
-  headingElements,
-  activeId,
-  setActiveId,
-}: TocMobileItemProps) => {
+interface Props {
+  headingElements: Element[];
+  activeId: string;
+  setActiveId: Dispatch<SetStateAction<string>>;
+}
+
+const TocMobileItem = ({ headingElements, activeId, setActiveId }: Props) => {
   const ref = useRef<HTMLDivElement>(null);
 
   const activeTocModal = useRecoilValue(TocModalState);

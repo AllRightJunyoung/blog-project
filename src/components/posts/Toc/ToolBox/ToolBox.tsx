@@ -1,4 +1,4 @@
-"use clients";
+"use client";
 
 import imageLoader from "@/lib/imageloader";
 import { Flex, Box, Link, useColorMode } from "@chakra-ui/react";

@@ -1,5 +1,4 @@
 "use client";
-
 import { Tag, TagLabel, useColorMode } from "@chakra-ui/react";
 interface Props {
   name: string;

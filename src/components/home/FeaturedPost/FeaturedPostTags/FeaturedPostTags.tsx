@@ -1,9 +1,14 @@
+"use client";
+
 import uuid from "react-uuid";
-import type { FeaturedPostTagsProps } from "./FeaturedPostTags.types";
 import { HStack } from "@chakra-ui/react";
 import { PostTag } from "@/components/shared";
 
-const FeaturedPostTags = ({ tags }: FeaturedPostTagsProps) => {
+interface Props {
+  tags: string[];
+}
+
+const FeaturedPostTags = ({ tags }: Props) => {
   return (
     <HStack spacing={3}>
       {tags.map((tag) => (

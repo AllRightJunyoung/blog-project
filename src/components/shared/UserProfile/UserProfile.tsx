@@ -1,8 +1,11 @@
 "use client";
-import type { UserProfileProps } from "./UserProfile.types";
 import { Avatar, Flex, Text, useColorMode } from "@chakra-ui/react";
 
-const UserProfile = ({ size }: UserProfileProps) => {
+interface Props {
+  size: string;
+}
+
+const UserProfile = ({ size }: Props) => {
   const { colorMode } = useColorMode();
 
   return (

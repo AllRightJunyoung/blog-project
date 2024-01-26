@@ -1,10 +1,13 @@
 "use client";
-
 import uuid from "react-uuid";
 import { HStack } from "@chakra-ui/react";
-import type { PostDetailTagsProps } from "./PostDetailTags.type";
 import { PostTag } from "@/components/shared";
-const PostDetailTags = ({ tags }: PostDetailTagsProps) => {
+
+interface Props {
+  tags: string[];
+}
+
+const PostDetailTags = ({ tags }: Props) => {
   return (
     <HStack spacing={3}>
       {tags.map((tagName) => (
