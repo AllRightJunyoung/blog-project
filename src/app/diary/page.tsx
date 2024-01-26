@@ -1,5 +1,5 @@
-import DiaryLayout from "@/components/diary/Layout/Layout";
+import { DiaryMainLayout } from "@/components/diary";
 
-export default async function Diary() {
-  return <DiaryLayout />;
+export default async function DiaryMainPage() {
+  return <DiaryMainLayout />;
 }

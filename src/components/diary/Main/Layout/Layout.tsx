@@ -4,7 +4,14 @@ import { Flex, Grid, Box } from "@chakra-ui/react";
 import DiaryCard from "../DiaryCard/DiaryCard";
 import { HorizontalHeading } from "@/components/shared";
 import DiaryTag from "../DiaryTag";
-const DiaryLayout = () => {
+
+// interface Props {
+//   date:string[],
+//   list:unk
+
+// }
+
+const DiaryMainLayout = () => {
   return (
     <Flex direction="column">
       <Box padding={5} textAlign="center">
@@ -36,4 +43,4 @@ const DiaryLayout = () => {
   );
 };
 
-export default DiaryLayout;
+export default DiaryMainLayout;

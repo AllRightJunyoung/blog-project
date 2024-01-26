@@ -1,21 +1,16 @@
 "use client";
 import type { PostDetailLayoutProps } from "./PostDetailLayout.types";
+import imageLoader from "@/lib/imageloader";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/styles/framer-motions";
 import { useRecoilState } from "recoil";
 import { TocModalState } from "@/recoil/posts";
-import { Box, Text, Flex, useMediaQuery } from "@chakra-ui/react";
-import {
-  MarkdownViewer,
-  PostDetailTags,
-  ProgressBar,
-  TocLayout,
-} from "@/components/posts";
-import { TimeIcon, InfoOutlineIcon } from "@chakra-ui/icons";
+import { Box, Flex, useMediaQuery } from "@chakra-ui/react";
+import { TocLayout } from "@/components/posts";
 import Image from "next/image";
 import Giscus from "@giscus/react";
-import { HorizontalHeading, Footer } from "@/components/shared";
-import imageLoader from "@/lib/imageloader";
+import { Footer, MarkdownViewer, ProgressBar } from "@/components/shared";
+import PostInfoLayout from "@/components/shared/PostInfo/Layout/PostInfoLayout";
 
 const PostDetailLayout = ({
   title,
@@ -68,27 +63,12 @@ const PostDetailLayout = ({
           </Box>
         )}
         <Box>
-          <Box padding={10}>
-            <HorizontalHeading title={title} fontSize="3xl" />
-            <Flex gap={5}>
-              <Flex alignItems="center" gap={2} marginTop={3} marginBottom={3}>
-                <InfoOutlineIcon color="white" />
-                <Text color="white" fontSize="lg">
-                  {category}
-                </Text>
-              </Flex>
-
-              <Flex alignItems="center" gap={1} marginTop={3} marginBottom={3}>
-                <TimeIcon color="white" />
-                <Text color="white" fontSize="lg">
-                  {date}
-                </Text>
-              </Flex>
-            </Flex>
-            <Box marginTop={2}>
-              <PostDetailTags tags={tags} />
-            </Box>
-          </Box>
+          <PostInfoLayout
+            title={title}
+            date={date}
+            category={category}
+            tags={tags}
+          />
           <Flex as="article" padding={{ base: 4, sm: 2 }} gap={3}>
             <MarkdownViewer>{content}</MarkdownViewer>
             <TocLayout isSmallerThan960={isSmallerThan960} />
