@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 import { Metadata } from "next";
-import { getPostData } from "@/utils/shared/readFile";
+import { getAllPosts, getPostData } from "@/utils/shared/readFile";
 import { Spinner } from "@/components/shared";
 
 const PostDetailPageLayout = dynamic(
@@ -52,4 +52,10 @@ export default async function PostDetailPage({ params: { slug } }: Props) {
       category={postData.category}
     />
   );
+}
+export async function generateStaticParams() {
+  const allpostData = getAllPosts();
+  return allpostData.map((post) => ({
+    slug: post.slug,
+  }));
 }
