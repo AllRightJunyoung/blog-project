@@ -7,11 +7,3 @@ export interface PostCardType
   > {
   diffDate: string;
 }
-
-export interface FeaturedPostCardType
-  extends Pick<
-    PostsType,
-    "slug" | "title" | "category" | "date" | "thumbnail" | "featured"
-  > {
-  diffDate: string;
-}

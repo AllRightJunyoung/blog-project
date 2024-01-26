@@ -12,10 +12,8 @@ import { Footer, MarkdownViewer, ProgressBar } from "@/components/shared";
 import PostInfoLayout from "@/components/shared/PostInfo/Layout/PostInfoLayout";
 import { PostsType } from "@/types/shared";
 
-interface Props extends PostsType {
-  content: string;
-}
-
+interface Props
+  extends Pick<PostsType, "title" | "category" | "date" | "tags" | "content"> {}
 const PostDetailLayout = ({ title, content, date, tags, category }: Props) => {
   const [isSmallerThan960] = useMediaQuery("(max-width: 960px)", {
     ssr: true,

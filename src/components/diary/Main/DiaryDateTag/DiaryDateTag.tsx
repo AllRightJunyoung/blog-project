@@ -4,11 +4,10 @@ import uuid from "react-uuid";
 import { Tag, TagLabel } from "@chakra-ui/react";
 
 interface Props {
-  year: number;
-  month: number;
+  name: string;
 }
 
-const DiaryTag = ({ year, month }: Props) => {
+const DiaryDateTag = ({ name }: Props) => {
   return (
     <Tag
       size="lg"
@@ -18,9 +17,9 @@ const DiaryTag = ({ year, month }: Props) => {
       cursor="pointer"
     >
       <TagLabel color="white" fontSize="md">
-        {year}-{month}
+        {name}
       </TagLabel>
     </Tag>
   );
 };
-export default DiaryTag;
+export default DiaryDateTag;

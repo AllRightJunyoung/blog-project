@@ -1,8 +1,11 @@
 import type { PostsType } from "../shared";
 
-export interface DiaryListType
-  extends Pick<PostsType, "description" | "tags" | "image" | "date"> {}
+export type DiaryListType = Pick<
+  PostsType,
+  "description" | "tags" | "date" | "thumbnail"
+>;
 
 export type DiaryPageType = {
-  list: DiaryListType;
+  date: string[];
+  list: DiaryListType[];
 };

@@ -4,7 +4,7 @@
         {
             "description":"2024-01-26 일기장",
             "tags":["알고리즘","프로젝트","개발공부"],
-            "image":"/diary/book.jpg",
+            "thumbnail":"/diary/book.jpg",
             "date":"January 25, 2024"
         }
     ]

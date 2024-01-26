@@ -9,7 +9,13 @@ interface Props {
 
 const DiaryCardTag = ({ name }: Props) => {
   return (
-    <Tag size="md" key={uuid()} variant="solid" background="teal">
+    <Tag
+      size="md"
+      key={uuid()}
+      variant="solid"
+      background="teal"
+      fontWeight={700}
+    >
       <TagLabel color="white" fontSize="md">
         {name}
       </TagLabel>

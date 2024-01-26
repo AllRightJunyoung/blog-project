@@ -6,11 +6,16 @@ import Image from "next/image";
 import { CalendarIcon } from "@chakra-ui/icons";
 import DiaryCardTag from "../DiaryCardTag";
 
-const DiaryCard = () => {
+import type { DiaryListType } from "@/types/diary";
+import imageLoader from "@/lib/imageloader";
+import uuid from "react-uuid";
+
+const DiaryCard = ({ date, description, tags, thumbnail }: DiaryListType) => {
   const { colorMode } = useColorMode();
 
   return (
     <GridItem
+      cursor="pointer"
       bg={
         colorMode === "light" ? "light.card.background" : "dark.card.background"
       }
@@ -18,9 +23,9 @@ const DiaryCard = () => {
     >
       <Flex direction="column" fontWeight="bold">
         <Image
-          alt=""
-          // loader={imageLoader}
-          src=""
+          alt={description}
+          loader={imageLoader}
+          src={thumbnail}
           sizes="100vw"
           width={200}
           height={150}
@@ -33,14 +38,14 @@ const DiaryCard = () => {
         />
         <Flex direction="column" color="white">
           <Flex paddingLeft={2} marginTop={6} gap={2}>
-            <DiaryCardTag name="기록" />
-            <DiaryCardTag name="기록" />
-            <DiaryCardTag name="기록" />
+            {tags.map((name) => {
+              return <DiaryCardTag key={uuid()} name={name} />;
+            })}
           </Flex>
           <Flex alignItems="center" alignSelf="flex-end">
             <CalendarIcon />
             <Text fontSize="md" padding={3}>
-              January 25, 2024
+              {date}
             </Text>
           </Flex>
         </Flex>
