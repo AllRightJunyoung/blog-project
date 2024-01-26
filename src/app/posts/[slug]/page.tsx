@@ -1,7 +1,8 @@
 import dynamic from "next/dynamic";
 import { Metadata } from "next";
-import { getAllPosts, getPostData } from "@/utils/shared/readFile";
+
 import { Spinner } from "@/components/shared";
+import { getPostsData, getAllPosts } from "@/utils/shared/readFile";
 
 const PostDetailPageLayout = dynamic(
   () => import("@/components/posts/Layout/PostDetailLayout"),
@@ -20,7 +21,7 @@ type Props = {
 export async function generateMetadata({
   params: { slug },
 }: Props): Promise<Metadata> {
-  const { title, description, thumbnail, tags } = getPostData(slug);
+  const { title, description, thumbnail, tags } = getPostsData(slug, "article");
   return {
     title,
     description,
@@ -41,7 +42,7 @@ export async function generateMetadata({
 }
 
 export default async function PostDetailPage({ params: { slug } }: Props) {
-  const postData = getPostData(slug);
+  const postData = getPostsData(slug, "article");
 
   return (
     <PostDetailPageLayout
@@ -54,8 +55,8 @@ export default async function PostDetailPage({ params: { slug } }: Props) {
   );
 }
 export async function generateStaticParams() {
-  const allpostData = getAllPosts();
-  return allpostData.map((post) => ({
+  const allpostArticleData = getAllPosts("article");
+  return allpostArticleData.map((post) => ({
     slug: post.slug,
   }));
 }

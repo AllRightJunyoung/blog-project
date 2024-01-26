@@ -8,7 +8,7 @@ const HomeLayout = dynamic(() => import("../components/home/Layout/Layout"), {
 });
 
 export default async function HomePage() {
-  const postAllData = getAllPosts();
+  const allPostsArticleData = getAllPosts("article");
 
-  return <HomeLayout data={postAllData} />;
+  return <HomeLayout data={allPostsArticleData} />;
 }

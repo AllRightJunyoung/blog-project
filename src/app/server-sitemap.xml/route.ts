@@ -2,9 +2,9 @@ import { getAllPosts } from "@/utils/shared/readFile";
 import { ISitemapField, getServerSideSitemap } from "next-sitemap";
 
 export async function GET(request: Request) {
-  const allposts = getAllPosts();
+  const allArticlePosts = getAllPosts("article");
 
-  const sitemapFields: ISitemapField[] = allposts.map((post) => {
+  const sitemapFields: ISitemapField[] = allArticlePosts.map((post) => {
     return {
       loc: `${process.env.BLOG_URI}/posts/${post.slug}`,
       lastmod: new Date().toISOString(),

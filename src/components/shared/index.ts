@@ -8,3 +8,4 @@ export { default as UserProfile } from "./UserProfile";
 export { default as SnsIcons } from "./SnsIcons";
 export { default as MarkdownViewer } from "./MarkDownViewer";
 export { default as ProgressBar } from "./ProgressBar";
+export { default as PostInfoLayout } from "./PostInfo/Layout";

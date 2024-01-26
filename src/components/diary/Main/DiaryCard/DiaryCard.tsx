@@ -5,13 +5,15 @@ import { GridItem, useColorMode, Flex, Text } from "@chakra-ui/react";
 import Image from "next/image";
 import { CalendarIcon } from "@chakra-ui/icons";
 import DiaryCardTag from "../DiaryCardTag";
+import { useRouter } from "next/navigation";
 
-import type { DiaryListType } from "@/types/diary";
+import type { DiaryType } from "@/types/diary";
 import imageLoader from "@/lib/imageloader";
 import uuid from "react-uuid";
 
-const DiaryCard = ({ date, description, tags, thumbnail }: DiaryListType) => {
+const DiaryCard = ({ date, description, tags, thumbnail, slug }: DiaryType) => {
   const { colorMode } = useColorMode();
+  const router = useRouter();
 
   return (
     <GridItem
@@ -20,6 +22,7 @@ const DiaryCard = ({ date, description, tags, thumbnail }: DiaryListType) => {
         colorMode === "light" ? "light.card.background" : "dark.card.background"
       }
       borderRadius="10px"
+      onClick={() => router.push(`/diary/${slug}`)}
     >
       <Flex direction="column" fontWeight="bold">
         <Image

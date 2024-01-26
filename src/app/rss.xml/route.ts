@@ -1,8 +1,8 @@
 import RSS from "rss";
 import { getAllPosts } from "@/utils/shared/readFile";
 
-export async function GET() {
-  const allposts = await getAllPosts();
+export function GET() {
+  const allArticlePosts = getAllPosts("article");
   const feed = new RSS({
     title: "준영의 기술블로그",
     description: "준영의 기술블로그 입니다.",
@@ -11,7 +11,7 @@ export async function GET() {
     language: "ko",
   });
 
-  allposts.forEach((post) => {
+  allArticlePosts.forEach((post) => {
     feed.item({
       title: post.title,
       description: post.description,

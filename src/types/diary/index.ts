@@ -1,11 +1,11 @@
 import type { PostsType } from "../shared";
 
-export type DiaryListType = Pick<
+export type DiaryType = Pick<
   PostsType,
-  "description" | "tags" | "date" | "thumbnail"
+  "description" | "tags" | "date" | "thumbnail" | "slug"
 >;
 
 export type DiaryPageType = {
   date: string[];
-  list: DiaryListType[];
+  list: DiaryType[];
 };

@@ -2,10 +2,11 @@
     "date":["2024-01"],
     "list":[
         {
-            "description":"2024-01-26 일기장",
+            "description":"2024-01-26 일기",
             "tags":["알고리즘","프로젝트","개발공부"],
             "thumbnail":"/diary/book.jpg",
-            "date":"January 25, 2024"
+            "date":"January 26, 2024",
+            "slug":"2024-01-26"
         }
     ]
 }

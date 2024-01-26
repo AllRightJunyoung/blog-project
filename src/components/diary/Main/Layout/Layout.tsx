@@ -1,9 +1,8 @@
 "use client";
 
 import { DiaryPageType } from "@/types/diary";
-import { Flex, Grid, Box } from "@chakra-ui/react";
+import { Flex, Grid } from "@chakra-ui/react";
 import DiaryCard from "../DiaryCard/DiaryCard";
-import { HorizontalHeading } from "@/components/shared";
 import DiaryDateTag from "../DiaryDateTag";
 import uuid from "react-uuid";
 
@@ -12,13 +11,9 @@ interface Props {
 }
 
 const DiaryMainLayout = ({ data }: Props) => {
-  console.log(data);
   return (
     <Flex direction="column">
-      <Box padding={5} textAlign="center">
-        <HorizontalHeading title="일기장" fontSize="4xl" />
-      </Box>
-      <Flex padding={5} gap={2}>
+      <Flex padding={10} gap={2}>
         {data.date.map((value) => {
           return <DiaryDateTag key={uuid()} name={value} />;
         })}
@@ -36,6 +31,7 @@ const DiaryMainLayout = ({ data }: Props) => {
         {data.list.map((info) => {
           return (
             <DiaryCard
+              slug={info.slug}
               key={uuid()}
               description={info.description}
               date={info.date}
