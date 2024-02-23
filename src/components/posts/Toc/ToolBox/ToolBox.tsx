@@ -1,6 +1,5 @@
 "use client";
 
-import imageLoader from "@/lib/imageloader";
 import { Flex, Box, Link, useColorMode } from "@chakra-ui/react";
 import Image from "next/image";
 const ToolBox = () => {
@@ -17,7 +16,6 @@ const ToolBox = () => {
       <Box cursor="pointer">
         <Image
           src="/icons/clip.svg"
-          loader={imageLoader}
           width={40}
           height={40}
           alt="clip-icon"
@@ -26,7 +24,6 @@ const ToolBox = () => {
       <Box cursor="pointer">
         <Link href={`#nav-bar`}>
           <Image
-            loader={imageLoader}
             src="/icons/top.svg"
             width={40}
             height={40}

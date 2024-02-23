@@ -1,5 +1,4 @@
 "use client";
-import imageLoader from "@/lib/imageloader";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/styles/framer-motions";
 import { useRecoilState } from "recoil";
@@ -41,7 +40,6 @@ const PostDetailLayout = ({ title, content, date, tags, category }: Props) => {
           >
             {!activeTocModal ? (
               <Image
-                loader={imageLoader}
                 src="/icons/list.svg"
                 width={60}
                 height={60}
@@ -49,7 +47,6 @@ const PostDetailLayout = ({ title, content, date, tags, category }: Props) => {
               />
             ) : (
               <Image
-                loader={imageLoader}
                 src="/icons/close.svg"
                 width={80}
                 height={80}

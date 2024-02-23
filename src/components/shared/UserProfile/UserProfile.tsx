@@ -18,7 +18,7 @@ const UserProfile = ({ size }: Props) => {
         }
         border="2px solid"
         size={size}
-        src={`${process.env.IMAGE_URI}/profile/profile.jpg`}
+        src="/profile/profile.jpg"
       />
       <Text size="2xl" color="white" mt={1} fontWeight="bold">
         문준영

@@ -12,7 +12,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import { BellIcon, SunIcon, CalendarIcon } from "@chakra-ui/icons";
 import { FeaturedPostTags } from "../FeaturedPostTags";
-import imageLoader from "@/lib/imageloader";
 
 interface Props {
   data: PostsType[];
@@ -21,6 +20,7 @@ interface Props {
 const FeautredPostCarousel = ({ data }: Props) => {
   const router = useRouter();
 
+  
   return (
     <Flex width={{ lg: "720px", md: "640px", base: "400px" }} padding={7}>
       <Swiper
@@ -30,6 +30,7 @@ const FeautredPostCarousel = ({ data }: Props) => {
         autoplay={{ delay: 3000, disableOnInteraction: false }}
       >
         {data.map((post, idx) => {
+          
           return (
             <SwiperSlide key={uuid()}>
               <Flex direction="column" gap={2}>
@@ -68,7 +69,6 @@ const FeautredPostCarousel = ({ data }: Props) => {
                     width={300}
                     height={200}
                     priority={true}
-                    loader={imageLoader}
                     style={{
                       width: "100%",
                       height: "auto",

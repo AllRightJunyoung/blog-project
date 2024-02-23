@@ -1,14 +1,12 @@
 "use client";
 
 import { GridItem, useColorMode, Flex, Text } from "@chakra-ui/react";
-
+import type { DiaryType } from "@/types/diary";
 import Image from "next/image";
 import { CalendarIcon } from "@chakra-ui/icons";
 import DiaryCardTag from "../DiaryCardTag";
 import { useRouter } from "next/navigation";
 
-import type { DiaryType } from "@/types/diary";
-import imageLoader from "@/lib/imageloader";
 import uuid from "react-uuid";
 
 const DiaryCard = ({ date, description, tags, thumbnail, slug }: DiaryType) => {
@@ -27,7 +25,6 @@ const DiaryCard = ({ date, description, tags, thumbnail, slug }: DiaryType) => {
       <Flex direction="column" fontWeight="bold">
         <Image
           alt={description}
-          loader={imageLoader}
           src={thumbnail}
           sizes="100vw"
           width={200}

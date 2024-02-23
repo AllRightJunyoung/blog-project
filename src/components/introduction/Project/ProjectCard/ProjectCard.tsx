@@ -17,7 +17,6 @@ import {
 } from "@chakra-ui/react";
 import Image from "next/image";
 import ProjectTag from "../ProjectTag";
-import imageLoader from "@/lib/imageloader";
 
 const ProjectCard = ({
   name,
@@ -40,7 +39,6 @@ const ProjectCard = ({
         <Box display="flex" flexDirection="column">
           <Image
             alt={description}
-            loader={imageLoader}
             src={image}
             sizes="100vw"
             width={150}
@@ -105,7 +103,6 @@ const ProjectCard = ({
                 width={30}
                 height={30}
                 alt="github-icon"
-                loader={imageLoader}
               />
               <Text>Github</Text>
             </Flex>

@@ -7,9 +7,6 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 });
 
 const nextConfig = {
-  images: {
-    domains: [`${process.env.NEXT_PUBLIC_IMAGE_DOMAIN}`],
-  },
   webpack(config) {
     // Grab the existing rule that handles SVG imports
     const fileLoaderRule = config.module.rules.find((rule) =>
@@ -42,7 +39,6 @@ const nextConfig = {
     NEXT_PUBLIC_GA_ID: process.env.NEXT_PUBLIC_GA_ID,
     BLOG_URI: process.env.BLOG_URI,
     GOOGLE_SITE_VERIFICATION: process.env.GOOGLE_SITE_VERIFICATION,
-    IMAGE_URI: process.env.NEXT_PUBLIC_IMAGE_URI,
   },
 };
 

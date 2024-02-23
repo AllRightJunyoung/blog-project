@@ -4,7 +4,6 @@ import { Avatar, AvatarGroup, useColorMode } from "@chakra-ui/react";
 import { Link } from "@chakra-ui/next-js";
 import NextLink from "next/link";
 import Image from "next/image";
-import imageLoader from "@/lib/imageloader";
 
 const SnsIcons = () => {
   const { colorMode } = useColorMode();
@@ -15,7 +14,6 @@ const SnsIcons = () => {
         <Avatar
           icon={
             <Image
-              loader={imageLoader}
               src={
                 colorMode === "light"
                   ? "/icons/instagram.svg"
@@ -44,7 +42,6 @@ const SnsIcons = () => {
         <Avatar
           icon={
             <Image
-              loader={imageLoader}
               src={
                 colorMode === "light"
                   ? "/icons/linkedIn.svg"
@@ -77,7 +74,6 @@ const SnsIcons = () => {
         <Avatar
           icon={
             <Image
-              loader={imageLoader}
               src={
                 colorMode === "light"
                   ? "/icons/github.svg"

@@ -24,14 +24,13 @@ import { ImageProps } from "next/image";
 import Markdown from "react-markdown";
 import type { Element } from "hast";
 import ChakraUIRenderer from "chakra-ui-markdown-renderer";
-import imageLoader from "@/lib/imageloader";
+
 
 const markDowntheme: any = {
   img: (image: ImageProps) => {
     return (
       <Box display="flex" flexDirection="column">
         <Image
-          loader={imageLoader}
           src={image.src}
           alt={image.alt}
           width={600}
@@ -215,8 +214,7 @@ const MarkdownViewer = ({ children }: Props) => {
       bgColor="blackAlpha.300"
       w="100%"
       className="markdown-viewer"
-    >
-      <Markdown
+    >      <Markdown
         components={ChakraUIRenderer(markDowntheme)}
         remarkPlugins={[remarkGfm]}
       >

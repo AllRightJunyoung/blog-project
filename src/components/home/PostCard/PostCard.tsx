@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { CalendarIcon, TimeIcon, ViewIcon } from "@chakra-ui/icons";
 import { GridItem, Flex, Text, Box, useColorMode } from "@chakra-ui/react";
-import imageLoader from "@/lib/imageloader";
 import { PostCardType } from "../../../types/home/index";
 
 interface Props extends PostCardType {
@@ -55,7 +54,6 @@ const PostCard = ({
                 height={200}
                 priority={true}
                 placeholder="blur"
-                loader={imageLoader}
                 blurDataURL={blurURL}
                 style={{
                   width: "100%",
