@@ -20,7 +20,6 @@ interface Props {
 const FeautredPostCarousel = ({ data }: Props) => {
   const router = useRouter();
 
-  
   return (
     <Flex width={{ lg: "720px", md: "640px", base: "400px" }} padding={7}>
       <Swiper
@@ -30,7 +29,6 @@ const FeautredPostCarousel = ({ data }: Props) => {
         autoplay={{ delay: 3000, disableOnInteraction: false }}
       >
         {data.map((post, idx) => {
-          
           return (
             <SwiperSlide key={uuid()}>
               <Flex direction="column" gap={2}>

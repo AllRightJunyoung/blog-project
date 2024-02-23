@@ -25,7 +25,6 @@ import Markdown from "react-markdown";
 import type { Element } from "hast";
 import ChakraUIRenderer from "chakra-ui-markdown-renderer";
 
-
 const markDowntheme: any = {
   img: (image: ImageProps) => {
     return (
@@ -214,7 +213,8 @@ const MarkdownViewer = ({ children }: Props) => {
       bgColor="blackAlpha.300"
       w="100%"
       className="markdown-viewer"
-    >      <Markdown
+    >
+      <Markdown
         components={ChakraUIRenderer(markDowntheme)}
         remarkPlugins={[remarkGfm]}
       >

@@ -14,12 +14,7 @@ const ToolBox = () => {
       padding={3}
     >
       <Box cursor="pointer">
-        <Image
-          src="/icons/clip.svg"
-          width={40}
-          height={40}
-          alt="clip-icon"
-        />
+        <Image src="/icons/clip.svg" width={40} height={40} alt="clip-icon" />
       </Box>
       <Box cursor="pointer">
         <Link href={`#nav-bar`}>
