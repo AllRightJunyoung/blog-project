@@ -11,6 +11,8 @@ const UserProfile = ({ size }: Props) => {
   return (
     <Flex flexDir="column" alignItems="center" justifyContent="center">
       <Avatar
+        as="image"
+        alt="블로그 주인 사진"
         color={
           colorMode === "light"
             ? "light.userProfile.border"

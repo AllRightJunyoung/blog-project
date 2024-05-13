@@ -23,6 +23,8 @@ const SearchBar = () => {
       gap={1}
     >
       <Input
+        type="search"
+        id="search-btn"
         placeholder="검색"
         _placeholder={{
           color:
@@ -51,21 +53,23 @@ const SearchBar = () => {
         width={500}
         onChange={handleInput}
       />
-      {colorMode === "dark" ? (
-        <Image
-          src="/icons/darkSearch.svg"
-          width="50"
-          height="50"
-          alt="search-icon"
-        />
-      ) : (
-        <Image
-          src="/icons/search.svg"
-          width="50"
-          height="50"
-          alt="search-icon"
-        />
-      )}
+      <label htmlFor="search-btn">
+        {colorMode === "dark" ? (
+          <Image
+            src="/icons/darkSearch.svg"
+            width="50"
+            height="50"
+            alt="검색 버튼"
+          />
+        ) : (
+          <Image
+            src="/icons/search.svg"
+            width="50"
+            height="50"
+            alt="검색 버튼"
+          />
+        )}
+      </label>
     </Flex>
   );
 };

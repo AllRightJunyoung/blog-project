@@ -21,7 +21,7 @@ const SnsIcons = () => {
               }
               width={50}
               height={50}
-              alt="instagram-Icon"
+              alt="인스타그램 이동 링크"
             />
           }
           bg={
@@ -49,7 +49,7 @@ const SnsIcons = () => {
               }
               width={50}
               height={50}
-              alt="linkedIn-Icon"
+              alt="링크드 인 이동 링크"
             />
           }
           bg={
@@ -81,7 +81,7 @@ const SnsIcons = () => {
               }
               width={50}
               height={50}
-              alt="github-icon"
+              alt="깃허브 이동 링크"
             />
           }
           bg={

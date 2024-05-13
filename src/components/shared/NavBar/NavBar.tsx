@@ -3,6 +3,7 @@
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import { Link, Flex, useColorMode, Button } from "@chakra-ui/react";
 import NextLink from "next/link";
+import Image from "next/image";
 
 const NavBar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -31,13 +32,32 @@ const NavBar = () => {
           Diary
         </Link>
 
-        <Button onClick={toggleColorMode} background="none" padding={1}>
+        <Button
+          onClick={toggleColorMode}
+          background="none"
+          padding={1}
+          aria-label="다크모드 라이트모드 전환 버튼"
+        >
           {colorMode === "light" ? (
             <SunIcon color="orange" />
           ) : (
             <MoonIcon color="yellow" />
           )}
         </Button>
+        <Link
+          as={NextLink}
+          target="_blank"
+          href="/rss.xml"
+          fontSize="xl"
+          fontWeight="bold"
+        >
+          <Image
+            src="/icons/rss.svg"
+            width="30"
+            height="30"
+            alt="RSS 구독 버튼"
+          />
+        </Link>
       </Flex>
     </Flex>
   );
