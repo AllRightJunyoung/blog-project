@@ -36,13 +36,13 @@ const FeautredPostCarousel = ({ data }: Props) => {
                 <Flex gap={1} direction="column">
                   <Flex alignItems="center" gap={2}>
                     <BellIcon color="yellow" w={5} h={5} />
-                    <Text fontSize="2xl" color="white">
+                    <Text fontSize="2xl" color="white" as="h2">
                       {post.title}
                     </Text>
                   </Flex>
                   <Flex alignItems="center" gap={2} marginBottom={1}>
                     <SunIcon color="orange" w={5} h={5} />
-                    <Text fontSize="2xl" color="white">
+                    <Text fontSize="2xl" color="white" as="h2">
                       {post.description}
                     </Text>
                   </Flex>

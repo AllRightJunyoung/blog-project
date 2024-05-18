@@ -14,7 +14,7 @@ const Footer = () => {
       as="footer"
     >
       <Box margin={1}>
-        <UserProfile size="2xl" />
+        <UserProfile />
         <Box marginTop={5}>
           <SnsIcons />
         </Box>

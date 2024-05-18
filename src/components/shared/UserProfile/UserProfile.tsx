@@ -1,27 +1,25 @@
 "use client";
-import { Avatar, Flex, Text, useColorMode } from "@chakra-ui/react";
+import { Flex, Text, useColorMode, Image } from "@chakra-ui/react";
 
-interface Props {
-  size: string;
-}
-
-const UserProfile = ({ size }: Props) => {
+const UserProfile = () => {
   const { colorMode } = useColorMode();
 
   return (
     <Flex flexDir="column" alignItems="center" justifyContent="center">
-      <Avatar
-        as="image"
-        aria-label="블로그 주인 사진"
+      <Image
         color={
           colorMode === "light"
             ? "light.userProfile.border"
             : "dark.userProfile.border"
         }
-        border="2px solid"
-        size={size}
+        objectFit="cover"
         src="/profile/profile.jpg"
+        borderRadius="full"
+        boxSize="150px"
+        alt="블로그 주인 프로필"
+        border="2px solid"
       />
+
       <Text size="2xl" color="white" mt={1} fontWeight="bold">
         문준영
       </Text>

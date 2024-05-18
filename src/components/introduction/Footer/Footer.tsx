@@ -13,7 +13,7 @@ const Footer = () => {
         alignItems="center"
         justifyContent="center"
       >
-        <UserProfile size="2xl" />
+        <UserProfile />
         <SnsIcons />
         <Text padding={1} color="white" textAlign="center">
           2023 copyright 문준영 all rights reserved

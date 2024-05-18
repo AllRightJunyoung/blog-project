@@ -5,7 +5,14 @@ import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { CalendarIcon, TimeIcon, ViewIcon } from "@chakra-ui/icons";
-import { GridItem, Flex, Text, Box, useColorMode } from "@chakra-ui/react";
+import {
+  GridItem,
+  Flex,
+  Heading,
+  Box,
+  useColorMode,
+  Text,
+} from "@chakra-ui/react";
 import { PostCardType } from "../../../types/home/index";
 
 interface Props extends PostCardType {
@@ -47,7 +54,7 @@ const PostCard = ({
           <Box>
             <Box display="flex" flexDirection="column">
               <Image
-                alt={title}
+                alt="게시글 썸네일"
                 src={thumbnail}
                 sizes="100vw"
                 width={300}
@@ -63,9 +70,9 @@ const PostCard = ({
                 }}
               />
             </Box>
-            <Text color="white" fontSize="18px" margin={5}>
+            <Heading color="white" fontSize="18px" margin={5}>
               {title}
-            </Text>
+            </Heading>
           </Box>
           <Flex
             borderTop="1px solid #242E35"

@@ -10,7 +10,7 @@ interface Props {
 const HorizontalHeading = ({ title, fontSize }: Props) => {
   return (
     <Flex flexDirection="column">
-      <Text fontSize={fontSize} color="white" fontWeight="bold">
+      <Text fontSize={fontSize} color="white" fontWeight="bold" as="h1">
         {title}
       </Text>
       <Divider color="divider.color" border="1px" />
