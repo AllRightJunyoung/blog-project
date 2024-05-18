@@ -27,10 +27,7 @@ const SearchBar = () => {
         id="search-btn"
         placeholder="검색"
         _placeholder={{
-          color:
-            colorMode === "light"
-              ? "light.searchBar.background"
-              : "dark.searchBar.background",
+          color: colorMode === "light" ? "white" : "dark.searchBar.background",
         }}
         color={
           colorMode === "light"

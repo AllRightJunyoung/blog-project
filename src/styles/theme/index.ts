@@ -90,19 +90,19 @@ export const theme: ThemeConfig = extendTheme({
       tag: {
         active: {
           fontColor: "black",
-          background: "#2D7B7F",
+          background: "#01827F",
         },
         inactive: {
-          fontColor: "#627387",
-          background: "#293C4A",
+          fontColor: "white",
+          background: "#222A2F",
         },
       },
       searchBar: {
-        fontColor: "#627387",
-        background: "#293C4A",
+        fontColor: "white",
+        background: "#293c4a",
       },
       card: {
-        fontColor: "rgb(100, 116, 139)",
+        fontColor: "#637FB8",
         background: "#10181B",
       },
       pagination: {
