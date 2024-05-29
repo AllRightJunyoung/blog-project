@@ -7,12 +7,11 @@ import type { PostsType } from "@/types/shared";
 import uuid from "react-uuid";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import { Text, Flex, Skeleton } from "@chakra-ui/react";
+import { Text, Flex } from "@chakra-ui/react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import { BellIcon, SunIcon, CalendarIcon } from "@chakra-ui/icons";
 import { FeaturedPostTags } from "../FeaturedPostTags";
-import { Suspense, useEffect, useState } from "react";
 
 interface Props {
   data: PostsType[];
