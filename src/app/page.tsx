@@ -7,7 +7,7 @@ const HomeLayout = dynamic(() => import("../components/home/Layout/Layout"), {
   ssr: false,
 });
 
-export default async function HomePage() {
+export default function HomePage() {
   const allPostsArticleData = getAllPosts("article");
 
   return <HomeLayout data={allPostsArticleData} />;

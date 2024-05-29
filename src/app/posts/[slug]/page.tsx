@@ -1,16 +1,6 @@
-import dynamic from "next/dynamic";
 import { Metadata } from "next";
-
-import { Spinner } from "@/components/shared";
 import { getPostsData, getAllPosts } from "@/utils/shared/readFile";
-
-const PostDetailPageLayout = dynamic(
-  () => import("@/components/posts/Layout/PostDetailLayout"),
-  {
-    loading: () => <Spinner />,
-    ssr: false,
-  },
-);
+import { PostDetailPageLayout } from "@/components/posts";
 
 type Props = {
   params: {
