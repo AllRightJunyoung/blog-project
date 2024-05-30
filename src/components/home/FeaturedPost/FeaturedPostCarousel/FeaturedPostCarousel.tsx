@@ -66,7 +66,6 @@ const FeautredPostCarousel = ({ data }: Props) => {
                     sizes="100vw"
                     width={300}
                     height={200}
-                    priority={true}
                     style={{
                       width: "100%",
                       height: "auto",

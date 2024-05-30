@@ -33,6 +33,8 @@ const nextConfig = {
 
     return config;
   },
+  formats: ["image/webp"],
+  unoptimized: false,
 
   pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
   env: {

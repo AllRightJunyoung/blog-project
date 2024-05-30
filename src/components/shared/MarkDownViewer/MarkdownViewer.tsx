@@ -35,7 +35,7 @@ const markDowntheme: any = {
           width={600}
           height={400}
           sizes="100vw"
-          priority={true}
+          priority
           style={{
             width: "100%",
             height: "auto",
