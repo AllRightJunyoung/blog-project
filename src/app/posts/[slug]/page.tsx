@@ -31,7 +31,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function PostDetailPage({ params: { slug } }: Props) {
+export default function PostDetailPage({ params: { slug } }: Props) {
   const postData = getPostsData(slug, "article");
 
   return (
@@ -44,7 +44,7 @@ export default async function PostDetailPage({ params: { slug } }: Props) {
     />
   );
 }
-export async function generateStaticParams() {
+export function generateStaticParams() {
   const allpostArticleData = getAllPosts("article");
   return allpostArticleData.map((post) => ({
     slug: post.slug,

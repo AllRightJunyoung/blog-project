@@ -13,13 +13,20 @@ const CategoryTag = ({ name }: Props) => {
   const setCurrentPage = useSetRecoilState(currentPageState);
   const { colorMode } = useColorMode();
 
-  const handleTag = () => {
+  const handleClick = () => {
     setCategoryTag(name);
     setCurrentPage(1);
+  };
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLElement>) => {
+    if (e.key === "Enter") {
+      setCategoryTag(name);
+      setCurrentPage(1);
+    }
   };
 
   return (
     <Tag
+      tabIndex={0}
       size="lg"
       key="lg"
       variant="solid"
@@ -34,7 +41,8 @@ const CategoryTag = ({ name }: Props) => {
       }
       borderRadius={10}
       cursor="pointer"
-      onClick={handleTag}
+      onClick={handleClick}
+      onKeyDown={handleKeyDown}
     >
       <TagLabel
         color={

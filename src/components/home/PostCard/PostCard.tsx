@@ -34,11 +34,22 @@ const PostCard = ({
   const router = useRouter();
   const { colorMode } = useColorMode();
 
+  const handleClick = () => {
+    router.push(`/posts/${slug}`);
+  };
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLElement>) => {
+    if (e.key === "Enter") {
+      router.push(`/posts/${slug}`);
+    }
+  };
+
   return (
     <motion.div
       style={style}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
+      onClick={handleClick}
+      onKeyDown={handleKeyDown}
     >
       <GridItem
         bg={
@@ -48,7 +59,6 @@ const PostCard = ({
         }
         borderRadius={10}
         cursor="pointer"
-        onClick={() => router.push(`/posts/${slug}`)}
       >
         <Flex direction="column" fontWeight="bold">
           <Box>

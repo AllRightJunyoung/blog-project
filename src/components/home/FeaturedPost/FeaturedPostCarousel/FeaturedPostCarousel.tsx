@@ -20,8 +20,23 @@ interface Props {
 const FeautredPostCarousel = ({ data }: Props) => {
   const router = useRouter();
 
+  const handleClick = (e: React.MouseEvent<HTMLElement>) => {
+    const slug = (e.target as HTMLElement).dataset.slug;
+    router.push(`/posts/${slug}`);
+  };
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLElement>) => {
+    const slug = (e.target as HTMLElement).dataset.slug;
+    if (e.key === "Enter") {
+      router.push(`/posts/${slug}`);
+    }
+  };
+
   return (
-    <Flex width={{ lg: "720px", md: "640px", base: "400px" }} padding={7}>
+    <Flex
+      width={{ lg: "720px", md: "640px", base: "400px" }}
+      padding={7}
+      tabIndex={0}
+    >
       <Swiper
         modules={[Pagination, Autoplay]}
         speed={600}
@@ -61,6 +76,8 @@ const FeautredPostCarousel = ({ data }: Props) => {
 
                 <Flex alignItems="center">
                   <Image
+                    data-slug={post.slug}
+                    tabIndex={0}
                     alt={post.title}
                     src={post.thumbnail}
                     sizes="100vw"
@@ -73,7 +90,8 @@ const FeautredPostCarousel = ({ data }: Props) => {
                       borderRadius: "20px",
                       cursor: "pointer",
                     }}
-                    onClick={() => router.push(`/posts/${post.slug}`)}
+                    onClick={handleClick}
+                    onKeyDown={handleKeyDown}
                   />
                 </Flex>
               </Flex>

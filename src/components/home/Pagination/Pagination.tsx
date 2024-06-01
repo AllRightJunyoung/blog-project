@@ -18,7 +18,7 @@ const Pagination = () => {
   const paginationCircles = CreatePaginationCircle(posts, colorMode);
 
   return (
-    <HStack spacing={5} marginBottom={10}>
+    <HStack spacing={5} marginBottom={10} tabIndex={0}>
       {posts.length > 0 ? (
         paginationCircles.map((paginationCircle) => {
           return paginationCircle;
@@ -64,7 +64,9 @@ const CreatePaginationCircle = (posts: unknown[], colorMode: ColorMode) => {
         opacity={currentPage === i + 1 ? 1 : 0.5}
         key={uuid()}
         cursor="pointer"
+        tabIndex={0}
         onClick={() => setCurrentPage(i + 1)}
+        onKeyDown={() => setCurrentPage(i + 1)}
       >
         {i + 1}
       </Circle>,

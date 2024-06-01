@@ -7,7 +7,7 @@ type Props = {
   };
 };
 
-export default async function DiaryDetailPage({ params: { slug } }: Props) {
+export default function DiaryDetailPage({ params: { slug } }: Props) {
   const postDiaryData = getPostsData(slug, "diary");
   return (
     <DiaryDetailLayout
@@ -21,7 +21,7 @@ export default async function DiaryDetailPage({ params: { slug } }: Props) {
   );
 }
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   const allpostDiaryData = getAllPosts("diary");
   return allpostDiaryData.map((post) => ({
     slug: post.slug,
